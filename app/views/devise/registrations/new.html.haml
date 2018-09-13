@@ -1,21 +1,59 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+#wrap
+  .main-content
+    #main
+      .inner
+        .content-only-main-01
+          .img-prof
+            %img.img{alt: "", src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tabibito-01.svg"}
+          %h1.hi
+            登録してシゴトに応募しよう
+            %p.hi_bottom
+              すでに登録済みの方は
+              %a.login{href:"/login"}
+                ログイン
+          %p.checkbox-msg
+            登録するには
+            %br
+            チェックボックスにチェックを入れてください
+          %form#form-signup.form-signup-01
+            / = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            /   = devise_error_messages!
+            %p.application-confirm-text.confirm
+              %input#checkbox_gps.checkbox{:class => "validate[required]", :name => "sagojo_backendbundle_user_signup[checkbox]", :type => "checkbox", :value => "check"}/
+              %a.checkbox-font{:href => "/rules"}利用規約
+              と
+              %a.checkbox-font{:href => "/rules"} 会員規約
+              と
+              %a.checkbox-font{:href => "/privacy"} プライバシーポリシー
+              に同意します
+            %p
+            /   %button#fbLoginBtn.btn.facebook-01.w-100.after_gps
+            /     %img.facebook-acon{:alt => "", :src => "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-fb.svg"}>/
+            /     Facebookで 旅人登録
+              %input#sagojo_backendbundle_user_signup_name{:class => "validate[required].textbox-01.w-100", :name => "sagojo_backendbundle_user_signup[name]", :placeholder => "お名前", :required => "required", :type => "text"}/
+
+        .content-only-sub-01
+
+
+
+/ %h2 Sign up
+/ = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+/   = devise_error_messages!
+/   .field
+/     = f.label :email
+/     %br/
+/     = f.email_field :email, autofocus: true, autocomplete: "email"
+/   .field
+/     = f.label :password
+/     - if @minimum_password_length
+/       %em
+/         (#{@minimum_password_length} characters minimum)
+/     %br/
+/     = f.password_field :password, autocomplete: "new-password"
+/   .field
+/     = f.label :password_confirmation
+/     %br/
+/     = f.password_field :password_confirmation, autocomplete: "new-password"
+/   .actions
+/     = f.submit "Sign up"
+/ = render "devise/shared/links"
