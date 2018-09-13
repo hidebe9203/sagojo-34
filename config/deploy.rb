@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "sagojo-34"
-set :repo_url, "git@example.com:hidebe9203/sagojo-34.git"
+set :repo_url, "git@github.com:hidebe9203/sagojo-34.git"
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
