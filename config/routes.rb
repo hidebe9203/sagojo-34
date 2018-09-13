@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get "test" => "test#index"
+  root to: "tops#show"
+  resource :tops, only: [:show]
 end
