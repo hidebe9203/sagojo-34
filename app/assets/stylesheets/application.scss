@@ -2,3 +2,8 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import 'bootstrap-custom';
+@import 'font-awesome';
+@import './mixin/mixins';
+@import './config/variable';
+@import './modules/header';
+@import './modules/appeal';
