@@ -1,0 +1,13 @@
+
+$(document).ready(function(){
+  $('.slick').slick({
+  centerMode: true,
+  // centerPadding: '40%';
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  accessibility: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  dots: true
+});
+});
