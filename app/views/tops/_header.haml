@@ -22,29 +22,29 @@
               %li.nav-item
                 %a.nav-link{:href => "#"} FAQ
           -# userがログインしていないとき
-          -# .col-sm-4.col-sm-offset-4
-          -#   %ul.nav.justify-content-end.register
-          -#     %li.nav-item.company
-          -#       %a.nav-link{:href => "#"} 企業登録
-          -#     %li.nav-item.user
-          -#       %a.nav-link{:href => "#"} 旅人登録
-          -# userがログインしているとき
           .col-sm-4.col-sm-offset-4
-            %ul.nav.justify-content-end.utility
-              %li.nav-item
-                %span.bell
-                  = image_tag "bell.png"
-                %span.comment
-                  = link_to image_tag('comment.png'), '#'
-              %li.nav-item#dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
-                %span.user
-                  = image_tag "user.png"
-                %span.user_name
-                  current_user.name
-                .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-                  %a.dropdown-item{:href => "#"} 応募したシゴト一覧
-                  %a.dropdown-item{:href => "#"} リターン管理
-                  %a.dropdown-item{:href => "#"} お気に入り一覧
-                  %a.dropdown-item{:href => "#"} プロフィール編集
-                  %a.dropdown-item{:href => "#"} アカウント設定
-                  %a.dropdown-item.logout{:href => "#"} ログアウト
+            %ul.nav.justify-content-end.register
+              %li.nav-item.company
+                %a.nav-link{:href => "#"} 企業登録
+              %li.nav-item.user
+                %a.nav-link{:href => "#"} 旅人登録
+          -# userがログインしているとき
+          -# .col-sm-4.col-sm-offset-4
+          -#   %ul.nav.justify-content-end.utility
+          -#     %li.nav-item
+          -#       %span.bell
+          -#         = image_tag "bell.png"
+          -#       %span.comment
+          -#         = link_to image_tag('comment.png'), '#'
+          -#     %li.nav-item#dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+          -#       %span.user
+          -#         = image_tag "user.png"
+          -#       %span.user_name
+          -#         current_user.name
+          -#       .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+          -#         %a.dropdown-item{:href => "#"} 応募したシゴト一覧
+          -#         %a.dropdown-item{:href => "#"} リターン管理
+          -#         %a.dropdown-item{:href => "#"} お気に入り一覧
+          -#         %a.dropdown-item{:href => "#"} プロフィール編集
+          -#         %a.dropdown-item{:href => "#"} アカウント設定
+          -#         %a.dropdown-item.logout{:href => "#"} ログアウト

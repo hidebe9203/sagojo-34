@@ -17,15 +17,15 @@ $btn-user: $blue;
 $btn-user-font: $white;
 $appeal-carousel-indicators: $white;
 
-@mixin square-round_btn($color){
+@mixin square-round_btn($color, $width, $height, $border-radius){
     display: inline-block;
     padding: 7px 20px;
-	  border-radius: 25px;
+	  border-radius: $border-radius;
     text-decoration: none;
     background-color: $color;
-    // background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
-    // background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
     transition: .4s;
+    width: $width;
+    height: $height;
 }
 
 // @mixin square-round_btn.hover {
@@ -37,7 +37,7 @@ $appeal-carousel-indicators: $white;
     padding: 0 60px;
     background-color: $white;
     position: fixed;
-    z-index: 50;
+    z-index: 10;
     border: 1px solid $nav--border;
     nav{
       text-align: center;
@@ -61,7 +61,7 @@ $appeal-carousel-indicators: $white;
           li.company{
             display: inline-block;
             vertical-align: middle;
-            @include square-round_btn($btn-company);
+            @include square-round_btn($btn-company, 150px, 50px, 25px);
             a{
               color: $btn-company-font;
             }
@@ -69,7 +69,7 @@ $appeal-carousel-indicators: $white;
           li.user{
             display: inline-block;
             vertical-align: middle;
-            @include square-round_btn($btn-user);
+            @include square-round_btn($btn-user, 150px, 50px, 25px);
             a{
               color: $btn-user-font;
             }
