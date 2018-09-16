@@ -9,20 +9,19 @@
     width: 100vw;
     margin: 0 0;
     li.slick-image{
-      display: block;
       position: relative;
       margin-top: 10px;
       color: $white;
       img{
-      height: 600px;
-      width: 1030px;
-      object-fit: cover;
-      z-index: 2;
-      }
+        height: 600px;
+        width: 1050px;
+        object-fit: cover;
+        z-index: 2;
+        }
       .shadow-box{
         background-color: rgba(0,0,0,0.3);
         height: 600px;
-        width: 1030px;
+        width: 1050px;
         position: absolute;
         top: 0;
         left: 0;
@@ -179,7 +178,7 @@
   }
   ul.slick-dots{
     li{
-      bottom: -10px;
+      bottom: -5px;
     }
     .slick-active{
       button::before{
