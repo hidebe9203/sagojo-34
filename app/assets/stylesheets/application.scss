@@ -4,6 +4,8 @@
 @import 'bootstrap-custom';
 @import 'font-awesome';
 @import './mixin/mixins';
-@import './config/variable';
+// @import './config/variable';
 @import './modules/header';
 @import './modules/appeal'; 
+@import './modules/sub-contents';
+@import './modules/footer';
