@@ -27,9 +27,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|VARCHAR|null: false|
-|email|VARCHAR|null: false, unique: true|
-|password|VARCHAR|null: false, unique: true|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
 
 ### Association
 - has_many :likes
@@ -40,8 +40,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|foreign_key: true|
-|work_id|integer|foreign_key: true|
+|user_id|references|foreign_key: true|
+|work_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -59,42 +59,43 @@ Things you may want to cover:
 - has_many :work_tags
 - has_many :works, through: :work_tags
 - has_many :column_tags
-- has_many :colums, through: :column_tags
+- has_many :columns, through: :column_tags
 
 
 
-## companysテーブル
+## companiesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|company_name|VARCHAR|null: false, unique: true|
-|name|VARCHAR|null: false|
-|number|VARCHAR|null: false|
-|email|VARCHAR|null: false, unique: true|
-|password|VARCHAR|null: false, unique: true|
+|company_name|string|null: false, unique: true|
+|name|string|null: false|
+|number|integer|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
 
 ### Association
-
+- has_many :works
 
 
 ## worksテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|occupations_id|integer|foreign_key: true|
+|occupations_id|references|foreign_key: true|
 
 ### Association
 - has_many :work_tags
 - has_many :tags, through: :work_tags
-
+- belongs_to :occupation
+- belongs_to :company
 
 
 ## work_tagsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|tag_id|integer|foreingn_key: true|
-|user_id|integer|foreign_key: true|
+|tag_id|references|foreingn_key: true|
+|work_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :work
@@ -106,10 +107,10 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|unique: true|
+|name|string|unique: true, null: false|
 
 ### Association
-- belongs_to :work
+- has_many :works
 
 
 
@@ -121,9 +122,8 @@ Things you may want to cover:
 
 ### Association
 - has_many :column_tags
-- has_many :column, through: :column_tags
-- has_many :genre_columns
-- has_many :genre, through: :genre_columns
+- has_many :tags, through: :column_tags
+- belongs_to :genre
 
 
 
@@ -131,12 +131,12 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|tag_id|integer|foreign_key: true|
-|columns_id|integer|foreign_key: true|
+|tag_id|references|foreign_key: true|
+|column_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :tag
-- belongs_to :genre
+- belongs_to :column
 
 
 
@@ -151,25 +151,11 @@ Things you may want to cover:
 
 
 
-## genreテーブル
+## genresテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|unique: true|
+|name|string|unique: true, null: false|
 
 ### Association
-- has_many :genre_columns
-- has_many :columns, through: :genre_columns
-
-
-
-## genre_columnsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|genre_id|integer|foreign_key: true|
-|column_id|integer|foreign_key: true|
-
-### Association
-- belongs_to :genre
-- belongs_to :column
+- has_many :genres
