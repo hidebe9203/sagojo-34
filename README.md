@@ -33,6 +33,18 @@ Things you may want to cover:
 
 ### Association
 - has_many :likes
+- has_one :profile
+
+
+
+## profilesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+||||
+
+### Association
+- belongs_to :user
 
 
 
@@ -159,3 +171,17 @@ Things you may want to cover:
 
 ### Association
 - has_many :genres
+
+
+
+## workstatusesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|foreign_key: true|
+|work_id|references|foreign_key: true|
+|status|integer||
+
+### Association
+- belongs_to :user
+- belongs_to :work
