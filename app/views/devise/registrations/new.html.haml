@@ -1,21 +1,113 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+#wrap
+  .main-content
+    #main
+      .inner
+        .content-only-main-01
+          .img-prof
+            %img.img{alt: "", src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tabibito-01.svg"}
+          %h1.hi
+            登録してシゴトに応募しよう
+            %p.hi_bottom
+              すでに登録済みの方は
+              / =link_to new_user_session_path,class: "login"
+              %a.login{href: "/users/sign_in"}
+                ログイン
+          %p.checkbox-msg
+            登録するには
+            %br
+            チェックボックスにチェックを入れてください
+          %div#form-signup.form-signup-01
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            %p.application-confirm-text.confirm
+              %input#checkbox_gps.checkbox{:class => "validate[required]", :name => "sagojo_backendbundle_user_signup[checkbox]", :type => "checkbox", :value => "check"}/
+              %a.checkbox-font{:href => "/rules"}利用規約
+              と
+              %a.checkbox-font{:href => "/rules"} 会員規約
+              と
+              %a.checkbox-font{:href => "/privacy"} プライバシーポリシー
+              に同意します
+            .name_field
+              = f.text_field :name, id: "sagojo_backendbundle_user_signup_name", class: "validate[required].textbox-01.w-100", placeholder: "お名前", required: "required"
+            / %p
+            /   %input#sagojo_backendbundle_user_signup_name{:class => "validate[required].textbox-01.w-100", :name => "sagojo_backendbundle_user_signup[name]", :placeholder => "お名前", :required => "required", :type => "text"}/
+            %p.mailaddress-font
+              キャリアのアドレスは登録確認メールが届かない事がございます。
+              %br
+              gmailなどのアドレスをお使いください。
+            .email_field
+              = f.email_field :email ,id: "sagojo_backendbundle_user_signup_email", class: "validate[required,custom[email]].textbox-01.w-100.text-input", placeholder: "メールアドレス", required:"required"
+            / %input#sagojo_backendbundle_user_signup_email{:class => "validate[required,custom[email]].textbox-01.w-100.text-input", :name => "sagojo_backendbundle_user_signup[email]", :placeholder => "メールアドレス", :required => "required", :type => "email"}/
+            .password_fild
+              = f.password_field :password, autocomplete: "off", id: "sagojo_backendbundle_user_signup_password", class: "validate[required,minSize[6],maxSize[50]].passwordbox-01.w-100.text-input", placeholder: "パスワード",required: "required"
+            / %input#sagojo_backendbundle_user_signup_password{:class => "validate[required,minSize[6],maxSize[50]].passwordbox-01.w-100.text-input", :name => "sagojo_backendbundle_user_signup[password]", :placeholder => "パスワード", :required => "required", :type => "password"}/
+            %p.password-font
+              パスワードは ６文字以上 にしてください
+            / %input#sagojo_backendbundle_user_signup__token{:name => "sagojo_backendbundle_user_signup[_token]", :type => "hidden", :value => "dPq1Q_Fp0xDVluV_ey5ITHWpC9LRE1RcFxZAKb92g-8"}/
+            .fubmit_actions
+              = f.submit "メールアドレスで 旅人登録", class: "btn w-100 g-mb0 after_gps"
+              / %input.btn.w-100.g-mb0.after_gps{ :type => "submit", :value => "メールアドレスで 旅人登録"}/
+
+
+        .content-only-sub-01
+          %p.copyright{lang: "en"}© SAGOJO.
+
+
+
+/ %h2 Sign up
+/ = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+/   = devise_error_messages!
+/   / .name_field
+/   /   = f.text_field :name, id: "sagojo_backendbundle_user_signup_name", class: "validate[required].textbox-01.w-100", placeholder: "お名前", required: "required"
+/   .field
+/     = f.label :email
+/     %br/
+/     = f.email_field :email, autofocus: true, autocomplete: "email"
+/   .field
+/     = f.label :password
+/     - if @minimum_password_length
+/       %em
+/         (#{@minimum_password_length} characters minimum)
+/     %br/
+/     = f.password_field :password, autocomplete: "new-password"
+/   .field
+/     = f.label :password_confirmation
+/     %br/
+/     = f.password_field :password_confirmation, autocomplete: "new-password"
+/   .actions
+/     = f.submit "Sign up"
+/ = render "devise/shared/links"
+
+/ #account-page.account-page
+/   .account-page__inner.clearfix
+/     .account-page__inner--left.account-page__header
+/       %h2 Create Account
+/       %h5 新規アカウントの作成
+/       = render "/devise/shared/links"
+/     .account-page__inner--right.user-form
+/       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+/         = devise_error_messages!
+/         .field
+/           .field-label
+/             = f.label :name
+/           .field-input
+/             = f.text_field :name, autofocus: true
+/         .field
+/           .field-label
+/             = f.label :email
+/           .field-input
+/             = f.email_field :email
+/         .field
+/           .field-label
+/             = f.label :password
+/             %i (英数字8文字以上)
+/           .field-input
+/             = f.password_field :password, autocomplete: "off"
+/         .field
+/           .field-label
+/             = f.label :password_confirmation
+/           .field-input
+/             = f.password_field :password_confirmation, autocomplete: "off"
+/         .actions
+/           = f.submit "Create Account", class: 'btn'
+
