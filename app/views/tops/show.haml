@@ -1,16 +1,11 @@
-/ .wrapper
-/   .header
-/     = render partial: "./tops/header"
-/   .appeal
-/     = render partial: "./tops/appeal"
-/   .main-contents
-/     = render partial: "./tops/contents"
-/   -# .sub-contents
-/   -#   = render partial: "./tops/sub-contents"
-/   .footer
-/     = render partial: "./tops/footer"
-
-
-= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-= link_to "サインイン", new_user_registration_path, method: :get, class: 'btn'
-
+.wrapper
+  .header
+    = render partial: "./tops/header"
+  .appeal
+    = render partial: "./tops/appeal"
+  .main-contents
+    = render partial: "./tops/contents"
+  -# .sub-contents
+  -#   = render partial: "./tops/sub-contents"
+  .footer
+    = render partial: "./tops/footer"
