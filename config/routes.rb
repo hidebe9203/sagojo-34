@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "tops#show"
-  resource :test
+  root to: "tops#show"
   resource :tops, only: [:show]
 end
