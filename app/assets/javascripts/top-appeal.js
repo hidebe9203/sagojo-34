@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   $('.slick').slick({
   centerMode: true,
@@ -9,6 +8,5 @@ $(document).ready(function(){
   autoplay: true,
   autoplaySpeed: 2000,
   dots: true,
-
 });
 });

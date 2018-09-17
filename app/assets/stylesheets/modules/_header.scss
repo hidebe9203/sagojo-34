@@ -11,9 +11,9 @@ $smoky_black: #494848;
 $nav--border: $dusty_gray;
 $nav-font: $dusty_gray;
 $appeal-background-color: $white_gray;
-$btn-company: $yellow;
+$btn-yellow: $yellow;
 $btn-company-font: $smoky_black;
-$btn-user: $blue;
+$btn-blue: $blue;
 $btn-user-font: $white;
 $appeal-carousel-indicators: $white;
 
@@ -28,10 +28,6 @@ $appeal-carousel-indicators: $white;
     height: $height;
 }
 
-// @mixin square-round_btn.hover {
-//     background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
-//     background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
-// }
 .row{
   .col-sm.navbar{
     padding: 0 60px;
@@ -61,7 +57,8 @@ $appeal-carousel-indicators: $white;
           li.company{
             display: inline-block;
             vertical-align: middle;
-            @include square-round_btn($btn-company, 150px, 50px, 25px);
+            @include square-round_btn($btn-yellow, 130px, 50px, 25px);
+            margin-right: 10px;
             a{
               color: $btn-company-font;
             }
@@ -69,10 +66,13 @@ $appeal-carousel-indicators: $white;
           li.user{
             display: inline-block;
             vertical-align: middle;
-            @include square-round_btn($btn-user, 150px, 50px, 25px);
+            @include square-round_btn($btn-blue, 130px, 50px, 25px);
             a{
               color: $btn-user-font;
             }
+          }
+          li:hover{
+            filter: brightness(110%);
           }
         }
         ul.justify-content-end.utility{

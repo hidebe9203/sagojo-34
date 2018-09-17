@@ -71,7 +71,6 @@
             top: 33px;
             right: 5px;
           }
-
         }
       }
       .catchcopy{
@@ -105,7 +104,7 @@
             z-index: 4;
           }
           span.price{
-            font-size: 21px;
+            font-size: 25px;
           }
           span.detail{
             font-size: 15px;
@@ -145,7 +144,10 @@
             line-height: 50px;
             margin-bottom: 15px;
             text-align: center;
-            @include square-round_btn($btn-company, 220px, 65px, 30px);
+            @include square-round_btn($btn-yellow, 220px, 65px, 30px);
+          }
+          a:hover{
+            filter: brightness(110%);
           }
         }
       }
