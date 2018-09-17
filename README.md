@@ -42,8 +42,8 @@ Things you may want to cover:
 |work_id       |references  |null: false, foreign_key: true|
 |title         |text        |null: false                   |
 |image_id      |references  |null: false, foreign_key: true|
-|heading_id    |references  |null: false, foreign_key: true|
-|subheading_id |references  |null: false, foreign_key: true|
+|heading_id    |references  |                              |
+|subheading_id |references  |                              |
 |text_id       |references  |null: false, foreign_key: true|
 |plan_id       |references  |null: false, foreign_key: true|
 
@@ -152,7 +152,7 @@ Things you may want to cover:
 ## spots
 |column         |Type           |Options                       |
 |---------------|---------------|------------------------------|
-|spot           |strng          |index: true, unique: true     |
+|spot           |string         |index: true, unique: true     |
 
 ## Association
 - belongs_to :area
