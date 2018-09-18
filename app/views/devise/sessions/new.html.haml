@@ -1,17 +1,50 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+#wrap
+  .main-content
+    #main
+      .inner
+        .content-only-main-01
+          .img-prof
+            %img.img{alt: "", src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-sagojokun-01.svg"}
+          %h1.hi
+            旅人アカウントでログイン
+          %div#form-signup.form-signup-01
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .email_field
+              = f.email_field :email ,id: "sagojo_backendbundle_user_signup_email", class: "validate[required,custom[email]].textbox-01.w-100.text-input", placeholder: "メールアドレス", required:"required"
+            .password_fild
+              = f.password_field :password, autocomplete: "off", id: "sagojo_backendbundle_user_signup_password", class: "validate[required,minSize[6],maxSize[50]].passwordbox-01.w-100.text-input", placeholder: "パスワード",required: "required"
+            .fubmit_actions
+              = f.submit "ログイン", class: "btn w-100 g-mb0 after_gps"
+        .content-only-sub-01
+          .wrap-col_col2
+            .left
+              %p
+                パスワードを忘れた方は
+                %a{:href => "/user/password_reset/new"}> こちら
+                から
+            .right
+              %p
+                登録しましたか？
+                %a{:href => "/signup"} 企業登録
+          %p.copyright02{lang: "en"}© SAGOJO.
+
+
+
+
+/ %h2 ああああLog in
+/ = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+/   .field
+/     = f.label :email
+/     %br/
+/     = f.email_field :email, autofocus: true, autocomplete: "email"
+/   .field
+/     = f.label :password
+/     %br/
+/     = f.password_field :password, autocomplete: "current-password"
+/   - if devise_mapping.rememberable?
+/     .field
+/       = f.check_box :remember_me
+/       = f.label :remember_me
+/   .actions
+/     = f.submit "Log in"
+/ = render "devise/shared/links"
