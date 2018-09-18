@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "tops#show"
-  resource :tops, only: [:show]
+  root to: "tops#index"
+  resources :tops, only: [:index]
+  resources :works
+  resources :columns
 end
