@@ -292,6 +292,63 @@
   }
 }
 
+@media(max-width: 737px) {
+  .main-contents {
+    padding: 20px 15px 35px;
+    box-sizing: border-box;
+    font-size: 0.6rem;
+    min-width: 100%;
+    width: 100%;
+    .left {
+      width: 100%;
+      .inner {
+        .thum-job-01 {
+          height: initial;
+          a {
+            height: 100%;
+            .image {
+              width: 100px;
+              height: 100%;
+              padding: 10px;
+              text-align: center;
+              .thum-job-status {
+                font-size: 0.5rem;
+                position: static;
+                display: inline-block;
+                margin-top: 15px;
+                padding: 8px 11px;
+                border-radius: 5px;
+              }
+            }
+            .content {
+              float: none;
+              overflow: hidden;
+              width: auto;
+              padding: 10px 15px 10px 0;
+              .thum-job-desc {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .right {
+      margin-bottom: 75px;
+      float: none;
+      box-sizing: border-box;
+      width: 100% !important;
+      .topbanner {
+        img {
+          width: 340px;
+          margin-top: 10px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
 .btn.type-06 {
   font-size: 0.8rem;
   font-weight: bold;
