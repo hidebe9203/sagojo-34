@@ -21,13 +21,17 @@
                 %a.nav-link{:href => "#"} 企業の方はこちら
               %li.nav-item
                 %a.nav-link{:href => "#"} FAQ
+
           -# userがログインしていないとき
           .col-sm-4.col-sm-offset-4
             %ul.nav.justify-content-end.register
               %li.nav-item.company
-                %a.nav-link{:href => "#"} 企業登録
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+
+                / %a.nav-link{:href => "#"} 企業登録
               %li.nav-item.user
-                %a.nav-link{:href => "#"} 旅人登録
+                = link_to "サインイン", new_user_registration_path, method: :get, class: 'btn'
+                / %a.nav-link{:href => "#"} 旅人登録
           -# userがログインしているとき
           -# .col-sm-4.col-sm-offset-4
           -#   %ul.nav.justify-content-end.utility
