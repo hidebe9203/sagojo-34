@@ -1,5 +1,41 @@
 = render partial: "./tops/header"
 .container
-  .col-sm6.edit
-    .edit-area
-      = markdown(@test.content)
+  #main.left
+    .inner
+      .article
+        .utility-top
+        %h1.main_title
+          = markdown(@test.title)
+        %ul.utility-sns
+          %li.twitter
+            %a.twitter-share-button{"data-show-count" => "false", href: "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
+            %script{async: "", charset: "utf-8", src: "https://platform.twitter.com/widgets.js"}
+          %li.facebook
+            =image_tag "Like-Button_JP_RGB.png"
+          %li.hatena
+            %a.hatena-bookmark-button{"data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter", href: "http://b.hatena.ne.jp/entry/", title: "このエントリーをはてなブックマークに追加"}
+            %script{async: "async", charset: "utf-8", src: "https://b.st-hatena.com/js/bookmark_button.js", type: "text/javascript"}
+          %li.google
+            %script{async: "", defer: "defer", src: "https://apis.google.com/js/platform.js"}
+            %plusone
+            .g-plusone{"..." => "", "data-size" => "tall"}
+        .img
+          -# = image_tag @test.image
+        .content
+          =markdown(@test.content)
+        .utility-bottom
+          %ul.utility-sns02
+            %li.google
+              %script{async: "", defer: "defer", src: "https://apis.google.com/js/platform.js"}
+              %plusone
+              .g-plusone{"..." => "", "data-size" => "tall"}
+            %li.hatena
+              %a.hatena-bookmark-button{"data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter", href: "http://b.hatena.ne.jp/entry/", title: "このエントリーをはてなブックマークに追加"}
+              %script{async: "async", charset: "utf-8", src: "https://b.st-hatena.com/js/bookmark_button.js", type: "text/javascript"}
+            %li.facebook
+              =image_tag "Like-Button_JP_RGB.png"
+            %li.twitter
+              %a.twitter-share-button{"data-show-count" => "false", href: "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
+              %script{async: "", charset: "utf-8", src: "https://platform.twitter.com/widgets.js"}
+        .shigoto-icon-box
+          =image_tag 'shigoto_icon.png', class: 'shigoto_icon'
