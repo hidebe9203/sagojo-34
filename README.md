@@ -33,12 +33,12 @@ Things you may want to cover:
 |title          |strings        |null: false                   |
 |content        |text           |null: false                   |
 |image          |strings        |null: false                   |
-|requirement    |text           |null: false                   |
+|detail         |text           |null: false                   |
 |upper          |integer        |null: false,                  |
 |under          |integer        |                              |  
-|conditions     |string         |null: false                   |
+|condition      |string         |null: false                   |
 |duration       |string         |null: false                   |
-|condition      |text           |null: false                   |
+|requirement    |text           |null: false                   |
 |area_id        |references     |null: false, foreign_key: true|
 |minmember      |integer        |null: false                   |
 |maxmember      |integer        |                              |
