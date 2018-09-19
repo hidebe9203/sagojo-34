@@ -1,0 +1,223 @@
+html {
+  height: 100%;
+  font-size: 62.5%;
+  line-height: 1;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.main-content {
+  font-size: 1.4rem;
+  width: 1090px;
+  margin: 15px auto;
+  padding-bottom: 80px;
+  overflow: hidden;
+  #side {
+  width: 340px;
+  float: right;
+    .side-profile-01{
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #fff;
+      .image{
+        height: 105px;
+        .image01{
+          width: 105px;
+          border-radius: 50%;
+        }
+      }
+      .side-profile-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-top: 25px;
+        color: #000;
+      }
+      .side-profile-text {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        margin-top: 25px;
+        text-align: left;
+     }
+    }
+  }
+}
+
+.side-job-detail-01{
+    display: block;
+    top: 53px;
+    width: 340px;
+    margin-top: 20px;
+  .side-job-category{
+    padding: 20px;
+    background-color: #fff;
+    .image02{
+      margin-top: 5px;
+      float: left;
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    .image02-text{
+      line-height: 22px;
+      overflow: hidden;
+      margin-left: 35px;
+    }
+  }
+  .side-job-company{
+    border-top: 1px solid #f5f5f5;
+    padding: 20px;
+    background-color: #fff;
+    .image03{
+      float: left;
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    .image03-text{
+      line-height: 22px;
+      overflow: hidden;
+      margin-left: 35px;
+    }
+  }
+  .side-job-return-01{
+    border-top: 1px solid #f5f5f5;
+    padding: 20px;
+    background-color: #fff;
+    .image04{
+      float: left;
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    .price-area{
+      font-size: 1.3rem;
+      font-weight: bold;
+      line-height: 22px;
+      overflow: hidden;
+      margin-left: 35px;
+      .price{
+        font-size: 1.5rem;
+        color: #ffcb00;
+      }
+    }
+  }
+  .side-tag-list-02{
+    border-top: 1px solid #f5f5f5;
+    padding-bottom: 10px;
+    padding: 20px;
+    background-color: #fff;
+    .image04{
+      position: relative;
+      top: -3px;
+      float: left;
+      overflow: hidden;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    ul{
+      margin: 3px 0 0 35px;
+      overflow: hidden;
+      li{
+        font-size: 1.1rem;
+        float: left;
+        margin: 0 15px 15px 0;
+        a{
+          position: relative;
+          padding-left: 18px;
+          text-decoration: none;
+          color: #aeaeae;
+        }
+      }
+    }
+  }
+  .side-job-detail-inner-02.like{
+    padding: 20px 20px 10px 20px;
+    background-color: #fff;
+    border-top: 1px solid #f5f5f5;
+    p{
+      #work-like-button{
+        background-color: #fff;
+        border: solid 1.5px #ddd;
+        color: #494848;
+        font-weight: normal;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        letter-spacing: 2px;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        border-radius: 100px;
+        .star{
+          content: "";
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          background-color: #f9f9f9;
+          background-position: 6px 5px;
+          border-radius: 36px;
+          margin-left: 10px;
+          margin-right: 10px;
+          transition: all 0.6s;
+          .fa.fa-star{
+            position: relative;
+            top: 5px;
+            left: 2px;
+            font-size: 1.8em;
+            color: #aeaeae;
+          }
+        }
+      }
+    }
+  }
+  .side-job-detail-inner-02{
+    padding: 25px 20px;
+    text-align: center;
+    background-color: #ededed;
+    p{
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: inherit;
+      vertical-align: baseline;
+      .btn.w-100{
+        font-weight: bold;
+        box-sizing: border-box;
+        padding-right: 10px;
+        padding-left: 10px;
+        width: 99.99% !important;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        display: inline-block;
+        margin-bottom: 15px;
+        padding: 20px 47px 20px 50px;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 3px;
+        color: #494848;
+        border-radius: 100px;
+        background-color: #ffcb00;
+      }
+    }
+    p{
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: inherit;
+      vertical-align: baseline;
+      color: #aeaeae;
+    }
+  }
+}
+
+i{
+  color: #ffcb00;
+}
