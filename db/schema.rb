@@ -10,14 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_19_032136) do
+ActiveRecord::Schema.define(version: 2018_09_20_065821) do
+
+  create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "spot"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot"], name: "index_spots_on_spot"
+  end
 
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "detail"
+    t.string "upper"
+    t.string "under"
+    t.string "condition"
+    t.string "duration"
+    t.text "requirement"
     t.string "title"
     t.string "image"
+    t.string "member"
+    t.date "limit"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -32,4 +47,15 @@ ActiveRecord::Schema.define(version: 2018_09_19_032136) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "work_spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "test_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_work_spots_on_spot_id"
+    t.index ["test_id"], name: "index_work_spots_on_test_id"
+  end
+
+  add_foreign_key "work_spots", "spots"
+  add_foreign_key "work_spots", "tests"
 end

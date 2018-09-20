@@ -1,0 +1,23 @@
+= render partial: "./tops/header"
+.container-fluid.form
+  .row
+    .col-sm6.edit
+      .edit-area
+        = form_for @test do |f|
+          = f.text_area :title, cols: 40, rows: 3, placeholder: 'タイトル'
+          .image
+            =f.label :image, class: 'form_dammy' do
+              =fa_icon'picture-o'
+              =f.file_field :image, class: 'file'
+          = f.text_area :content, placeholder: '本文'
+          .btn
+            = f.submit 'send'
+    .col-sm6.show
+      .preview-area
+        .draw-title
+          ここにタイトルが表示されます
+          = qiita_markdown(@test.title)
+        .draw-image
+        .draw-text
+          ここに本文が表示されます
+          = qiita_markdown(@test.content)
