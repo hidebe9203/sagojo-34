@@ -46,9 +46,9 @@ Things you may want to cover:
 |background_image     |text      |                              |
 |person_image         |text      |                              |
 |catchphrase          |text      |                              |
-|birth                |date  |                              |
+|birth                |date      |                              |
 |gender               |string    |null: false                   |
-|phone_number         |integer   |                              |
+|phone_number         |integer   |unique: true                  |
 |postal_code          |integer   |                              |
 |state                |string    |                              |
 |city                 |string    |                              |
