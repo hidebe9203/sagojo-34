@@ -88,18 +88,49 @@ Things you may want to cover:
 ### Association
 - has_many :works
 
+## Worksテーブル
+|column         |Type           |Options                       |
+|---------------|---------------|------------------------------|
+|company_id     |references     |null: false, foreign_key: true|
+|title          |strings        |null: false                   |
+|content        |text           |null: false                   |
+|image          |strings        |null: false                   |
+|detail         |text           |null: false                   |
+|upper          |string         |                              |
+|under          |string         |                              |  
+|condition      |string         |                              |
+|duration       |string         |null: false                   |
+|requirement    |text           |null: false                   |
+|area_id        |references     |null: false, foreign_key: true|
+|member         |string         |null: false                   |
+|limit          |date           |null: false                   |
 
-## worksテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|occupations_id|references|foreign_key: true|
 
 ### Association
 - has_many :work_tags
 - has_many :tags, through: :work_tags
 - belongs_to :occupation
 - belongs_to :company
+
+## work-spotテーブル
+|column         |Type           |Options                       |
+|---------------|---------------|------------------------------|
+|work_id        |references     |null: false, foreign_key: true|
+|spot_id        |references     |null: false, foreign_key: true|
+
+
+## Association
+- belongs_to :work
+- has_many :work_spots
+- has_many   :spots, through::work_spots
+
+## spotsテーブル
+|column         |Type           |Options                       |
+|---------------|---------------|------------------------------|
+|spot           |string         |index: true, unique: true     |
+
+## Association
+- belongs_to :area
 
 
 ## work_tagsテーブル
