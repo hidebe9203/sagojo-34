@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :tops, only: [:index]
   resources :works
   resources :columns
+  resources :faqs
 end

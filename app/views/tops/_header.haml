@@ -20,7 +20,8 @@
               %li.nav-item
                 %a.nav-link{:href => "#"} 企業の方はこちら
               %li.nav-item
-                %a.nav-link{:href => "#"} FAQ
+                = link_to "FAQ", faqs_path, method: :get, class: 'nav-link'
+                / %a.nav-link{:href => "#"} FAQ
 
           -# userがログインしていないとき
           .col-sm-4.col-sm-offset-4
