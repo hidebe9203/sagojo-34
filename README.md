@@ -32,14 +32,13 @@ Things you may want to cover:
 |content        |text           |null: false                   |
 |image          |strings        |null: false                   |
 |detail         |text           |null: false                   |
-|upper          |integer        |null: false,                  |
-|under          |integer        |                              |  
-|condition      |string         |null: false                   |
+|upper          |string         |                              |
+|under          |string         |                              |  
+|condition      |string         |                              |
 |duration       |string         |null: false                   |
 |requirement    |text           |null: false                   |
 |area_id        |references     |null: false, foreign_key: true|
-|minmember      |integer        |null: false                   |
-|maxmember      |integer        |                              |
+|member         |string         |null: false                   |
 |limit          |date           |null: false, foreign_key: true|
 
 ## Association
@@ -47,7 +46,7 @@ Things you may want to cover:
 - has_many :tags
 - has_many :occupation
 
-## areas
+## work-spot
 |column         |Type           |Options                       |
 |---------------|---------------|------------------------------|
 |work_id        |references     |null: false, foreign_key: true|
