@@ -108,7 +108,7 @@ Things you may want to cover:
 |---------------|----------|------------------------------|
 |profile_id     |references|null: false, foreign_key: true|
 |link           |text      |                              |
-|follower_number|          |                              |
+|follower_number|string    |                              |
 
 ### Association
 - belongs_to :profile
