@@ -39,12 +39,13 @@ Things you may want to cover:
 |requirement    |text           |null: false                   |
 |area_id        |references     |null: false, foreign_key: true|
 |member         |string         |null: false                   |
-|limit          |date           |null: false, foreign_key: true|
+|limit          |date           |null: false                   |
 
 ## Association
 - belongs_to :company
-- has_many :tags
-- has_many :occupation
+- has_many :work_tags
+- has_many :tags, through::work_tags
+- belongs_to :occupation
 
 ## work-spot
 |column         |Type           |Options                       |
@@ -54,7 +55,8 @@ Things you may want to cover:
 
 ## Association
 - belongs_to :work
-- has_many   :spots
+- has_many :work_spots
+- has_many   :spots, through::work_spots
 
 ## spots
 |column         |Type           |Options                       |
