@@ -80,8 +80,8 @@ Things you may want to cover:
 |Column               |Type      |Options                       |
 |---------------------|----------|------------------------------|
 |profile_id           |references|null: false, foreign_key: true|
-|departure_date       |date  |                              |
-|return_date          |date  |                              |
+|departure_date       |date      |                              |
+|return_date          |date      |                              |
 |place                |string    |                              |
 
 ### Association
