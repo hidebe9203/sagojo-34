@@ -28,8 +28,6 @@ Things you may want to cover:
 |column         |Type           |Options                       |
 |---------------|---------------|------------------------------|
 |company_id     |references     |null: false, foreign_key: true|
-|appeal_id      |references     |null: false, foreign_key: true|
-|entry_id       |references     |null: false, foreign_key: true|
 |title          |strings        |null: false                   |
 |content        |text           |null: false                   |
 |image          |strings        |null: false                   |
@@ -45,14 +43,14 @@ Things you may want to cover:
 |limit          |date           |null: false, foreign_key: true|
 
 ## Association
-- belongs_to : company
+- belongs_to :company
 - has_many :tags
 - has_many :occupation
 
 ## areas
 |column         |Type           |Options                       |
 |---------------|---------------|------------------------------|
-|entry_id       |references     |null: false, foreign_key: true|
+|work_id        |references     |null: false, foreign_key: true|
 |spot_id        |references     |null: false, foreign_key: true|
 
 ## Association
