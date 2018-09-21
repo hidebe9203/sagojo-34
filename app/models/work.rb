@@ -5,4 +5,5 @@ class Work < ApplicationRecord
   belongs_to :company
   has_many :work_spots, dependent: :destroy
   has_many :spots, through: :work_spots, dependent: :destroy
+  mount_uploader :image, ImageUploader
 end
