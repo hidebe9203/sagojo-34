@@ -4,6 +4,7 @@ class CreateWorkSpots < ActiveRecord::Migration[5.2]
       t.references :test, foreign_key: true
       t.references :spot, foreign_key: true
       t.timestamps
+      
     end
   end
 end
