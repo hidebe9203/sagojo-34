@@ -1,74 +1,70 @@
 = render partial: "./tops/header"
-.jumbotron.jumbotron-fluid
-  .container.work-post
-    .box
-      .requirement_information
-        %h1.display-4 シゴトを投稿する
-        %p.lead 旅人の募集概要と、シゴトをアピールする記事を投稿してください
-        .post_form
-          = form_for @test do |f|
-            .information_table
-              %h2 募集概要
-              %table
-                %tr
-                  %td
-                    = f.label :detail, 'シゴト内容'
-                  %td
-                    = f.text_area :detail
-                %tr
-                  %td.label
-                    報酬
-                  %td.form
-                    %span ¥
-                    = f.text_field :upper, placeholder: '下限'
-                    %span 円
-                    %span ~
-                    %span ¥
-                    = f.text_field :under, placeholder: '上限'
-                    %span 円
-                %tr
-                  %td
-                  %td
-                    = f.text_area :condition, placeholder: '報酬条件　例：( /本＋経費 )など'
-                %tr
-                  %td
-                    = f.label :requirement, '応募資格'
-                  %td
-                    = f.text_area :requirement
-                %tr
-                  %td
-                    = f.label :member, '募集人数'
-                  %td
-                    = f.text_field :member, placeholder: '例　1 ~ 20人'
-                %tr
-                  %td
-                    = f.label :duration, '期間'
-                  %td
-                    = f.text_field :duration, placeholder: '例　2018年9月〜12月'
-                    -# = f.check_box
-                %tr
-                  %td
-                    = f.label :limit, '募集締め切り日'
-                  %td
-                    = f.text_field :limit, placeholder: '例　2018/11/30'
-              .btn.information
-                = f.submit '送信する', class: 'post_information'
-            .requirement_article
-            .edit-area
-              = f.text_area :title, cols: 40, rows: 3, placeholder: 'タイトル'
+.container.work-post
+  .box
+    .requirement_information
+      %h1.display-4.pt-5 シゴトを投稿する
+      %p.lead 旅人の募集概要と、シゴトをアピールする記事を投稿してください
+      .post_form
+        = form_for @test do |f|
+          .information_table.pb-5
+            %h2.requirement.pt-5 募集概要
+            %table
+              %tr
+                %td
+                  = f.label :detail, 'シゴト内容'
+                %td
+                  = f.text_area :detail
+              %tr
+                %td.label
+                  報酬
+                %td.form
+                  %span ¥
+                  = f.text_field :upper, placeholder: '下限'
+                  %span 円
+                  %span ~
+                  %span ¥
+                  = f.text_field :under, placeholder: '上限'
+                  %span 円
+              %tr
+                %td
+                %td
+                  = f.text_area :condition, placeholder: '報酬条件  例：( /本＋経費 )など'
+              %tr
+                %td
+                  = f.label :requirement, '応募資格'
+                %td
+                  = f.text_area :requirement
+              %tr
+                %td
+                  = f.label :member, '募集人数'
+                %td
+                  = f.text_field :member, placeholder: '例  1 ~ 20人'
+              %tr
+                %td
+                  = f.label :duration, '期間'
+                %td
+                  = f.text_field :duration, placeholder: '例  2018年9月〜12月'
+                  -# = f.check_box
+              %tr
+                %td
+                  = f.label :limit, '募集締め切り日'
+                %td
+                  = f.text_field :limit, placeholder: '例  2018/11/30'
+          .requirement_article.my-5.py-5.px-3
+            %h2.requirement.pt-5 アピール記事の投稿
+            .edit-area.w-50.h-auto
+              = f.text_area :title, size: '80x5',placeholder: 'タイトル'
               .image
-                =f.label :image, class: 'form_dammy' do
-                  =fa_icon'picture-o'
-                  =f.file_field :image, class: 'file'
-                = f.text_area :content, placeholder: '本文'
-              .btn
-                = f.submit 'send'
-            .preview-area
+                =f.file_field :image, class: 'file'
+              = f.text_area :content, size: '80x25', placeholder: '本文'
+            .preview-area.w-50.h-auto.border
               .draw-title
                 ここにタイトルが表示されます
                 = qiita_markdown(@test.title)
               .draw-image
-              .draw-text
+              .draw-text.border-top
                 ここに本文が表示されます
                 = qiita_markdown(@test.content)
+            .btn.information
+              = f.submit '送信する', class: 'post_information'
 =render partial: "./tops/copyright"
