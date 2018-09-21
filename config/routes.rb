@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   resources :tops, only: [:index]
   resources :works
   resources :columns
-  resources :tests
+  resources :tests do
+    collection do
+      get :post
+    end
+  end
+
 end

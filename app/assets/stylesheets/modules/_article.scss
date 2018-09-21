@@ -28,9 +28,14 @@ $h1_titile_back: #f8f8f8;
             }
           }
         }
-        img{
+        .main-image{
           width: 650px;
           height: 430px;
+          margin-top: 50px;
+          img{
+            width: 650px;
+            height: 430px;
+          }
         }
         .content{
           h1{
@@ -40,6 +45,12 @@ $h1_titile_back: #f8f8f8;
             margin: 48px 0 19px 0;
             padding: 18px 25px;
             font-weight: bold;
+          }
+          h2{
+            padding: 20px 15px;
+            margin: 40px 0 16px 0;
+            border-top: solid 1px $dusty_gray;
+            border-bottom: solid 1px $dusty_gray;
           }
           p{
             font-size: 15px;

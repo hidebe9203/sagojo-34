@@ -19,10 +19,10 @@
             %script{async: "", defer: "defer", src: "https://apis.google.com/js/platform.js"}
             %plusone
             .g-plusone{"..." => "", "data-size" => "tall"}
-        .img
-          -# = image_tag @test.image
+        .main-image
+          = image_tag @test.image.to_s
         .content
-          =markdown(@test.content)
+          = markdown(@test.content)
         .utility-bottom
           %ul.utility-sns02
             %li.google

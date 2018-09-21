@@ -1,84 +1,46 @@
-.container-fluid.form{
-  margin-top: 80px;
-  .row{
-    width: 100vw;
-    height: 100vh;
-    padding: 0 10px;
-    .col-sm6.edit{
-      .edit-area{
-        margin-right: 5px;
-        height: 100vh;
-        width: 700px;
-        float: left;
-        #new_test{
-          position: relative;
-          border-color: $dusty_gray;
-          font-size: 20px;
-          #test_title{
-            width: 700px;
-            height: 100px;
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-          .image{
-            position: absolute;
-            top: 100px;
-            left: 0;
-            width: 700px;
-            height: 50px;
-            background-color: $white;
-            border: solid 1px $dusty_gray;
-          }
-          #test_content{
-            position: absolute;
-            top: 150px;
-            left: 0;
-            width: 700px;
-            height: calc(100vh - 150px);
-          }
-          .btn{
-            position: absolute;
-            top: 580px;
-            width: 100%;
-          }
-        }
-      }
-    }
-    .preview-area{
-      position: relative;
-      width: 700px;
-      height: 100vh;
-      float: right;
+// マークダウンエディタとプレビュー画面です
+.requirement_article{
+  width: auto;
+  height: 1000px;
+  border-radius: 40px;
+  background-color: $white;
+  .edit-area{
+    float: left;
+    .image{
+      width: 656px;
+      height: 50px;
       background-color: $white;
-      border: solid 1px $dusty_gray;
-      .draw-title{
-        height: 100px;
-        width: 700px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: solid 1px $dusty_gray;
-        font-size: 26px;
-      }
-      // .draw-image{
-      //   position: absolute;
-      //   width: 700px;
-      //   height: 460px;
-      //   top: 100px;
-      //   left: 0;
-      // }
-      .draw-text{
-        position: absolute;
-        top: 100px;
-        left: 0;
-        width: 700px;
-        height: calc(100vh - 100px);
-        background-color: $white;
-        overflow: scroll;
-        border: solid 1px $dusty_gray;
-        font-size: 15px;
-      }
+      font-size: 16px;
+    }
+    textarea{
+      border: none;
+      background-color: $form-background-color;
+      font-size: 15px;
+    }
+  }
+  .preview-area{
+    float: right;
+    background-color: $white;
+    color: $dusty_gray;
+    .draw-title{
+      height: 92px;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+    .draw-text{
+      height: 602px;
+      background-color: $white;
+      overflow: scroll;
+      font-size: 15px;
+    }
+  }
+  .btn.information{
+    width: 100%;
+    margin: 0 auto;
+    .post_information{
+      margin: 50px auto;
+      font-size: 20px;
+      @include square-round_btn($btn-yellow, 130px, 50px, 25px);
     }
   }
 }

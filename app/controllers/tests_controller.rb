@@ -14,8 +14,12 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
+  def post
+    @test = Test.new
+  end
+
   private
   def test_params
-    params.require(:test).permit(:title, :image, :content)
+    params.require(:test).permit(:detail, :upper, :under, :condition, :duration, :requirement, :member, :limit, :title, :image, :content)
   end
 end
