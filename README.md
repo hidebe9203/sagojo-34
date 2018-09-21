@@ -115,10 +115,10 @@ Things you may want to cover:
 
 
 ## profile_tagsテーブル
-|Column    |Type      |Options                       |
-|----------|----------|------------------------------|
-|profile_id|references|null: false, foreign_key: true|
-|tag_id    |references|null: false, foreign_key: true|
+|Column    |Type      |Options                                  |
+|----------|----------|-----------------------------------------|
+|profile_id|references|null: false, foreign_key: true, add_index|
+|tag_id    |references|null: false, foreign_key: true, add_index|
 
 ### Association
 - belongs_to :profile
@@ -128,10 +128,10 @@ Things you may want to cover:
 
 ## likesテーブル
 
-|Column |Type      |Options                       |
-|-------|----------|------------------------------|
-|user_id|references|null: false, foreign_key: true|
-|work_id|references|null: false, foreign_key: true|
+|Column |Type      |Options                                  |
+|-------|----------|-----------------------------------------|
+|user_id|references|null: false, foreign_key: true, add_index|
+|work_id|references|null: false, foreign_key: true, add_index|
 
 ### Association
 - belongs_to :user
@@ -211,7 +211,7 @@ Things you may want to cover:
 ## spotsテーブル
 |column         |Type           |Options                       |
 |---------------|---------------|------------------------------|
-|spot           |string         |index: true, unique: true     |
+|spot           |string         |unique: true, add_index       |
 
 ## Association
 - has_many :work_spots
@@ -247,7 +247,7 @@ Things you may want to cover:
 
 |column    |Type      |Options                       |
 |----------|----------|------------------------------|
-|genre_id  |references|null: false, foreign_key] true|
+|genre_id  |references|null: false, foreign_key: true|
 |title     |string    |null: false                   |
 |content   |text      |null: false                   |
 |image     |text      |null: false                   |
@@ -261,10 +261,10 @@ Things you may want to cover:
 
 ## column_tagsテーブル
 
-|Column   |Type      |Options                       |
-|---------|----------|------------------------------|
-|tag_id   |references|null: false, foreign_key: true|
-|column_id|references|null: false, foreign_key: true|
+|Column   |Type      |Options                                  |
+|---------|----------|-----------------------------------------|
+|tag_id   |references|null: false, foreign_key: true, add_index|
+|column_id|references|null: false, foreign_key: true, add_index|
 
 ### Association
 - belongs_to :tag
