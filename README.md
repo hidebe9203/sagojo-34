@@ -40,24 +40,24 @@ Things you may want to cover:
 
 ## profilesテーブル
 
-|Column               |Type      |Options                       |
-|---------------------|----------|------------------------------|
-|user_id              |references|null: false, foreign_key: true|
-|background_image     |text      |                              |
-|person_image         |text      |                              |
-|catchphrase          |text      |                              |
-|birth                |date      |                              |
-|gender               |integer   |null: false                   |
-|phone_number         |integer   |unique: true                  |
-|current_place        |string    |                              |
-|language_skill       |text      |                              |
-|career               |text      |                              |
-|travel_history       |text      |                              |
-|performance          |text      |                              |
-|expected_income      |text      |                              |
-|preparatory_period   |text      |                              |
-|desired_travel_detail|text      |                              |
-|self_introduction    |text      |                              |
+|Column               |Type      |Options          |
+|---------------------|----------|-----------------|
+|user_id              |references|foreign_key: true|
+|background_image     |text      |                 |
+|person_image         |text      |                 |
+|catchphrase          |text      |                 |
+|birth                |date      |                 |
+|gender               |integer   |null: false      |
+|phone_number         |integer   |unique: true     |
+|current_place        |string    |                 |
+|language_skill       |text      |                 |
+|career               |text      |                 |
+|travel_history       |text      |                 |
+|performance          |text      |                 |
+|expected_income      |text      |                 |
+|preparatory_period   |text      |                 |
+|desired_travel_detail|text      |                 |
+|self_introduction    |text      |                 |
 
 ### Association
 - belongs_to :user
@@ -72,14 +72,14 @@ Things you may want to cover:
 
 ## addressesテーブル
 
-|Column     |Type      |Options                       |
-|-----------|----------|------------------------------|
-|profile_id |references|null: false, foreign_key: true|
-|postal_code|integer   |                              |
-|state      |string    |                              |
-|city       |string    |                              |
-|address1   |string    |                              |
-|address2   |string    |                              |
+|Column     |Type      |Options          |
+|-----------|----------|-----------------|
+|profile_id |references|foreign_key: true|
+|postal_code|integer   |                 |
+|state      |string    |                 |
+|city       |string    |                 |
+|address1   |string    |                 |
+|address2   |string    |                 |
 
 ### Association
 - belongs_to :profile
@@ -87,12 +87,12 @@ Things you may want to cover:
 
 ## travelplansテーブル
 
-|Column               |Type      |Options                       |
-|---------------------|----------|------------------------------|
-|profile_id           |references|null: false, foreign_key: true|
-|departure_date       |date      |                              |
-|return_date          |date      |                              |
-|place                |string    |                              |
+|Column               |Type      |Options          |
+|---------------------|----------|-----------------|
+|profile_id           |references|foreign_key: true|
+|departure_date       |date      |                 |
+|return_date          |date      |                 |
+|place                |string    |                 |
 
 ### Association
 - belongs_to :profile
@@ -101,11 +101,11 @@ Things you may want to cover:
 
 ## relationlinksテーブル
 
-|Column     |Type      |Options                       |
-|-----------|----------|------------------------------|
-|profile_id |references|null: false, foreign_key: true|
-|link       |text      |                              |
-|pv_number  |string    |                              |
+|Column     |Type      |Options          |
+|-----------|----------|-----------------|
+|profile_id |references|foreign_key: true|
+|link       |text      |                 |
+|pv_number  |string    |                 |
 
 ### Association
 - belongs_to :profile
@@ -114,21 +114,21 @@ Things you may want to cover:
 
 ## SNSaccountsテーブル
 
-|Column         |Type      |Options                       |
-|---------------|----------|------------------------------|
-|profile_id     |references|null: false, foreign_key: true|
-|link           |text      |                              |
-|follower_number|string    |                              |
+|Column         |Type      |Options          |
+|---------------|----------|-----------------|
+|profile_id     |references|foreign_key: true|
+|link           |text      |                 |
+|follower_number|string    |                 |
 
 ### Association
 - belongs_to :profile
 
 
 ## profile_tagsテーブル
-|Column    |Type      |Options                                  |
-|----------|----------|-----------------------------------------|
-|profile_id|references|null: false, foreign_key: true, add_index|
-|tag_id    |references|null: false, foreign_key: true, add_index|
+|Column    |Type      |Options          |
+|----------|----------|-----------------|
+|profile_id|references|foreign_key: true|
+|tag_id    |references|foreign_key: true|
 
 ### Association
 - belongs_to :profile
@@ -138,10 +138,10 @@ Things you may want to cover:
 
 ## likesテーブル
 
-|Column |Type      |Options                                  |
-|-------|----------|-----------------------------------------|
-|user_id|references|null: false, foreign_key: true, add_index|
-|work_id|references|null: false, foreign_key: true, add_index|
+|Column |Type      |Options          |
+|-------|----------|-----------------|
+|user_id|references|foreign_key: true|
+|work_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -179,20 +179,20 @@ Things you may want to cover:
 - has_many :works, dependent: :destroy
 
 ## Worksテーブル
-|column         |Type           |Options                       |
-|---------------|---------------|------------------------------|
-|company_id     |references     |null: false, foreign_key: true|
-|title          |string         |null: false                   |
-|content        |text           |null: false                   |
-|image          |text           |null: false                   |
-|detail         |text           |null: false                   |
-|upper          |string         |                              |
-|under          |string         |                              |  
-|condition      |string         |                              |
-|duration       |string         |null: false                   |
-|requirement    |text           |null: false                   |
-|member         |string         |null: false                   |
-|limit          |date           |null: false                   |
+|column         |Type           |Options          |
+|---------------|---------------|-----------------|
+|company_id     |references     |foreign_key: true|
+|title          |string         |null: false      |
+|content        |text           |null: false      |
+|image          |text           |null: false      |
+|detail         |text           |null: false      |
+|upper          |string         |                 |
+|under          |string         |                 |  
+|condition      |string         |                 |
+|duration       |string         |null: false      |
+|requirement    |text           |null: false      |
+|member         |string         |null: false      |
+|limit          |date           |null: false      |
 
 ### Association
 - has_many :work_tags, dependent: :destroy
@@ -205,10 +205,10 @@ Things you may want to cover:
 
 
 ## work_spotsテーブル
-|column         |Type           |Options                       |
-|---------------|---------------|------------------------------|
-|work_id        |references     |null: false, foreign_key: true|
-|spot_id        |references     |null: false, foreign_key: true|
+|column         |Type           |Options          |
+|---------------|---------------|-----------------|
+|work_id        |references     |foreign_key: true|
+|spot_id        |references     |foreign_key: true|
 
 
 ## Association
@@ -230,10 +230,10 @@ Things you may want to cover:
 
 ## work_tagsテーブル
 
-|Column |Type      |Options                        |
-|-------|----------|-------------------------------|
-|tag_id |references|null: false, foreingn_key: true|
-|work_id|references|null: false, foreign_key: true |
+|Column |Type      |Options           |
+|-------|----------|------------------|
+|tag_id |references|foreingn_key: true|
+|work_id|references|foreign_key: true |
 
 ### Association
 - belongs_to :work
@@ -254,12 +254,12 @@ Things you may want to cover:
 
 ## columnsテーブル
 
-|column    |Type      |Options                       |
-|----------|----------|------------------------------|
-|genre_id  |references|null: false, foreign_key: true|
-|title     |string    |null: false                   |
-|content   |text      |null: false                   |
-|image     |text      |null: false                   |
+|column    |Type      |Options          |
+|----------|----------|-----------------|
+|genre_id  |references|foreign_key: true|
+|title     |string    |null: false      |
+|content   |text      |null: false      |
+|image     |text      |null: false      |
 
 ### Association
 - has_many :column_tags, dependent: :destroy
@@ -270,10 +270,10 @@ Things you may want to cover:
 
 ## column_tagsテーブル
 
-|Column   |Type      |Options                                  |
-|---------|----------|-----------------------------------------|
-|tag_id   |references|null: false, foreign_key: true, add_index|
-|column_id|references|null: false, foreign_key: true, add_index|
+|Column   |Type      |Options                     |
+|---------|----------|----------------------------|
+|tag_id   |references|foreign_key: true, add_index|
+|column_id|references|foreign_key: true, add_index|
 
 ### Association
 - belongs_to :tag
@@ -305,11 +305,11 @@ Things you may want to cover:
 
 ## workstatusesテーブル
 
-|Column |Type      |Options                       |
-|-------|----------|------------------------------|
-|user_id|references|null: false, foreign_key: true|
-|work_id|references|null: false, foreign_key: true|
-|status |integer   |null: false                   |
+|Column |Type      |Options          |
+|-------|----------|-----------------|
+|user_id|references|foreign_key: true|
+|work_id|references|foreign_key: true|
+|status |integer   |null: false      |
 
 ### Association
 - belongs_to :user
