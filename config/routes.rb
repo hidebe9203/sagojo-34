@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :works
   resources :columns
   resources :businesses, only: [:index]
+  resources :faqs
 end
