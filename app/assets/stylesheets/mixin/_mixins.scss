@@ -1,1 +1,14 @@
-
+@mixin btn {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 20px 47px 20px 50px;
+  transition: background-color 0.2s;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: #494848;
+  border-radius: 100px;
+  background-color: #ffcb00;
+}
