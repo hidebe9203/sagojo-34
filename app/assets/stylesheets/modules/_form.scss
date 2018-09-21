@@ -1,0 +1,47 @@
+$form-background-color: #ffffe0;
+// マークダウンエディタとプレビュー画面です
+.requirement_article{
+  width: auto;
+  height: 1000px;
+  border-radius: 40px;
+  background-color: $white;
+  .edit-area{
+    float: left;
+    .image{
+      width: 656px;
+      height: 50px;
+      background-color: $white;
+      font-size: 16px;
+    }
+    textarea{
+      border: none;
+      background-color: $form-background-color;
+      font-size: 15px;
+    }
+  }
+  .preview-area{
+    float: right;
+    background-color: $white;
+    color: $dusty_gray;
+    .draw-title{
+      height: 92px;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+    .draw-text{
+      height: 602px;
+      background-color: $white;
+      overflow: scroll;
+      font-size: 15px;
+    }
+  }
+  .btn.information{
+    width: 100%;
+    margin: 0 auto;
+    .post_information{
+      margin: 50px auto;
+      font-size: 20px;
+      @include square-round_btn($btn-yellow, 130px, 50px, 25px);
+    }
+  }
+}
