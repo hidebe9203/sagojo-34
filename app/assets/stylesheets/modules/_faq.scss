@@ -1,3 +1,5 @@
+$a-color: #494848;
+
 #wrap{
   padding-top: 71px;
   overflow: hidden;
@@ -16,7 +18,7 @@
         text-align: center;
         letter-spacing: 3px;
         color: #000;
-        background-image: url("https://previews.123rf.com/images/orangemilk/orangemilk1605/orangemilk160500019/57917881-astratto-minima-semplice-seamless-elegante-e-moderno-con-i-tasti-colorati-seamless-pattern-pu%C3%B2-essere-u.jpg")
+        background-image: url("/sagojo_image1.jpg")
       }
       nav{
         padding: 30px 25px;
@@ -32,7 +34,7 @@
               font-weight: bold;
               position: relative;
               text-decoration: none;
-              color: #494848;
+              color: $a-color
             }
             #dropdownMenuLink:after{
               position: absolute;
@@ -59,7 +61,7 @@
                 margin-bottom: 25px;
                 a{
                   text-decoration: none;
-                  color: #494848;
+                  color: $a-color
                 }
               }
             }
@@ -70,7 +72,7 @@
               font-weight: bold;
               position: relative;
               text-decoration: none;
-              color: #494848;
+              color: $a-color
             }
             a:after{
               position: absolute;
