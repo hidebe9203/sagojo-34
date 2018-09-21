@@ -1,0 +1,786 @@
+.header
+  = render partial: "./tops/header"
+#wrap
+  .main-content
+    #side.left
+      .faq-nav
+        %h1 FAQ
+        %nav{role: "navigation"}
+          %ul.js-toggle-list
+            .dropdown
+              %a#dropdownMenuLink.btn.btn-white.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "", :role => "button"}
+                旅人の方へ
+              .dropdown-menu{"aria-labelledby" => "dropdownMenuLink"}
+                %a.dropdown-item{:href => "#"} シゴト内容について
+                %a.dropdown-item{:href => "#anc-02"} サイトについて
+                %a.dropdown-item{:href => "#anc-03"} シゴトの応募
+                %a.dropdown-item{:href => "#anc-04"} 選考について
+                %a.dropdown-item{:href => "#anc-05"} 旅先の不安
+                %a.dropdown-item{:href => "#anc-06"} リターンについて
+                %a.dropdown-item{:href => "#anc-07"} 確定申告・源泉徴収
+                %a.dropdown-item{:href => "#anc-08"} 「すごい旅人」について
+                %a.dropdown-item{:href => "#anc-09"} プロフィールについて
+                %a.dropdown-item{:href => "#anc-10"} メルマガについて
+                %a.dropdown-item{:href => "#anc-11"} 個人情報について
+                %a.dropdown-item{:href => "#anc-12"}契約について
+            .dropdown
+              %a#dropdownMenuLink.btn.btn-white.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "", :role => "button"}
+                企業の方へ
+              .dropdown-menu{"aria-labelledby" => "dropdownMenuLink"}
+                %a.dropdown-item{:href => "#anc-13"} シゴトの依頼
+                %a.dropdown-item{:href => "#anc-14"} シゴトの掲載
+                %a.dropdown-item{:href => "#anc-15"} 募集の流れ
+                %a.dropdown-item{:href => "#anc-16"} 費用・リターン
+                %a.dropdown-item{:href => "#anc-17"} 企業アカウントについて
+                %a.dropdown-item{:href => "#anc-18"} 旅人について
+                %a.dropdown-item{:href => "#anc-19"} 契約について
+    #main.side{role: "main"}
+      .inner
+        %h2#anc-01.faq-hdg-01 シゴト内容について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            SAGOJOにはどんな仕事があるの？
+          %dd
+            %span.faq-type> A.
+            記事の執筆や写真・動画の撮影といったコンテンツ制作のシゴトが中心になります。「旅人だからこそできるシゴト」であることを大切にしつつ、将来的には海外の市場調査や営業代行などといったコンテンツ以外のシゴトも増やしていく予定です。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            どんな職種のシゴトがあるの？
+          %dd
+            %span.faq-type> A.
+            募集職種は様々ですが、現在はコンテンツ制作のシゴトができる「ライター」「編集者」「カメラマン（写真・動画）」などが中心です。旅人であれば誰でも参加できるシゴトもありますので、詳しくは旅人募集記事をご覧ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            シゴトの「リターン」には何があるの？
+          %dd
+            %span.faq-type> A.
+            シゴトのリターンは、「旅の資金」「航空券」「宿泊費」「交通費」「旅で使えるアイテム」など募集ごとに異なります。詳しくは旅人募集記事の募集要項をご覧ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅人ではないけど、自分の住んでる地域のシゴトに申し込んでもいいの？
+          %dd
+            %span.faq-type> A.
+            シゴトを実行可能であればお申し込みいただけます。SAGOJOでは、外出し新しいものに出会う体験を「旅」と考えています。ぜひお住まいの地域をいつもとは違った新しい視点で眺めてみてください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅の経験は少ないけど大丈夫？
+          %dd
+            %span.faq-type> A.
+            SAGOJOでは経験豊富な運営チームがあなたの旅をサポートします。
+            %br>/
+            誰でも最初は初心者です。チャレンジしたい皆さまからのご応募をお待ちしております。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            実績は無いけどやる気はある。それでも応募していいの？
+          %dd
+            %span.faq-type> A.
+            もちろんです。選考の基準は、企業によってもシゴトによっても異なります。実績が必要のないシゴトもありますので、チャレンジしたい多くの旅人からのご応募をお待ちしております。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            初心者・未経験者でもできるシゴトはあるの？?
+          %dd
+            %span.faq-type> A.
+            シゴトによっては、実績の有無に関わらずすべての方にご参加いただける案件もあります。詳しくは旅人募集記事をご覧ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            シゴトにはどれくらいのクオリティが求められるの？
+          %dd
+            %span#anc-02.faq-type> A.
+            求められるクオリティ基準はシゴト内容によりまちまちです。旅人募集記事の中、または応募後の選考の中で求められるクオリティ基準についてご説明させていただきます。
+        %h2.faq-hdg-01 サイトについて
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人登録するとどうなるの？
+          %dd
+            %span.faq-type> A.
+            旅人登録することで、SAGOJOに掲載しているシゴトに応募できるようになります。
+            %br/
+            また、SAGOJOに掲載される新しいシゴトやその他のお知らせの情報を受け取ることができます。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            海外在住者でも登録できるの？
+          %dd
+            %span.faq-type> A.
+            住んでいる国・地域に関係なくどなたでも登録できます。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            会社で働きながらでも利用できるの？
+          %dd
+            %span.faq-type> A.
+            お勤めの方でもSAGOJOをご利用いただけます。ただし、副業の可否などお勤めの企業の就業規則をご確認ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            ログインパスワードを忘れてしまった
+          %dd
+            %span.faq-type> A.
+            ログイン画面の「パスワードを忘れた方はこちらから」、またはプロフィール画面の「アカウント設定」からパスワードの再設定を行ってください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            登録メールアドレスを変更したい
+          %dd
+            %span.faq-type> A.
+            プロフィール画面の「アカウント設定」より、メールアドレスの再設定が可能です。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            退会方法は？
+          %dd
+            %span#anc-03.faq-type> A.
+            SAGOJOの退会をご希望の方は、大変お手数ですがSAGOJO事務局（info@sagojo.link ）までその旨をご連絡ください。
+        %h2.faq-hdg-01 シゴトの応募
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            応募からシゴト実行までの流れはどうなるの？
+          %dd
+            %span.faq-type A.
+            = succeed "\u{306e}\u{30da}\u{30fc}\u{30b8}\u{5185}\u{306b}\u{3042}\u{308b}\u{300c}\u{30b7}\u{30b4}\u{30c8}\u{306e}\u{6d41}\u{308c}\u{300d}\u{3092}\u{3054}\u{89a7}\u{304f}\u{3060}\u{3055}\u{3044}\u{3002}" do
+              %a{:href => "/beginner"} 「はじめての方はこちら」
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            シゴトに応募したらすぐに働けるの？
+          %dd
+            %span.faq-type> A.
+            応募後、SAGOJOと企業による選考期間があります。マッチング後にもオリエンテーション（シゴトの詳細説明など）がありますので、応募〜シゴトがスタートまではの時間は一般的に2週間〜ひと月前後です。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            一度に複数のシゴトに応募してもいいの？
+          %dd
+            %span.faq-type> A.
+            もちろんOKです。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            応募したけど連絡がこない
+          %dd
+            %span.faq-type> A.
+            募集締め切り後、シゴトによっては採用／不採用のご連絡までに時間を要するものがあります。基本的には、次のステップに進んでいただく方には、募集締切日から2週間以内にSAGOJOチャットでご連絡します。最新の選考状況につきましては、「応募したシゴト一覧」からご確認ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            シゴトへ応募した後にキャンセルしたい
+          %dd
+            %span.faq-type> A.
+            選考中のキャンセルの場合は、チャットの「SAGOJO編集部」宛、またはSAGOJO事務局（info@sagojo.link）までご連絡ください。企業とのマッチング後のキャンセルは受け付けておりませんので、ご応募の際はシゴトを実行できることを予めご確認ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            企業とのマッチングが決まった後にキャンセルしたい
+          %dd
+            %span#anc-04.faq-type> A.
+            基本的に、マッチング後のキャンセルは受け付けておりません。ご応募の際は、シゴトを実行できることを予めご確認ください。
+        %h2.faq-hdg-01 選考について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            応募後は、どんな審査があるの？
+          %dd
+            %span.faq-type> A.
+            応募時にご記入いただく申し込みフォームの内容によって一次選考を行います。その後、シゴトによっては面接を行うものがあります。中には一次選考もなくすべての旅人にご参加いただける案件もありますので、詳しくは旅人募集記事をご確認ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            審査の基準は？
+          %dd
+            %span.faq-type> A.
+            「スキル」「職種」「過去の実績」「居住地」「人柄・熱意」など、クライアントやシゴト内容によって異なります。詳しくは旅人求人記事をご覧ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            シゴトへの応募後、審査を通過する確率を上げるためにはどうしたらいいの？
+          %dd
+            %span.faq-type A.
+            1. プロフィール情報を充実させる
+            %br/
+            プロフィール情報の充実度は、あなたの信頼性に繋がります。できるだけ多くの項目に詳しく入力するようにしましょう。
+            %br/
+            特に「居住地」「職種」「シゴト実績」は審査に大きく影響する情報です。できるだけ細かく入力してみましょう。
+            %br/
+            %br/
+            2. 実績をつくる
+            %br/
+            ライターであれば個人ブログや他メディアで記事を書く経験を増やしたり、フォトグラファーであればポートフォリオサイトをつくったりするなど、プロフィールに掲載できる実績をどんどん増やしていきましょう。もちろん、SAGOJOで実施したシゴトがあれば、あなたのプロフィールにどんどん追加してください。
+            %br/
+            %br/
+            3. たくさんの案件に応募してみる
+            %br#anc-05/
+            SAGOJOで実行したシゴト実績は、あなたのプロフィール信頼度を高めます。たくさんの案件に応募し、SAGOJO内での実績を増やしましょう。まずは、誰でも参加できるシゴトから実践してみることをおすすめします。
+        %h2.faq-hdg-01 旅先の不安
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅している間、SAGOJOとの連絡手段は？
+          %dd
+            %span.faq-type> A.
+            基本的には、SAGOJOチャットやメール、Skypeを使ってのやり取りがメインになります。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅の中で、トラブルに巻き込まれるなどシゴトの継続が不可になった場合はどうすればいいの？
+          %dd
+            %span#anc-06.faq-type> A.
+            SAGOJOチャットの「SAGOJO編集部」宛、またはSAGOJO事務局（info@sagojo.link）へすぐにご連絡ください。
+        %h2.faq-hdg-01 リターンについて
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            シゴトの「リターン」には何があるの？
+          %dd
+            %span.faq-type> A.
+            シゴトのリターンは、「旅の資金」「航空券」「宿泊費」「交通費」「旅で使えるアイテム」など募集ごとに異なります。詳しくは旅人募集記事の募集要項をご覧ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅先への移動費はSAGOJOが出してくれるの？
+          %dd
+            %span.faq-type> A.
+            旅人募集記事の募集要項の中に特に記載がない場合は、交通費は支給されません。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            世界各国でシゴトする場合、移動費用は出してくれるの？
+          %dd
+            %span.faq-type> A.
+            基本的にリターンはシゴトの納品物に対してのみとなります。移動経費もお支払いできるシゴトの場合は、旅人募集記事の募集要項に記載がありますのでご確認ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            途中でシゴトをキャンセルした場合、リターンは全くもらえないの？
+          %dd
+            %span.faq-type> A.
+            募集要項に「納品前のお支払い」との記載がない場合は、全て納品後のお支払いになります。そのため、途中でキャンセルされた場合にはリターンはありません。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            納期に間に合わなかった場合、リターンはどうなるの？
+          %dd
+            %span.faq-type> A.
+            旅人とSAGOJO事務局の間であらかじめ取り決めた納期に間に合わない場合、お約束していたリターンが減額、またはお支払いできなくなる場合があります。納期に間に合わない場合は、すぐにSAGOJOまでご連絡ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            リターンの受け取り方法は？
+          %dd
+            %span.faq-type> A.
+            リターンが現金の場合は、「リターン管理」の画面に報酬が付与されます。引き出し希望金額をご記入の上、「引き出す」のボタンを押すことで報酬が指定の口座に振り込まれます。お支払日は、引き出し申請後、「翌月末払い」となります。
+            %br/
+            リターンが現金以外の場合は、旅人募集記事に記載の方法でリターンをお渡しします。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            「リターン管理」の画面から引き出した現金は、いつ、どのように受け取ることができるの？
+          %dd
+            %span.faq-type> A.
+            引き出し申請後、翌月末に指定の口座にお振込みします。「口座情報」を未設定の場合は引き出せませんので、初回はまず口座情報をご記入ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            リターンの引き出しはいくら（金額）からできるの？
+          %dd
+            %span.faq-type> A.
+            1,000円以上から引き出し可能です。1,000円以下の場合は、まずシゴトを実行してリターンを獲得しましょう。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            リターンを引き出す際、手数料はかかるの？
+          %dd
+            %span.faq-type> A.
+            10,000円以上の金額を引き出す場合は、手数料はかかりません。9,999円以下の場合は、216円の手数料がかかります。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            リターンの獲得履歴を確認する方法はあるの？
+          %dd
+            %span.faq-type> A.
+            1,「リターン管理」画面にある「これまでの履歴を見る」のページから確認することができます。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            口座情報はどこから変更できるの？
+          %dd
+            %span.faq-type> A.
+            「リターン管理」画面にある「お支払い情報を変更する」のページから変更することができます。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            口座情報の「法人／個人」の種別を変更できません
+          %dd
+            %span.faq-type> A.
+            初回設定後、変更を希望する場合は、SAGOJOチャットの「SAGOJO編集部」宛、またはSAGOJO事務局（info@sagojo.link）までご連絡ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            口座情報の「居住地（国内／海外）」の設定を変更できません
+          %dd
+            %span.faq-type> A.
+            初回設定後、変更を希望する場合は、SAGOJOチャットの「SAGOJO編集部」宛、またはSAGOJO事務局（info@sagojo.link）までご連絡ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            現金のリターンは、どのタイミングで付与されるの？
+          %dd
+            %span.faq-type> A.
+            シゴトの納品後、クライアントのチェックが完了したところでリターンが付与されます。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            支払日を通常よりも早めることはできるの？
+          %dd
+            %span.faq-type> A.
+            原則、リターンの振り込みは、引き出し申請後「翌月末払い」となります。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅人募集記事に表示されているリターンの金額は税込み？
+          %dd
+            %span.faq-type> A.
+            はい、旅人募集記事のリターンは税込金額を記載しています。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            獲得したリターン金額より、引き出し可能な金額が少ない
+          %dd
+            %span.faq-type> A.
+            「現在引き出せる金額」は、源泉徴収金額を差し引いた金額が表示されています。獲得総額や源泉徴収金額の内訳については、「これまでの履歴を見る」のページからご確認ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            SAGOJOで獲得したリターンは、源泉徴収されるの？
+          %dd
+            %span.faq-type> A.
+            はい、源泉徴収の対象になります。「リターン管理」には、源泉徴収後の金額が「現在引き出せる金額」として表示されます。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            海外在住ですが、源泉徴収金額はどのように計算されますか？
+          %dd
+            %span.faq-type> A.
+            源泉徴収率を20.42%で計算し、源泉徴収金額を算出しています。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            法人の場合、源泉徴収金額はどのように計算されますか？
+          %dd
+            %span.faq-type> A.
+            口座情報の種別を「法人」に設定されている場合、源泉徴収はされません。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            ずっと引出し申請をしなかった場合、リターンはどうなるの？
+          %dd
+            %span.faq-type> A.
+            1年間、リターン管理に何も変化がない状態（リターンの獲得も引き出しもない状態）が続いた場合、登録の口座に全額を自動振込みします。それをもって、「現在引き出せる金額」は0円にさせていただきます。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            1年間リターン管理に変化がなく、自動振込みされる際、口座情報を設定していなかった場合はどうなるの？
+          %dd
+            %span.faq-type> A.
+            口座情報の設定がなく、1年の期限に伴う自動振込みができなかった場合は、SAGOJOに登録のメールアドレスへAmazonギフト券を発行します。それをもってリターンの支給が完了となり、「現在引き出せる金額」を0円にさせていただきますので予めご了承ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            リターンが現金以外の場合は、どのように受け取るの？
+          %dd
+            %span#anc-07.faq-type> A.
+            リターン内容やシゴト内容によって変動しますので、詳しくは旅人募集記事をご覧ください。
+        %h2.faq-hdg-01 確定申告・源泉徴収
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            SAGOJOのシゴトをした場合、確定申告する必要はあるの？
+          %dd
+            %span.faq-type> A.
+            SAGOJO以外のお仕事も含めたあなたの収入に応じて、確定申告が必要な場合があります。詳しくは、お住まいの国・地域のルールをご確認ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            SAGOJOのシゴトは源泉徴収の対象になるの？
+          %dd
+            %span.faq-type> A.
+            はい、すべてのシゴトにおいて源泉徴収させていただいております。ただし、口座の種別を「法人」にされている場合は、源泉徴収の対象外となります。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            海外在住ですが、源泉徴収金額はどのように計算されますか？
+          %dd
+            %span.faq-type> A.
+            源泉徴収率を20.42%で計算し、源泉徴収金額を算出しています。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            法人の場合、源泉徴収金額はどのように計算されますか？
+          %dd
+            %span.faq-type> A.
+            口座情報の種別を「法人」に設定されている場合、源泉徴収はされません。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            支払調書は発行されるの？
+          %dd
+            %span#anc-08.faq-type> A.
+            毎年1月以降に、前年にお支払いのあった旅人のうち希望のご連絡をいただいた方には支払調書をお送りします。
+        %h2.faq-hdg-01 「すごい旅人」について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            「すごい旅人」にはどうすればなれるの？
+          %dd
+            %span.faq-type> A.
+            プロフィール情報を拝見し、ユニークな経歴や特別なスキルを持つ方は「すごい旅人」として認定されます。認定には、SAGOJOから直接スカウトされる場合と、プロフィールページにある「すごい旅人に立候補する」のボタンから自己申告する方法があります。まずはご自身のプロフィール情報を充実させましょう。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            「すごい旅人」になるメリットは？
+          %dd
+            %span.faq-type A.
+            「すごい旅人」には、
+            %br/
+            1. 報酬の高いシゴトを優先的にご紹介します
+            %br/
+            2. 企業から直接スカウトが届くことがあります
+            %br/
+            3. SAGOJOがPRを積極的にお手伝いします
+            %br#anc-09/
+            など、さまざまなメリットがあります。
+        %h2.faq-hdg-01 プロフィールについて
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            プロフィールの完成度が高いと、どんなメリットがあるの？
+          %dd
+            %span.faq-type> A.
+            プロフィールを充実させると、シゴトに応募した際の審査通過率がアップします。また、企業からシゴトのスカウトが届くことがあります。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            登録した個人情報はどのように使われるの？
+          %dd
+            %span.faq-type> A.
+            SAGOJOの業務及びそれに関連する用途においてのみ使用します。詳しくは
+            %a{:href => "/privacy"}> 「プライバシーポリシー」
+            をご覧ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            入力した個人情報が第三者に公開されることはあるの？
+          %dd
+            %span#anc-10.faq-type> A.
+            弊社にご登録いただいている個人情報は
+            %a{:href => "/privacy"}> 「プライバシーポリシー」
+            に基づいて運営、管理しています。
+        %h2.faq-hdg-01 メール配信について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            退会方法は？
+          %dd
+            %span.faq-type> A.
+            SAGOJOの退会をご希望の方は、大変お手数ですがSAGOJO事務局（info@sagojo.link）までその旨をご連絡ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            SAGOJOからのメール配信を停止したい
+          %dd
+            %span.faq-type> A.
+            メルマガの末尾についている退会リンクからお手続きをお願いします。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            一度停止したメルマガを再開したい
+          %dd
+            %span#anc-11.faq-type> A.
+            メルマガの再開をご希望の方は、大変お手数ですがSAGOJO事務局（info@sagojo.link）までその旨をご連絡ください。
+        %h2.faq-hdg-01 個人情報について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            登録した個人情報はどのように使われるの？
+          %dd
+            %span.faq-type> A.
+            SAGOJOの業務及びそれに関連する用途以外には一切使用しません。詳しくは
+            %a{:href => "/privacy"}> 「プライバシーポリシー」
+            をご覧ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            入力した個人情報が第三者に公開されることはあるの？
+          %dd
+            %span.faq-type> A.
+            弊社にご登録いただいている個人情報は
+            %a{:href => "/privacy"}> 「プライバシーポリシー」
+            に基づいて運営、管理していますのでご確認ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            シゴトへの応募後も、入力した個人情報は保管しているの？
+          %dd
+            %span#anc-12.faq-type> A.
+            いただいた個人情報は
+            %a{:href => "/privacy"}> 「プライバシーポリシー」
+            に基づき、大切に保管させていただきます。
+        %h2.faq-hdg-01 契約について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            現在旅人募集をしている企業、または過去にシゴトしたことのある企業と直接取引をしてもいいの？
+          %dd
+            %span.faq-type> A.
+            SAGOJOの認可なく企業と直接取引することは禁止されています。もし発覚した場合には、利用規約に基づき登録の取り消しや違約金および損害賠償金をご請求します。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            コンテンツの著作権は誰にあるの？
+          %dd
+            %span#anc-13.faq-type> A.
+            基本的には会員規約「16条 知的財産権」に基づきますが、シゴト内容やクライアントによっては個別契約を締結し取り決めることがあります。
+        %h2.faq-hdg-01 シゴトの依頼
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            どんなシゴトをお願いできるの？
+          %dd
+            %span.faq-type> A.
+            コンテンツ制作（記事執筆、写真・動画撮影など）やSNSプロモーション、情報収集や営業代行、バイヤーなど、多岐にわたるシゴトを旅人に依頼することができます。詳しくは
+            %a{:href => "/business/"}> 「企業の方はこちら」
+            をご覧ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅人にシゴトをお願いしたいんだけど、まず何をすればいいの？
+          %dd
+            %span.faq-type A.
+            = succeed "\u{304b}\u{3089}\u{3054}\u{9023}\u{7d61}\u{3044}\u{305f}\u{3060}\u{304f}\u{304b}\u{3001}SAGOJO\u{4e8b}\u{52d9}\u{5c40}\u{ff08}info@sagojo.link\u{ff09}\u{307e}\u{3067}\u{304a}\u{554f}\u{3044}\u{5408}\u{308f}\u{305b}\u{304f}\u{3060}\u{3055}\u{3044}\u{3002}\u{62c5}\u{5f53}\u{8005}\u{3088}\u{308a}\u{3054}\u{9023}\u{7d61}\u{3055}\u{305b}\u{3066}\u{3044}\u{305f}\u{3060}\u{304d}\u{307e}\u{3059}\u{3002}" do
+              %a{:href => "/business/form"} 問い合わせフォーム
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            特定の旅人を指名してシゴトをお願いすることはできないの？
+          %dd
+            %span.faq-type> A.
+            可能です。
+            %a{:href => "/business/form"}> 問い合わせフォーム
+            からご連絡いただくか、SAGOJO事務局（info@sagojo.link）までお問い合わせください。企業アカウントの旅人検索を利用して指名したい旅人を見つけた場合は、「この旅人について問い合わせる」のボタンからお問い合わせください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            直接SAGOJOのサイトに旅人募集記事を投稿することはできないの？
+          %dd
+            %span.faq-type> A.
+            現在、SAGOJOでは企業様に旅人募集記事を直接投稿いただくことはできません。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人と直接取引をしてもいいの？
+          %dd
+            %span.faq-type> A.
+            SAGOJOに登録している旅人との間で、SAGOJOを経由することなく直接取引を行うことは禁止されています。もし発覚した場合には、違約金および損害賠償をご請求することがあります。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            直接取引とは、どこまでの範囲をいうの？
+          %dd
+            %span.faq-type> A.
+            SAGOJOが紹介した旅人およびSAGOJOに登録しているその他の旅人との間で、内容の如何を問わず、SAGOJOと契約したシゴト以外の業務を直接依頼すること全般を指します。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            同時に複数のシゴトを依頼することはできるの？
+          %dd
+            %span.faq-type> A.
+            同時に複数の旅人募集記事を掲載することができます。ご希望の場合は、SAGOJO事務局までお問い合わせください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            SAGOJOによる編集・ディレクションは必要ないので、旅人の紹介だけしてほしい
+          %dd
+            %span.faq-type> A.
+            旅人とマッチングまでのプランがあります。詳しくは
+            %a{:href => "/business/form"}> 問い合わせフォーム
+            からご連絡いただくか、SAGOJO事務局（info@sagojo.link）までお問い合わせください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            シゴト実施中に、旅人と直接連絡をとることはできるの？
+          %dd
+            %span#anc-14.faq-type> A.
+            契約内容にもよりますが、基本的にはSAGOJOが間に入り旅人をディレクションします。どうしても直接連絡を取りたいことがある場合は、担当者までご連絡ください。
+        %h2.faq-hdg-01 シゴトの掲載
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人求人記事の掲載後に、報酬金額などの募集要項を変更したい
+          %dd
+            %span.faq-type> A.
+            基本的に、掲載後の変更はお断りしております。やむを得ない場合には、SAGOJO事務局（info@sagojo.link）までご連絡ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            同時に複数のシゴトを依頼することはできるの？
+          %dd
+            %span.faq-type> A.
+            同時に複数の旅人募集記事を掲載することができます。ご希望の場合は、SAGOJO事務局までお問い合わせください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            すぐに旅人にお願いしたいシゴトがある
+          %dd
+            %span.faq-type> A.
+            最短でアサイン・納品まで進めてまいります。お急ぎの場合は、SAGOJO事務局（info@sagojo.link）までその旨お問い合わせください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅人募集記事の掲載期間を延長することはできるの？
+          %dd
+            %span.faq-type> A.
+            旅人募集記事の掲載期間を延長したり、終了した募集を再スタートすることが可能です。ご希望の場合は、SAGOJO事務局（info@sagojo.link）までお問い合わせください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人募集記事の掲載後に、キャンセルすることはできるの？
+          %dd
+            %span.faq-type> A.
+            基本的に、掲載後のキャンセルはお断りしております。やむを得ない場合には、SAGOJO事務局（info@sagojo.link）までご連絡ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅人とのマッチング後に、キャンセルすることはできるの？
+          %dd
+            %span.faq-type> A.
+            旅人とのマッチング後のキャンセルはお断りしております。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人の応募が集まらなかったときはどうすればいいの？
+          %dd
+            %span#anc-15.faq-type> A.
+            SAGOJOが応募状況を把握しながら、随時PRをおこないますのでご安心ください。SAGOJOのこれまでのシゴトのマッチング率は96%以上です。
+        %h2.faq-hdg-01 募集の流れ
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人からの応募が集まった後、どういうフローでシゴト開始になるの？
+          %dd
+            %span.faq-type A.
+            基本的には以下のいずれかのフローになります。
+            %br/
+            %br/
+            【SAGOJOが旅人を決定する場合】
+            %br/
+            1. 御社からいただいた選考基準に基づき、SAGOJOが旅人を選考・決定
+            %br/
+            2. シゴトの詳細を旅人に説明、シゴト実施の準備
+            %br/
+            3. シゴト開始
+            %br/
+            %br/
+            【御社が旅人を決定する場合】
+            %br/
+            1. 御社からいただいた選考基準に基づき、SAGOJOが旅人を選考・推薦
+            %br/
+            2. おすすめの旅人をご確認の上、採用旅人を御社にて決定
+            %br/
+            3. SAGOJOよりシゴトの詳細を旅人に説明、シゴト実施の準備
+            %br#anc-16/
+            4. シゴト開始
+        %h2.faq-hdg-01 費用・リターン
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人募集記事の掲載から旅人のシゴト完了までのフロー中で、何に対して費用がかかるの？
+          %dd
+            %span.faq-type> A.
+            ご契約プランにより異なりますが、基本的には「旅人募集記事の制作・掲載」「旅人とのマッチング」「旅人のディレクション・クオリティ担保」に対して費用が発生します。別途、旅人に対してリターンが必要です。一部の費用は無料キャンペーンを実施していることもあるので、詳しくはSAGOJO事務局（info@sagojo.link）までご連絡ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            何をシゴトの「リターン」にできるの？
+          %dd
+            %span.faq-type> A.
+            「現金」「航空券」「宿泊費」「交通費」「旅で使えるアイテム」など様々です。リターンの設定方法により旅人の応募率が変わりますので、ぜひSAGOJO事務局（info@sagojo.link）までご相談ください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人へのリターンの提供は誰がやるの？
+          %dd
+            %span#anc-17.faq-type> A.
+            SAGOJOが旅人へリターンを提供します。旅人へのリターンも含め、SAGOJOから一括して御社へご請求させていただきます。
+        %h2.faq-hdg-01 企業アカウントについて
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            企業アカウントに登録すると何ができるの？
+          %dd
+            %span.faq-type> A.
+            旅人のプロフィールや位置情報から旅人を検索・閲覧することができます。公開中の旅人は一部のため、詳しくはSAGOJO事務局（info@sagojo.link）までお問い合わせください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅人と直接連絡をとることはできるの？
+          %dd
+            %span.faq-type> A.
+            現在、旅人へ直接連絡を取りシゴトを依頼することはできません。SAGOJOがご紹介しますので、まずはお問い合わせください。
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            旅人の連絡先や本名は見れないの？
+          %dd
+            %span.faq-type> A.
+            現在は旅人への直接連絡ができない関係上、連絡先や本名は公開しておりません。気になる旅人がいる場合は、お気軽にお問い合わせください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            特定の旅人を指名してシゴトをお願いすることはできないの？
+          %dd
+            %span#anc-18.faq-type> A.
+            可能です。企業アカウントの旅人検索を利用して指名したい旅人を見つけた場合は、「この旅人について問い合わせる」のボタンからお問い合わせください。
+        %h2.faq-hdg-01 旅人について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            SAGOJOにはどんな旅人が登録しているの？
+          %dd
+            %span.faq-type> A.
+            コンテンツ制作関連（ライター・カメラマン・動画クリエイターなど）だけでなく、営業・バイヤー・コンサルタント・料理人など、さまざまなスキルをもった旅人が登録しています。
+            %a{:href => "/company_user/signup"}> 法人登録
+            していただくことで一部の旅人のプロフィールを閲覧することができますので、まずはご登録ください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            旅人と連絡がとれなくなった時はどうすればいいの？
+          %dd
+            %span#anc-19.faq-type> A.
+            旅人と直接やりとりしていただくシゴトを実施中に、その旅人と連絡がとれなくなってしまった場合には、至急SAGOJOへご連絡ください。SAGOJO担当者より旅人へ連絡させていただきます。
+        %h2.faq-hdg-01 契約について
+        %dl.list-faq-01
+          %dt
+            %span.faq-type> Q.
+            契約はSAGOJOと旅人のどちらと締結するの？
+          %dd
+            %span.faq-type> A.
+            SAGOJOと締結する場合と、旅人と締結していただく場合の2パターンがあります。後者の場合も、SAGOJOが旅人の代理で締結することでスムーズに進行できる仕組みが整っています。詳しくは、SAGOJO事務局（info@sagojo.link）までお問い合わせください。
+        %dl.list-faq-01.even
+          %dt
+            %span.faq-type> Q.
+            コンテンツの著作権は誰にあるの？
+          %dd
+            %span.faq-type> A.
+            契約内容により異なります。ご要望がある場合は、契約時にその旨をご連絡ください。
+  .footer
+    = render partial: "./tops/footer"
+
