@@ -1,7 +1,7 @@
 .eyecatch {
   max-height: 700px;
   width: 100%;
-  min-width: 1090px;
+  min-width: 1100px;
   min-height: 100%;
   text-align: center;
   color: #fff;
@@ -53,6 +53,8 @@
   }
 }
 .main-content {
+  overflow: hidden;
+  min-width: 1100px;
   width: 99.99% !important;
   margin-bottom: 0 !important;
   margin-top: 0 !important;
@@ -66,9 +68,10 @@
         width: 100%;
         overflow: hidden;
         .inner {
-          width: 1090px;
+          width: 1100px;
           padding: 85px 0;
           margin: 0 auto;
+          min-width: 1100px;
           h2 {
             margin-bottom: 70px;
             font-size: 3rem;
@@ -105,10 +108,12 @@
         }
       }
       .business_user_map_area {
+        background-color: #f5f5f5;
         width: 100%;
         overflow: hidden;
         .inner {
-          width: 1090px;
+          min-width: 1100px;
+          width: 1100px;
           padding: 85px 0;
           margin: 0 auto;
           .user_map_txt {
@@ -219,6 +224,7 @@
         }
       }
       .sec-07 {
+        background-color: #f5f5f5;
         width: 100%;
         overflow: hidden;
         display: block;
