@@ -32,9 +32,9 @@ Things you may want to cover:
 |password|string|null: false, unique: true|
 
 ### Association
-- has_many :likes
+- has_many :likes, dependent: :destroy
 - has_one :profile
-- has_many :workstatuses
+- has_many :workstatuses, dependent: :destroy
 
 
 
@@ -47,18 +47,12 @@ Things you may want to cover:
 |person_image         |text      |                              |
 |catchphrase          |text      |                              |
 |birth                |date      |                              |
-|gender               |string    |null: false                   |
+|gender               |integer   |null: false                   |
 |phone_number         |integer   |unique: true                  |
-|postal_code          |integer   |                              |
-|state                |string    |                              |
-|city                 |string    |                              |
-|address1             |string    |                              |
-|address2             |string    |                              |
 |current_place        |string    |                              |
 |language_skill       |text      |                              |
 |career               |text      |                              |
 |travel_history       |text      |                              |
-|tag_id               |references|null: false, foreign_key: true|
 |performance          |text      |                              |
 |expected_income      |text      |                              |
 |preparatory_period   |text      |                              |
@@ -67,12 +61,28 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many :travelplans
-- has_many :relationlinks
-- has_many :SNSaccounts
-- has_many :profile_tags
-- has_many :tags, through: :profile_tags
+- has_many :travelplans, dependent: :destroy
+- has_many :relationlinks, dependent: :destroy
+- has_many :SNSaccounts, dependent: :destroy
+- has_many :profile_tags, dependent: :destroy
+- has_many :tags, through: :profile_tags, dependent: :destroy
+- has_one :address
 
+
+
+## addressesテーブル
+
+|Column     |Type      |Options                       |
+|-----------|----------|------------------------------|
+|profile_id |references|null: false, foreign_key: true|
+|postal_code|integer   |                              |
+|state      |string    |                              |
+|city       |string    |                              |
+|address1   |string    |                              |
+|address2   |string    |                              |
+
+### Association
+- belongs_to :profile
 
 
 ## travelplansテーブル
@@ -146,12 +156,12 @@ Things you may want to cover:
 |name  |string|unique: true, add_index|
 
 ### Association
-- has_many :work_tags
-- has_many :works, through: :work_tags
-- has_many :column_tags
-- has_many :columns, through: :column_tags
-- has_many :profile_tags
-- has_many :profiles, through: :profile_tags
+- has_many :work_tags, dependent: :destroy
+- has_many :works, through: :work_tags, dependent: :destroy
+- has_many :column_tags, dependent: :destroy
+- has_many :columns, through: :column_tags, dependent: :destroy
+- has_many :profile_tags, dependent: :destroy
+- has_many :profiles, through: :profile_tags, dependent: :destroy
 
 
 
@@ -166,7 +176,7 @@ Things you may want to cover:
 |password    |string |null: false, unique: true|
 
 ### Association
-- has_many :works
+- has_many :works, dependent: :destroy
 
 ## Worksテーブル
 |column         |Type           |Options                       |
@@ -181,17 +191,16 @@ Things you may want to cover:
 |condition      |string         |                              |
 |duration       |string         |null: false                   |
 |requirement    |text           |null: false                   |
-|area_id        |references     |null: false, foreign_key: true|
 |member         |string         |null: false                   |
 |limit          |date           |null: false                   |
 
 ### Association
-- has_many :work_tags
-- has_many :tags, through: :work_tags
+- has_many :work_tags, dependent: :destroy
+- has_many :tags, through: :work_tags, dependent: :destroy
 - belongs_to :occupation
 - belongs_to :company
-- has_many :work_spots
-- has_many :spots, through: :work_spots
+- has_many :work_spots, dependent: :destroy
+- has_many :spots, through: :work_spots, dependent: :destroy
 
 
 
@@ -214,8 +223,8 @@ Things you may want to cover:
 |spot           |string         |unique: true, add_index       |
 
 ## Association
-- has_many :work_spots
-- has_many :works, through: :work_spots
+- has_many :work_spots, dependent: :destroy
+- has_many :works, through: :work_spots, dependent: :destroy
 
 
 
@@ -239,7 +248,7 @@ Things you may want to cover:
 |name  |string|unique: true, null: false|
 
 ### Association
-- has_many :works
+- has_many :works, dependent: :destroy
 
 
 
@@ -253,8 +262,8 @@ Things you may want to cover:
 |image     |text      |null: false                   |
 
 ### Association
-- has_many :column_tags
-- has_many :tags, through: :column_tags
+- has_many :column_tags, dependent: :destroy
+- has_many :tags, through: :column_tags, dependent: :destroy
 - belongs_to :genre
 
 
@@ -290,7 +299,7 @@ Things you may want to cover:
 |name  |string|unique: true, null: false|
 
 ### Association
-- has_many :columns
+- has_many :columns, dependent: :destroy
 
 
 
