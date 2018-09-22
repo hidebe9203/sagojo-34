@@ -29,11 +29,17 @@
           .col-sm-4.col-sm-offset-4
             %ul.nav.justify-content-end.register
               %li.nav-item.company
-                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+                = link_to "ユーザーログアウト", destroy_user_session_path, method: :delete, class: 'btn'
 
                 / %a.nav-link{:href => "#"} 企業登録
               %li.nav-item.user
-                = link_to "サインイン", new_user_registration_path, method: :get, class: 'btn'
+                = link_to "ユーザーサインイン", new_user_registration_path, method: :get, class: 'btn'
+
+              %li.nav-item.company
+                = link_to "企業ログアウト", destroy_company_session_path, method: :delete, class: 'btn'
+
+              %li.nav-item.user
+                = link_to "企業サインイン", new_company_registration_path, method: :get, class: 'btn'
                 / %a.nav-link{:href => "#"} 旅人登録
           -# userがログインしているとき
           -# .col-sm-4.col-sm-offset-4
