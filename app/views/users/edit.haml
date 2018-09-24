@@ -1,0 +1,14 @@
+= render partial: "./tops/header"
+#wrap
+  .bg-prof-01
+    %p.prof-image-bg-add
+      %a#upload-user-bg-trigger(href="#")
+        背景画像を設定する
+  .main-content
+    = render partial: './users/profile'
+  .sub-contents-aside
+    = render partial: "./tops/sub-contents-aside"
+  .footer
+    .footer-inner
+      = render partial: "./tops/footer"
+      = render partial: "./tops/copyright"

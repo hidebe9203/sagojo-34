@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :columns
   resources :businesses, only: [:index]
   resources :faqs
+  resources :users, only: [:edit, :update]
 end
