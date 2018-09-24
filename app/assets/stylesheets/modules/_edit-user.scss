@@ -1,0 +1,230 @@
+#wrap {
+  overflow: hidden;
+  padding-top: 71px;
+  .bg-prof-01 {
+    position: relative;
+    height: 345px;
+    min-height: 100%;
+    background-color: #8f8f8f;
+    .prof-image-bg-add {
+      font-size: 1.4rem;
+      position: absolute;
+      top: 110px;
+      width: 100%;
+      text-align: center;
+      letter-spacing: 2px;
+      #upload-user-bg-trigger {
+        position: relative;
+        display: inline-block;
+        padding-top: 115px;
+        transition: opacity 0.3s;
+        text-decoration: none;
+        color: #fff;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+      }
+      #upload-user-bg-trigger::after {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        width: 92px;
+        height: 92px;
+        margin-left: -46px;
+        content: '';
+        border-radius: 50%;
+        background: no-repeat center/50%  url(http://icooon-mono.com/i/icon_16245/icon_162450_256.png);
+        background-size: 70%;
+        background-color: #f2f4f3;
+      }
+    }
+  }
+  .main-content {
+    padding-bottom: 80px;
+    font-size: 1.4rem;
+    width: 1090px;
+    margin: 15px auto;
+    #main.left {
+      width: 690px;
+      float: left;
+      display: block;
+      .application-form-01 {
+        position: relative;
+        padding: 50px 50px 35px 50px;
+        background-color: #fff;
+        .image-user {
+          position: absolute;
+          top: -80px;
+          left: 50%;
+          margin-left: -70px;
+          .image {
+            overflow:hidden;
+            box-sizing: border-box;
+            width: 140px;
+            height: 140px;
+            border: 4px solid #ffcb00;
+            border-radius: 50%;
+            background-color: #fff;
+          }
+          .icon {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            img {
+              border-radius: 50%;
+            }
+            #upload-user-img {
+              display: none;
+            }
+          }
+        }
+        .profile-user-name {
+          font-size: 1.8rem;
+          margin: 40px 0;
+          text-align: center;
+          letter-spacing: 2px;
+        }
+        .form-wrap-01 {
+          .textbox-02 {
+            width: 100%;
+          }
+          .textbox-02.type-01 {
+            width: 340px;
+          }
+          .textbox-02.type-02 {
+            width: 490px;
+          }
+          .textbox-02.type-03 {
+            width: 100%;
+          }
+          .select-01.type-04 {
+            width: 320px;
+          }
+          .select-01.type-02 {
+            width: 140px;
+          }
+          span.label-required {
+            font-size: 1.2rem;
+            font-weight: normal;
+            line-height: 20px;
+            display: inline-block;
+            padding: 1px 6px 1px 6px;
+            color: #fff;
+            border-radius: 10px;
+            background-color: #e25959;
+          }
+          .js-additional-input {
+            .js-additional-input-inner > div {
+              margin-top: 15px;
+              margin-right: 10px;
+            }
+            .js-additional-input-inner a {
+              cursor: pointer;
+              color: #3a94ff;
+            }
+            .js-additional-input-inner ul {
+              display: flex;
+            }
+            .js-additional-input-trigger {
+              line-height: 40px;
+              position: relative;
+              display: inline-block;
+              margin-top: 10px;
+              padding-left: 50px;
+              text-decoration: none;
+              color: #3a94ff;
+            }
+            .js-additional-input-trigger:after {
+              font-size: 20px;
+              line-height: 36px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: block;
+              box-sizing: border-box;
+              width: 40px;
+              height: 40px;
+              content: '+';
+              text-align: center;
+              border: 1px solid #3a94ff;
+              border-radius: 50%;
+            }
+            .js-additional-input-inner {
+              .travel-plan {
+                input {
+                  font-size: 1.3rem;
+                  position: relative;
+                  box-sizing: border-box;
+                  width: 200px;
+                  width: 100%;
+                  cursor: pointer;
+                  color: #000;
+                  border: 1px solid #ddd;
+                  border-radius: 25px;
+                  background-color: #fff;
+                }
+                .plan {
+                  margin: 0 auto;
+                  display: table;
+                  color: #a9a9a9;
+                }
+                .date {
+                  padding: 13px 0px 13px 5px;
+                  font-size: 1rem;
+                  text-align: center;
+                  display: flex;
+                }
+                input {
+                  font-size: 1.3rem;
+                  position: relative;
+                  box-sizing: border-box;
+                  width: 100%;
+                  padding: 13px 25px 13px 25px;
+                  cursor: pointer;
+                  color: #000;
+                  border: 1px solid #ddd;
+                  border-radius: 25px;
+                  background-color: #fff;
+                }
+              }
+            }
+          }
+        }
+        .form-wrap-01 + .form-wrap-01 {
+          margin-top: 25px;
+          .select-list {
+            display: flex;
+            li {
+              margin-right: 10px;
+              .type-01 {
+                width: 190px;
+              }
+              .type-02 {
+                width: 140px;
+              }
+            }
+          }
+        }
+        .aplication-area-03 {
+          margin-top: 15px;
+          padding: 25px 45px 30px;
+          background-color: #f8f8f8;
+          .btn {
+            font-weight: bold;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 20px 47px 20px 50px;
+            transition: background-color 0.2s;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 3px;
+            color: #494848;
+            border-radius: 100px;
+            background-color: #ffcb00;
+          }
+        }
+      }
+    }
+  }
+}

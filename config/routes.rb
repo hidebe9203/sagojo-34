@@ -17,4 +17,5 @@ devise_for :users, controllers: {
   resources :columns
   resources :businesses, only: [:index]
   resources :faqs
+  resources :users, only: [:edit, :update]
 end
