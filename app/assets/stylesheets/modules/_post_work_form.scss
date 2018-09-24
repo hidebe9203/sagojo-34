@@ -1,0 +1,66 @@
+// color
+$form-background-color: #ffffe0;
+
+// シゴト投稿画面の応募概要の部分です
+.container.work-post{
+  .box{
+    width: 100vw;
+    padding: 0 20px;
+    h1.display-4{
+      text-align: center;
+    }
+    p.lead{
+      text-align: center;
+      margin: 30px 0 50px 0;
+    }
+    h2.requirement{
+      font-size: 30px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .information_table{
+      width: auto;
+      font-size: 15px;
+      padding: 30px 340px 0 340px;
+      background-color: $white;
+      border-radius: 40px;
+      table{
+        tr{
+          padding: 20px 0;
+          td{
+            margin: 0 20px 20px 20px;
+          }
+          td.label{
+            width: 160px;
+          }
+          td.form{
+            width: 460px;
+            span{
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      textarea{
+        border: none;
+        background-color: $form-background-color;
+      }
+      input{
+        background-color: $form-background-color;
+      }
+      #work_detail, #work_requierment{
+        height: 200px;
+        width: 460px;
+      }
+      #work_under, #work_upper{
+        width: 100px;
+      }
+      #work_condition, #work_member, #work_duration, #work_limit{
+        font-size: 15px;
+        margin-top: 10px;
+        padding: 10px 10px;
+        width: 460px;
+      }
+    }
+  }
+}
