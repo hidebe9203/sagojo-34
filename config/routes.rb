@@ -11,7 +11,9 @@ devise_for :users, controllers: {
 }
   root to: "tops#index"
   resources :tops, only: [:index]
-  resources :works
+  resources :works do
+    resources :forms
+  end
   resources :columns
   resources :businesses, only: [:index]
   resources :faqs
