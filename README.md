@@ -58,6 +58,11 @@ Things you may want to cover:
 |preparatory_period   |text      |                 |
 |desired_travel_detail|text      |                 |
 |self_introduction    |text      |                 |
+|equipment            |text      |                 |
+|passion              |text      |                 |
+|Region               |text      |null: false      |
+|When_possible        |text      |null: false      |
+|Car_coverage         |text      |                 |
 
 ### Association
 - belongs_to :user
@@ -187,7 +192,7 @@ Things you may want to cover:
 |image          |text           |null: false      |
 |detail         |text           |null: false      |
 |upper          |string         |                 |
-|under          |string         |                 |  
+|under          |string         |                 |
 |condition      |string         |                 |
 |duration       |string         |null: false      |
 |requirement    |text           |null: false      |
