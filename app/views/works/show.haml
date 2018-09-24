@@ -1,4 +1,6 @@
 .main-content
+  #side.left
+  = render partial: "left_contents", locals: { work: @work}
   #side.rigth
     .side-profile-01
       .image
@@ -81,4 +83,3 @@
         %p
           %a.btn.w-100{href: ""} 応募画面へ進む
         %p.side-job-detail-text 現在16人が応募済みです
-
