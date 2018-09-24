@@ -21,7 +21,9 @@ class WorksController < ApplicationController
   # end
 
   private
+
   def work_params
     params.require(:work).permit(:title, :content, :image, :detail, :upper, :under, :condition, :duration, :requierment, :member, :limit).merge(company_id: current_company.id)
   end
+  
 end
