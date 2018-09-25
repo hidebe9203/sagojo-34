@@ -1,11 +1,12 @@
 #main.left
   .profile-area-01
     %form.application-form-01
-      .image-user
-        .image.js-img-uploader
-        %label.icon(for="upload-user-img")
-          %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-prof-camera.svg")
-          %input#upload-user-img.js-img-uploader-trigger(type="file" name="sagojo_backendbundle_user[thumbnailFile]")
+      - if request.path_info =~ %r(/users/\d+/edit) then
+        .image-user
+          .image.js-img-uploader
+          %label.icon(for="upload-user-img")
+            %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-prof-camera.svg")
+            %input#upload-user-img.js-img-uploader-trigger(type="file" name="sagojo_backendbundle_user[thumbnailFile]")
       %h2.profile-user-name
         hidebe9203
       .form-wrap-01
