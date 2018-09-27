@@ -55,9 +55,9 @@
 .main-content {
   overflow: hidden;
   min-width: 1100px;
-  width: 99.99% !important;
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
+  width: 99.99%;
+  margin-bottom: 0;
+  margin-top: 0;
   font-size: 1.4rem;
   margin: 15px auto;
   .main {
@@ -75,12 +75,12 @@
           h2 {
             margin-bottom: 70px;
             font-size: 3rem;
-            font-weight: normal !important;
+            font-weight: normal;
             line-height: 1.5;
-            color: #333 !important;
+            color: #333;
             text-align: center;
             .sp {
-              display: none !important;
+              display: none;
             }
           }
           ul {
@@ -100,7 +100,7 @@
                 letter-spacing: 2px;
                 line-height: 2;
                 .sp {
-                  display: none !important;
+                  display: none;
                 }
               }
             }
@@ -117,11 +117,11 @@
           padding: 85px 0;
           margin: 0 auto;
           .user_map_txt {
-            color: #333 !important;
+            color: #333;
             h2 {
               margin-bottom: 40px;
               font-size: 3rem;
-              font-weight: normal !important;
+              font-weight: normal;
               line-height: 1.5;
               text-align: center;
             }
@@ -165,7 +165,7 @@
           margin: 0 auto;
           h2 {
             font-size: 3rem;
-            font-weight: normal !important;
+            font-weight: normal;
             line-height: 1.5;
             margin-bottom: 30px;
             text-align: center;
@@ -173,7 +173,7 @@
           .skill {
             margin-bottom: 45px;
             .traveler_contents {
-              width: 1000px !important;
+              width: 1000px;
               background: #fff;
               box-shadow: 5px 4px 0px 1px #ededed;
               margin: 0 auto;
@@ -263,7 +263,7 @@
             display: block;
           }
           a {
-            margin-bottom: 0 !important;
+            margin-bottom: 0;
             @include btn;
             min-width: 88px;
           }
@@ -347,5 +347,5 @@
 }
 
 .sp {
-  display: none !important;
+  display: none;
 }
