@@ -1,22 +1,26 @@
 .thum-job-01
-  %a(href="#")
+  %a{href: "/works/#{work.id}"}
     .image
-      %img(src="https://pbs.twimg.com/profile_images/581025665727655936/9CnwZZ6j.jpg" alt="job_img")
-      %p.thum-job-status
-        募集中
+      = image_tag work.image.to_s
+      - if days_left >= 0
+        .thum-job-status.on
+          募集中
+      - else
+        .thum-job-status.over
+          募集終了
     .content
       .thum-job-company
         %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg" alt="会社名")
         %p 楽天株式会社
       %h3.thum-job-title
-        【中国・四国地方】楽天トラベルで「思わず旅したくなる」記事を描いてくれませんか？
+        = work.title
       %p.thum-job-desc
-        中国・四国地方を舞台に、様々な旅行コンテンツを実際に体験して、その魅力を記事として発信してくれる旅人ライターを募集します。観…
+        = work.content
       %p.thum-job-utility
         募集終了まで
         %span
           %span.date
-            6
+            = days_left
           %span
             日
         %span.view
@@ -39,10 +43,14 @@
           .inner-01
             %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg" alt="金額")
             %p
-              ¥
-              %span.price
-                23,000
-              = " ~ ¥"
-              %span.price
-                55,000
-              = " /本+経費（上限あり）"
+              - if work.under.present?
+                ¥
+                %span.price
+                  = work.under
+                〜
+              - if work.upper.present?
+                ¥
+                %span.price
+                  = work.upper
+              - if work.condition.present?
+                = work.condition
