@@ -1,85 +1,108 @@
-.main-content
-  #side.left
-  = render partial: "left_contents", locals: { work: @work}
-  #side.rigth
-    .side-profile-01
-      .image
-        %image.image01{src: "https://d1te0bovbq6epg.cloudfront.net/uploads/rakuten_travel/company_staff_icon.png"}
-      %p.side-profile-title 担当者さまから一言
-      %p.side-profile-text 「この場所に行きたい！旅行したい！」と、読んだ人の心を動かせるような、読者の立場に立ったコンテンツを一緒に作りましょう！
-    .side-job-detail-01
-      .side-job-category
-        %img.image02{src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-category.svg", alt: "カテゴリ"}
-        %p.image02-text 記事執筆
-      .side-job-company
-        %img.image03{src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg", alt: "会社名"}
-        %P.image03-text 楽天株式会社
-      .side-job-return-01
-        %img.image04{src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg", alt:"金額"}
-        %p.price-area
-          ￥
-          %span.price 23,000
-          〜 ￥
-          %span.price 55,000
-          ／本＋経費（上限あり）
-      .side-tag-list-02
-        %img.image04{:alt => "タグ", :src => "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tag-01.svg"}/
-        %ul
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              取材あり
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              写真
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              記事執筆
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              ライター
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              カメラマン
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              徳島県
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              香川県
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              岡山県
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              愛媛県
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              広島県
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              島根県
-          %li
-            %a{:href => ""}
-              %i.fa.fa-tag
-              山口県
-      .side-job-detail-inner-02.like
-        %p
-          %button#work-like-button.btn.w-100.work_like
-            .star
-              %i.fa.fa-star
-            お気に入りに追加
-      .side-job-detail-inner-02
-        %p
-          %a.btn.w-100{href: ""} 応募画面へ進む
-        %p.side-job-detail-text 現在16人が応募済みです
+= render partial: "./tops/header"
+.container.main-contents
+  .row.work_show
+    %nav.work_show{"aria-label" => "パンくずリスト"}
+      %ol.breadcrumb.mb-1
+        %li.breadcrumb-item
+          %a{href: "/"} ホーム
+        %li.breadcrumb-item
+          %a{href: "/works"} シゴト
+        %li.breadcrumb-item.active{"aria-current" => "page"}
+          = @work.title
+    .col-sm.main-content.work
+      #side.col-sm-8.work_show.left
+        = render partial: "left_contents", locals: { work: @work}
+      #side.col-sm-4.work_show.right
+        .side-profile-01
+          .image
+            %image.image01{src: "https://d1te0bovbq6epg.cloudfront.net/uploads/rakuten_travel/company_staff_icon.png"}
+          %p.side-profile-title 担当者さまから一言
+          %p.side-profile-text 「この場所に行きたい！旅行したい！」と、読んだ人の心を動かせるような、読者の立場に立ったコンテンツを一緒に作りましょう！
+        .side-job-detail-01
+          .side-job-category
+            %img.image02{src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-category.svg", alt: "カテゴリ"}
+            %p.image02-text 記事執筆
+          .side-job-company
+            %img.image03{src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg", alt: "会社名"}
+            %P.image03-text 楽天株式会社
+          .side-job-return-01
+            %img.image04{src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg", alt:"金額"}
+            %p.price-area
+              ￥
+              - if @work.under.present?
+                %span.price
+                  = @work.under
+                〜 ￥
+              - if @work.upper.present?
+                %span.price
+                  = @work.upper
+              = @work.condition
+          .side-tag-list-02
+            %img.image04{:alt => "タグ", :src => "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tag-01.svg"}/
+            %ul
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  取材あり
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  写真
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  記事執筆
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  ライター
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  カメラマン
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  徳島県
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  香川県
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  岡山県
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  愛媛県
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  広島県
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  島根県
+              %li
+                %a{:href => ""}
+                  %i.fa.fa-tag
+                  山口県
+          .side-job-detail-inner-02.like
+            %p
+              %button#work-like-button.btn.w-100.work_like
+                .star
+                  %i.fa.fa-star
+                お気に入りに追加
+          .side-job-detail-inner-02
+            %p
+              %a.btn.w-100{href: ""} 応募画面へ進む
+            %p.side-job-detail-text 現在16人が応募済みです
+.sub-contents-list
+  = render partial: "./tops/sub-contents-list"
+.sub-contents-aside
+  = render partial: "./tops/sub-contents-aside"
+.footer
+  .footer-inner
+    = render partial: "./tops/footer"
+    = render partial: "./tops/copyright"

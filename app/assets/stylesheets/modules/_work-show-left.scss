@@ -1,0 +1,270 @@
+// color
+$h1_titile_back: #f8f8f8;
+
+@mixin btn-like($width, $height){
+  background-color: #fff;
+  border: solid 1.5px #ddd;
+  color: #494848;
+  font-weight: normal;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  border-radius: 100px;
+  .star{
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #f9f9f9;
+    background-position: 6px 5px;
+    border-radius: 36px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: all 0.6s;
+    .fa.fa-star{
+      position: relative;
+      top: 5px;
+      left: 2px;
+      font-size: 1.8em;
+      color: #aeaeae;
+    }
+  }
+}
+
+// 左コンテンツの全体スタイル
+#side.work_show.left{
+  float: left;
+  .inner{
+    .article{
+      margin-bottom: 50px;
+      padding: 30px 20px;
+      background-color: $white;
+      .main-image{
+        width: 100%;
+        margin-top: 50px;
+        img{
+          width: 100%;
+        }
+      }
+      .shigoto-icon-box{
+        display: block;
+        margin: 85px 0;
+        height: 150px;
+        padding: 0 90px;
+        img.shigoto_icon{
+          height: 150px;
+          width: 470px;
+        }
+      }
+    }
+  }
+}
+// ぱんくずリスト
+nav.work_show{
+  margin: 50px 0 20px 0;
+  width: auto;
+  ol{
+    background-color: $white_gray;
+    li{
+      font-size: 1.2rem;
+      a{text-decoration: none;
+      }
+    }
+  }
+}
+
+// 募集状況と残り日数
+.sigoto_status{
+  display: inline;
+  p{
+    display: inline;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  p.on{
+    background-color: $yellow;
+    color: $white;
+  }
+  span.off{
+    background-color: #ddd;
+    color: #000;
+  }
+}
+
+.utility-top{
+  float: right;
+  font-size: 1.1rem;
+  color: #aeaeae;
+  margin: 0 30px 10px 0;
+  span.days_left{
+    font-size: 1.5rem;
+    color: $yellow;
+    font-weight: bold;
+    margin-left: 0.5em;
+  }
+}
+
+// マークダウンテキストから変換したHTMLにスタイルを当てる設定
+
+h1.main_title{
+  p{
+    line-height: 39px;
+    margin: 20px 0 ;
+    font-weight: bold;
+  }
+}
+.work_detail{
+  h1{
+    background-color: $h1_titile_back;
+    font-size: 2.6rem;
+    line-height: 2;
+    margin: 48px 0 19px 0;
+    padding: 18px 25px;
+    font-weight: bold;
+  }
+  h2{
+    padding: 20px 15px;
+    margin: 40px 0 16px 0;
+    border-top: solid 1px $dusty_gray;
+    border-bottom: solid 1px $dusty_gray;
+  }
+  p{
+    font-size: 1.5rem;
+    line-height: 2;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    img{
+      width: 100%;
+      padding-bottom: 30px;
+    }
+  }
+  ol{
+    border: solid 1px $dusty_gray;
+    padding: 10px 10px;
+  }
+  li{
+    font-size: 1.5rem;
+    line-height: 2;
+  }
+  strong{
+    font-weight: 700;
+  }
+}
+
+// SNSアイコンのスタイル設定
+ul.utility-sns{
+  height: 26px;
+  list-style: none;
+  li{
+    float: left;
+    margin-right: 10px;
+    img{
+      height: 24px;
+      width: 78px;
+    }
+  }
+}
+.utility-bottom{
+  margin: 56px 0 28px 0;
+  ul.utility-sns.bottom{
+    li{
+      float: right;
+      margin-right: 10px;
+    }
+  }
+}
+
+// 応募概要のスタイル設定
+table.show_requirement{
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: 2;
+  text-align: left;
+  th{
+    padding: 15px 15px;
+    font-weight: 700;
+    width: 194px;
+    background-color: $white_gray;
+  }
+  td{
+    padding: 15px 15px;
+  }
+}
+
+// 応募の流れのスタイル設定
+.flow_chart{
+  border: solid 10px #eaeaea;
+  padding: 25px 45px;
+  margin-top: 30px;
+  ol.list-group.flow{
+    padding-top: 20px;
+    width: auto;
+    margin: 0 0;
+    li{
+      margin-bottom: 20px;
+      span{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #5BC479;
+        color: $white;
+        margin-right: 15px;
+        font-size: 15px;
+        text-align: center;
+        line-height: 35px;
+        float: left;
+      }
+      dl{
+        float: left;
+        line-height: 1.5;
+        dt{
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        dd{
+          color: #aeaeae;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.application-btn{
+  background-color: #f8f8f8;
+  margin-top: 35px;
+  padding: 25px 20px;
+  overflow: hidden;
+  .left-like{
+    width: 230px;
+    height: 65px;
+    float: left;
+    margin: 0 20px 15px 0;
+    button#work-like-button{
+      @include btn-like(230px, 65px);
+    }
+  }
+  .right-apply{
+    width: 55%;
+    height: 65px;
+    float: right;
+    a.btn{
+      @include square-round_btn($yellow, 100%, 60px, 100px);
+      padding: 10px 7.5px;
+      margin-bottom: 15px;
+      align-items: center;
+      span.apply{
+        display: inline-block;
+        font-size: 1.6rem;
+        text-decoration: none;
+        line-height: 36px;
+      }
+    }
+  }
+}
