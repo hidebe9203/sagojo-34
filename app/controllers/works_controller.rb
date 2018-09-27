@@ -16,14 +16,15 @@ class WorksController < ApplicationController
 
   end
 
-  # def show
-  #   @work = Work.find(params[:id])
-  # end
+  def show
+    @work = Work.find(params[:id])
+    @days_left = Work.days_left(@work)
+  end
 
   private
 
   def work_params
     params.require(:work).permit(:title, :content, :image, :detail, :upper, :under, :condition, :duration, :requierment, :member, :limit).merge(company_id: current_company.id)
   end
-  
+
 end
