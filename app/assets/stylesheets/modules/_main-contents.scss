@@ -23,24 +23,47 @@
           transition: opacity 0.2s;
           text-decoration: none;
           background-color: #fff;
-          .image {
-            position: relative;
-            float: left;
-            width: 260px;
-            img {
-              border: none;
-              max-width: 100%;
-              vertical-align: bottom;
+          @include media-breakpoint-up(md) {
+            .image {
+              position: relative;
+              float: left;
+              width: 260px;
+              height: 100%;
+              img {
+                border: none;
+                max-width: 100%;
+                height: 100%;
+                vertical-align: bottom;
+                object-fit: cover;
+                object-position: 50% 50%;
+              }
+              .thum-job-status {
+                font-size: 0.6rem;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                padding: 6px 9px;
+                border-radius: 7px;
+              }
+              .on{
+                background-color: #ffcb00;
+                color: #fff;
+              }
+              .over{
+                background-color: #ddd;
+                color: #000;
+              }
             }
-            .thum-job-status {
-              font-size: 0.6rem;
-              position: absolute;
-              top: 20px;
-              left: 20px;
-              padding: 6px 9px;
-              color: #fff;
-              border-radius: 7px;
-              background-color: #ffcb00;
+          }
+          @include media-breakpoint-down(md){
+            .image{
+              display: none;
+              img{
+                display: none;
+              }
+              .thum-job-status{
+                display: none;
+              }
             }
           }
           .content {
@@ -67,22 +90,27 @@
               }
             }
             .thum-job-title {
-              font-size: 0.9rem;
+              font-size: 1.4rem;
               margin-bottom: 15px;
               font-weight: bold;
               color: #000;
             }
             .thum-job-desc {
-              font-size: 0.7rem;
+              display: inline-block;
+              font-size: 1.2rem;
               margin-bottom: 5px;
               color: #aeaeae;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
+              word-break: break-all;
+              height: 15%;
             }
             .thum-job-utility {
-              font-size: 0.7rem;
+              font-size: 1.1rem;
               margin-bottom: 10px;
               color: #aeaeae;
               .date {
-                font-size: 1.1rem;
+                font-size: 1.5rem;
                 font-weight: bold;
                 margin-left: 0.5rem;
                 color: #ffcb00;
@@ -129,12 +157,12 @@
                   height: 22px;
                 }
                 p {
-                  font-size: 0.9rem;
+                  font-size: 1.3rem;
                   font-weight: bold;
                   padding-left: 35px;
                   color: #000;
                   .price {
-                    font-size: 1rem;
+                    font-size: 1.5rem;
                     color: #ffcb00;
                   }
                 }

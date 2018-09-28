@@ -1,0 +1,120 @@
+// シゴト indexページ
+
+// アイキャッチ部分
+.eyecatch.work{
+  width: 100%;
+  background-image: url("/sagojo_image1.jpg");
+  color: $black;
+  margin-top: 70px;
+  .inner{
+    padding: 0 0;
+    h1{
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+    .eyecatch-lead{
+      font-size: 2rem;
+      line-height: 2;
+      span{
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+// ページネーション
+ul.pagination{
+  li.page-item{
+    width: 3em;
+    margin-left: 1em;
+    a{
+      color: $black;
+      font-size: 2rem;
+      border: none;
+    }
+  }
+  li.page-item.active{
+    a{
+      background-color: $yellow;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+}
+
+//シゴト件数
+.sub-content.work{
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  padding-bottom: 2em;
+  span{
+    padding-right: 1em;
+  }
+  span.works_total{
+    font-size: 1.6rem;
+    color: $yellow;
+    font-weight: bold;
+  }
+}
+
+// 職種部分
+.side-occupation-list{
+  ul.side-occupation{
+    width: 100%;
+    height: auto;
+    li{
+      width: 45%;
+      float: left;
+      background-color: $white;
+      border-radius: 5px;
+      a{
+        padding: 2em 1.5em 0.5em 1.5em;
+        display: block;
+        width: 100%;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        text-align: center;
+      }
+      span{
+        display: block;
+        text-align: center;
+        padding-bottom: 1.5em;
+      }
+      &:hover{
+        background-color: $yellow;
+        color: $white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+    li.current{
+      color: $white;
+      font-weight: bold;
+      border-radius: 5px;
+      background-color: $yellow;
+    }
+  }
+}
+
+// 人気のタグ
+.side-job-tag{
+  margin-top: 20px;
+  padding: 25px 25px;
+  background-color: $white;
+  clear: both;
+  dt{
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #000;
+  }
+  ul.side-tag-list{
+    color: #aeaeae;
+    font-size: 1.3rem;
+    line-height: 2.1;
+    li{
+      display: inline;
+      padding: 0 0 4px 18px;
+    }
+  }
+}
