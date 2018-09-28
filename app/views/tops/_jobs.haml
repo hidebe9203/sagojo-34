@@ -10,7 +10,7 @@
           募集終了
     .content
       .thum-job-company
-        %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg" alt="会社名")
+        = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg", alt: "会社名")
         %p 楽天株式会社
       %h3.thum-job-title
         = work.title
@@ -28,7 +28,7 @@
           %span
             view
         .thum-job-taglist
-          %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tag-01.svg" alt="タグ")
+          = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tag-01.svg", alt: "タグ")
           %ul
             %li
               %i.fa.fa-tag
@@ -41,7 +41,7 @@
               ライター
         .thum-job-return
           .inner-01
-            %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg" alt="金額")
+            = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg", alt: "金額")
             %p
               - if work.under.present?
                 ¥
