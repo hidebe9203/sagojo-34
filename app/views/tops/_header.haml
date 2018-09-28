@@ -10,15 +10,15 @@
           .col-sm-8
             %ul.navbar-nav
               %li.nav-item
-                %a.nav-link{:href => "#"} ホーム
+                = link_to "ホーム", root_path, class: "nav-link"
               %li.nav-item
-                %a.nav-link{href: "/works"} シゴト
+                = link_to "シゴト", works_path, class: "nav-link"
               %li.nav-item
-                %a.nav-link{:href => "#"} すごい旅研究所
+                = link_to "すごい旅研究所", "#", class: "nav-link"
               %li.nav-item
-                %a.nav-link{:href => "#"} はじめての方はこちら
+                = link_to "はじめての方はこちら", "#", class: "nav-link"
               %li.nav-item
-                %a.nav-link{:href => "#"} 企業の方はこちら
+                = link_to "企業の方はこちら", "#", class: "nav-link"
               %li.nav-item
                 = link_to "FAQ", faqs_path, class: 'nav-link'
                 / %a.nav-link{:href => "#"} FAQ
