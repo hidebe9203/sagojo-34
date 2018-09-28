@@ -2,7 +2,6 @@ $form-background-color: #ffffe0;
 // マークダウンエディタと入力内容のプレビューです
 .requirement_article{
   width: auto;
-  height: 1000px;
   border-radius: 40px;
   background-color: $white;
   .edit-area{
@@ -42,6 +41,33 @@ $form-background-color: #ffffe0;
       margin: 50px auto;
       font-size: 20px;
       @include square-round_btn($btn-yellow, 130px, 50px, 25px);
+    }
+  }
+}
+
+// マークダウンテキスト入力方法のモーダル部分
+.how-to-edit.w-50{
+  h3{
+    margin-bottom: 20px;
+  }
+  .btn.btn-primary{
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+}
+.modal-content{
+  .modal-header{
+    h5{
+      font-size: 2.0rem;
+    }
+  }
+  .modal-body{
+    p.heading{
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    p{
+      font-size: 1.5rem;
     }
   }
 }

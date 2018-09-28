@@ -1,0 +1,31 @@
+#wrap
+  .application-flow-area
+    %ol.application-flow-list
+      %li.current
+        %span.order 1
+        %span.flow 応募
+      %li.next
+        %span.order 2
+        %span.flow 確認
+      %li.after_next
+        %span.order 3
+        %span.flow 完了
+  .main-content
+    %h1.application-hdg-01 応募情報を入力してください
+    #main.left{role: "main"}
+      = render partial: './users/profile'
+    #side.right
+      .side-profile-01
+        .image.writer
+          .image.user-image{:style => "background-image: url('https://d1te0bovbq6epg.cloudfront.net/images/775138cb6335dccb1a82cf12084f2d215f31b050.jpeg');"}
+        %p.side-profile-title プロフィール完成度
+        .side-profile-percentage.animated
+          %p.number-wrap
+            %span.num.js-bar-percentage> 40
+            \%
+          %figure.bar-bg
+            %figure.bar{:style => "width: 40%;"}
+        %p.side-profile-text.g-mt25 プロフィールを充実させると、シゴトの審査率がアップしたり、すごい旅人としてSAGOJOからスカウトを受け取る確率がアップします。
+        %p.side-profile-link
+          %a{href: "#"} プロフィール編集へ
+  %p.copyright{:lang => "en"} © SAGOJO.
