@@ -26,7 +26,10 @@ class WorksController < ApplicationController
 
   def show
     @work = Work.find(params[:id])
+    # 募集締め切りまでの残り日数を算出
     @days_left = Work.days_left(@work)
+    # 注目のシゴト用にworksテーブルから最新4件を取得
+    @works = Work.page(params[:page]).per(4).order("created_at DESC")
   end
 
   private
