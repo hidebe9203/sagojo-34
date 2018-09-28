@@ -191,12 +191,11 @@ p {
       border: 0;
       font: inherit;
       vertical-align: baseline;
-      .btn.w-100{
+      .btn{
+        @include square-round_btn($yellow, 100%, 60px, 100px);
         font-weight: bold;
-        box-sizing: border-box;
         padding-right: 10px;
         padding-left: 10px;
-        width: 99.99% !important;
         font-size: 1.6rem;
         line-height: 2.5rem;
         display: inline-block;
@@ -206,8 +205,6 @@ p {
         text-decoration: none;
         letter-spacing: 3px;
         color: #494848;
-        border-radius: 100px;
-        background-color: #ffcb00;
       }
     }
     p{
