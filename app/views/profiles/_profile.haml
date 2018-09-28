@@ -1,6 +1,6 @@
 #main.left
   .profile-area-01
-    = form_for @profile, url: user_path, html: {class: "application-form-01"} do |f|
+    = form_for @profile, html: {class: "application-form-01"} do |f|
       - if request.path_info =~ %r(/users/\d+/edit) then
         .image-user
           .image.js-img-uploader
