@@ -14,12 +14,12 @@
       = markdown(work.title)
     %ul.utility-sns
       %li.twitter
-        = link_to "Tweet","https://twitter.com/share?ref_src=twsrc%5Etfw",class: "twitter-share-button","data-show-count" => "false"
+        %a.twitter-share-button{"data-show-count" => "false", href: "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
         %script{async: "", charset: "utf-8", src: "https://platform.twitter.com/widgets.js"}
       %li.facebook
         =image_tag "Like-Button_JP_RGB.png"
       %li.hatena
-        = link_to "B!ブックマーク","http://b.hatena.ne.jp/entry/", class: "hatena-bookmark-button","data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter",title: "このエントリーをはてなブックマークに追加"
+        %a.hatena-bookmark-button{"data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter", href: "http://b.hatena.ne.jp/entry/", title: "このエントリーをはてなブックマークに追加"}
         %script{async: "async", charset: "utf-8", src: "https://b.st-hatena.com/js/bookmark_button.js", type: "text/javascript"}
       %li.google
         %script{async: "", defer: "defer", src: "https://apis.google.com/js/platform.js"}
@@ -36,12 +36,12 @@
           %plusone
           .g-plusone{"..." => "", "data-size" => "tall"}
         %li.hatena
-          = link_to "B!ブックマーク","http://b.hatena.ne.jp/entry/", class: "hatena-bookmark-button","data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter",title: "このエントリーをはてなブックマークに追加"
+          %a.hatena-bookmark-button{"data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter", href: "http://b.hatena.ne.jp/entry/", title: "このエントリーをはてなブックマークに追加"}
           %script{async: "async", charset: "utf-8", src: "https://b.st-hatena.com/js/bookmark_button.js", type: "text/javascript"}
         %li.facebook
           =image_tag "Like-Button_JP_RGB.png"
         %li.twitter
-          = link_to "Tweet","https://twitter.com/share?ref_src=twsrc%5Etfw",class: "twitter-share-button","data-show-count" => "false"
+          %a.twitter-share-button{"data-show-count" => "false", href: "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
           %script{async: "", charset: "utf-8", src: "https://platform.twitter.com/widgets.js"}
     .shigoto-icon-box
       =image_tag 'shigoto_icon.png', class: 'shigoto_icon'
@@ -111,9 +111,11 @@
             %i.fa.fa-star
           %span お気に入りに追加
       .right-apply
-        = link_to "応募画面へ進む","#",class:"btn"
+        %a.btn{href: ""}
+          %span.apply 応募画面へ進む
   .sub-recomend
     #main.left
       %h2.top-hdg-02
         注目のシゴト
-        = render partial: "./tops/jobs", collection: @works, as: "work", locals: {days_left: @days_left}
+      - (1..4).each do |n|
+        = render partial: "./tops/jobs"

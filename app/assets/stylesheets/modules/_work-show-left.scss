@@ -259,9 +259,12 @@ table.show_requirement{
       padding: 10px 7.5px;
       margin-bottom: 15px;
       align-items: center;
-      font-size: 1.6rem;
-      text-decoration: none;
-      line-height: 36px;
+      span.apply{
+        display: inline-block;
+        font-size: 1.6rem;
+        text-decoration: none;
+        line-height: 36px;
+      }
     }
   }
 }
