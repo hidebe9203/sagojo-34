@@ -1,7 +1,7 @@
 #main.left
   .profile-area-01
     = form_for @profile, html: {class: "application-form-01"} do |f|
-      - if request.path_info =~ %r(/users/\d+/edit) then
+      - if request.path_info =~ %r(/profiles/\d+/edit) then
         .image-user
           .image.js-img-uploader
           %label.icon(for="upload-user-img")
@@ -152,147 +152,147 @@
           %label(for="male")
             男性
         .radio-01
-          = f.radio_button :gender, 0, id: "female"
+          = f.radio_button :gender, 1, id: "female"
           %label(for="female")
             女性
         .radio-01
-          = f.radio_button :gender, 0, id: "genderless"
+          = f.radio_button :gender, 2, id: "genderless"
           %label(for="genderless")
             その他
-      -# .form-wrap-01
-      -#   %label.label-01(for="phone-number")
-      -#     電話番号（半角）
-      -#   %input.textbox-02.type-01#postal-code(type="text" placeholder="例:01234567890（ハイフンなし）" name="sagojo_backendbundle_user[phoneNumber]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="postal-code")
-      -#     電話番号（半角）
-      -#   %input.textbox-02.type-01#postal-code(type="text" placeholder="例:3100044（ハイフンなし）" name="sagojo_backendbundle_user[userAddress][postalCode]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="address-01")
-      -#     都道府県
-      -#   %input.textbox-02.type-01#address-01(type="text" name="sagojo_backendbundle_user[userAddress][division]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="address-02")
-      -#     市町村
-      -#   %input.textbox-02.type-02#address-02(type="text" name="sagojo_backendbundle_user[userAddress][municipality]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="address-02")
-      -#     番地（半角）
-      -#   %input.textbox-02.type-02#address-03(type="text" name="sagojo_backendbundle_user[userAddress][address]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="address-04")
-      -#     ビル・マンション名等
-      -#   %input.textbox-02.type-02#address-04(type="text" name="sagojo_backendbundle_user[userAddress][building]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="address-04")
-      -#     現在地（現在旅行中の方のみご記入ください）
-      -#   %input.textbox-02.type-03(type="text" name="sagojo_backendbundle_user[currentLocation]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="relation")
-      -#     関連リンク（Webサイトやブログなど）
-      -#   .js-additional-input#userLink(name-part="sagojo_backendbundle_user" data="[]")
-      -#     .js-additional-input-inner(index="0")
-      -#       %input.textbox-02.type-03(type="text" name="sagojo_backendbundle_user[userLink][0][link]" placeholder="例:個人ブログ、ポートフォリオサイトなど")
-      -#       .select-01.type-04.pv
-      -#         %select(name="sagojo_backendbundle_user[userLink][0][pv]")
-      -#           %option(value="0") pv数
-      -#           %option(value="1") ~10000pv/月
-      -#           %option(value="2") 10001~50000pv/月
-      -#           %option(value="3") 50001~100000pv/月
-      -#           %option(value="4") 100001~500000pv/月
-      -#           %option(value="5") 500001~1000000pv/月
-      -#           %option(value="6") 10000001pv~/月
-      -#       %a.delete
-      -#         削除
-      -#     %a.js-additional-input-trigger.add-new-input.add_link
-      -#       関連リンクを追加する
-      -# .form-wrap-01
-      -#   %label.label-01(for="sns-account")
-      -#     SNSアカウント（プロフィールページのリンクを入力してください）
-      -#   .js-additional-input#userSnsLink(name-part="sagojo_backendbundle_user" data="[]")
-      -#     .js-additional-input-inner(index="0")
-      -#       %input.textbox-02.type-03(type="text" name="sagojo_backendbundle_user[userSnsLink][0][snsLink]" placeholder="https://twitter.com/sagojo_travel")
-      -#       .select-01.type-04.follower
-      -#         %select(name="sagojo_backendbundle_user[userSnsLink][0][influence]")
-      -#           %option(value="0") フォロワー数
-      -#       %a.delete
-      -#         削除
-      -#     %p
-      -#       %a.js-additional-input-trigger.add-new-input.add_sns
-      -#         SNSアカウントを追加する
-      -# .form-wrap-01
-      -#   %label.label-01(for="job-type")
-      -#     職種（タグ）
-      -#   %input.textbox-02.type-03.tagit-hidden-field#job-type(type="text" placeholder="例:ライター、フォトグラファー、動画ディレクター" name="sagojo_backendbundle_user[jobCategoryText]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="job-type")
-      -#     職種
-      -#   %input.textbox-02.type-03#job-type(type="text" placeholder="タグで入力しづらい項目を、自由記述でご入力ください" name="sagojo_backendbundle_user[job]")
-      -# .form-wrap-01
-      -#   %label.label-01(for="language")
-      -#     語学力
-      -#   %textarea.textarea-01#language(name="sagojo_backendbundle_user[languageSkill]" placeholder="例:英語：TOEIC830点、オーストラリアに留学経験あり、ビジネスレベル　中国語：中国に留学経験あり、日常会話レベル")
-      -# .form-wrap-01
-      -#   %label.label-01(for="career")
-      -#     就業経験・学歴など
-      -#   %textarea.textarea-01#career(name="sagojo_backendbundle_user[workingExperience]" placeholder="例：2010年3月：天竺大学卒業 2011年4月～2013年11月：株式会社流沙河出版にて旅行雑誌の編集業務に携わる。2013年12月～現在：独立しフリーランスのライター、編集者として活動。写真や動画撮影の仕事をうけることもあります。")
-      -# .form-wrap-01
-      -#   %label.label-01(for="travel-career")
-      -#     旅の経験
-      -#   %textarea.textarea-01#travel-career(name="sagojo_backendbundle_user[travelExperience]" placeholder="例：【国内】自転車移動、テント泊で北海道を旅しました。【海外】インド（3週間）、ヨルダン・イスラエル（2週間）、フランス（4日間）の5ヶ国を旅しました。")
-      -# .form-wrap-01
-      -#   %label.label-01(for="skill")
-      -#     あなたのスキル・得意なこと（タグ）
-      -#   %input.textbox-02.type-03.tagit-hidden-field#skill(type="text" placeholder="例：ライティング、写真撮影、動画編集")
-      -# .form-wrap-01
-      -#   %label.label-01#skill
-      -#     あなたのスキル・得意なこと
-      -#   %textarea.textarea-01#skill(name="sagojo_backendbundle_user[specialSkill]" placeholder="タグで入力しづらい項目を、自由記述でご入力ください")
-      -# .form-wrap-01
-      -#   %label.label-01(for="performance")
-      -#     過去のご実績・ご活動
-      -#   %textarea.textarea-01#performance(name="sagojo_backendbundle_user[actualResult]" placeholder="携わった作品・プロジェクトなどできるだけ詳細に記入してください。例：過去に執筆した主な記事は以下の通りです。http://www.sagojo.link/sample1http://www.sagojo.link/sample2http://www.sagojo.link/sample3下記の動画の撮影、編集も担当しました。http://www.sagojo.link/sample4http://www.sagojo.link/sample5")
-      -# .form-wrap-01
-      -#   %label.label-01(for="income")
-      -#     旅行時に臨む収入
-      -#   %input.textbox-02.type-03#income(type="text" name="sagojo_backendbundle_user[hopeIncome]" placeholder="例:移動費+月収10万円")
-      -# .form-wrap-01
-      -#   %label.label-01(for="preparation")
-      -#     準備期間
-      -#   %textarea.textarea-01#preparation(name="sagojo_backendbundle_user[preparationPeriod]" placeholder="例:基本的にご連絡いただいてから1ヶ月以内に出発可能です")
-      -# .form-wrap-01
-      -#   %label.label-01(for="userPlan")
-      -#     今後の旅の予定（必須ではありませんが、選考に影響する項目です）
-      -#   .js-additional-input#userPlan(name-part="sagojo_backendbundle_user" data="[]")
-      -#     .js-additional-input-inner(index="0")
-      -#       %ul.select-list.planform
-      -#         %li.startdate
-      -#           .select-01.type-02.travel-plan
-      -#             %label.plan(for="job-plan")
-      -#               出発日
-      -#             %input.plan.date.datepicker.departureAt(type="date" name="sagojo_backendbundle_user[userPlan][0][departureAt]")
-      -#         %li.backdate
-      -#           .select-01.type-02.travel-plan
-      -#             %label.plan(for="job-plan")
-      -#               帰国日
-      -#             %input.plan.date.datepicker.departureAt(type="date" name="sagojo_backendbundle_user[userPlan][0][departureAt]")
-      -#         %li
-      -#           .select-01.type-02.travel-plan
-      -#             %label.plan(for="job-plan")
-      -#               場所
-      -#             %input.area-name#gmap-0(type="text" name="sagojo_backendbundle_user[userPlan][0][areaName]" placeholder="場所を入力" autocomplete="off")
-      -#             %input#lat-0(type="hidden" name="sagojo_backendbundle_user[userPlan][0][lat]")
-      -#             %input#lng-0(type="hidden" name="sagojo_backendbundle_user[userPlan][0][lng]")
-      -#     %p
-      -#       %a.js-additional-input-trigger.add-new-input
-      -#         旅の予定を追加する
-      -# .form-wrap-01
-      -#   %label.label-01(for="job-plan")
-      -#     どんな旅がしたいか
-      -#   %textarea.textarea-01#job-plan(name="sagojo_backendbundle_user[idealTravel]" placeholder="例：観光地をただ回るだけでなく、現地の方の自宅に泊めてもらったりヒッチハイクをしたりしながら、 人とコミュニケーションをとる旅がしたいです。")
-      -# .form-wrap-01
-      -#   %label.label-01(for="self-introduction")
-      -#     自己紹介文
-      -#   %textarea.textarea-01#self-introduction(name="sagojo_backendbundle_user[introduction]" placeholder="その他あなたに関する情報をご記入ください。")
+      .form-wrap-01
+        %label.label-01(for="phone-number")
+          電話番号（半角）
+        %input.textbox-02.type-01#postal-code(type="text" placeholder="例:01234567890（ハイフンなし）" name="sagojo_backendbundle_user[phoneNumber]")
+      .form-wrap-01
+        %label.label-01(for="postal-code")
+          電話番号（半角）
+        %input.textbox-02.type-01#postal-code(type="text" placeholder="例:3100044（ハイフンなし）" name="sagojo_backendbundle_user[userAddress][postalCode]")
+      .form-wrap-01
+        %label.label-01(for="address-01")
+          都道府県
+        %input.textbox-02.type-01#address-01(type="text" name="sagojo_backendbundle_user[userAddress][division]")
+      .form-wrap-01
+        %label.label-01(for="address-02")
+          市町村
+        %input.textbox-02.type-02#address-02(type="text" name="sagojo_backendbundle_user[userAddress][municipality]")
+      .form-wrap-01
+        %label.label-01(for="address-02")
+          番地（半角）
+        %input.textbox-02.type-02#address-03(type="text" name="sagojo_backendbundle_user[userAddress][address]")
+      .form-wrap-01
+        %label.label-01(for="address-04")
+          ビル・マンション名等
+        %input.textbox-02.type-02#address-04(type="text" name="sagojo_backendbundle_user[userAddress][building]")
+      .form-wrap-01
+        %label.label-01(for="address-04")
+          現在地（現在旅行中の方のみご記入ください）
+        %input.textbox-02.type-03(type="text" name="sagojo_backendbundle_user[currentLocation]")
+      .form-wrap-01
+        %label.label-01(for="relation")
+          関連リンク（Webサイトやブログなど）
+        .js-additional-input#userLink(name-part="sagojo_backendbundle_user" data="[]")
+          .js-additional-input-inner(index="0")
+            %input.textbox-02.type-03(type="text" name="sagojo_backendbundle_user[userLink][0][link]" placeholder="例:個人ブログ、ポートフォリオサイトなど")
+            .select-01.type-04.pv
+              %select(name="sagojo_backendbundle_user[userLink][0][pv]")
+                %option(value="0") pv数
+                %option(value="1") ~10000pv/月
+                %option(value="2") 10001~50000pv/月
+                %option(value="3") 50001~100000pv/月
+                %option(value="4") 100001~500000pv/月
+                %option(value="5") 500001~1000000pv/月
+                %option(value="6") 10000001pv~/月
+            %a.delete
+              削除
+          %a.js-additional-input-trigger.add-new-input.add_link
+            関連リンクを追加する
+      .form-wrap-01
+        %label.label-01(for="sns-account")
+          SNSアカウント（プロフィールページのリンクを入力してください）
+        .js-additional-input#userSnsLink(name-part="sagojo_backendbundle_user" data="[]")
+          .js-additional-input-inner(index="0")
+            %input.textbox-02.type-03(type="text" name="sagojo_backendbundle_user[userSnsLink][0][snsLink]" placeholder="https://twitter.com/sagojo_travel")
+            .select-01.type-04.follower
+              %select(name="sagojo_backendbundle_user[userSnsLink][0][influence]")
+                %option(value="0") フォロワー数
+            %a.delete
+              削除
+          %p
+            %a.js-additional-input-trigger.add-new-input.add_sns
+              SNSアカウントを追加する
+      .form-wrap-01
+        %label.label-01(for="job-type")
+          職種（タグ）
+        %input.textbox-02.type-03.tagit-hidden-field#job-type(type="text" placeholder="例:ライター、フォトグラファー、動画ディレクター" name="sagojo_backendbundle_user[jobCategoryText]")
+      .form-wrap-01
+        %label.label-01(for="job-type")
+          職種
+        %input.textbox-02.type-03#job-type(type="text" placeholder="タグで入力しづらい項目を、自由記述でご入力ください" name="sagojo_backendbundle_user[job]")
+      .form-wrap-01
+        %label.label-01(for="language")
+          語学力
+        %textarea.textarea-01#language(name="sagojo_backendbundle_user[languageSkill]" placeholder="例:英語：TOEIC830点、オーストラリアに留学経験あり、ビジネスレベル　中国語：中国に留学経験あり、日常会話レベル")
+      .form-wrap-01
+        %label.label-01(for="career")
+          就業経験・学歴など
+        %textarea.textarea-01#career(name="sagojo_backendbundle_user[workingExperience]" placeholder="例：2010年3月：天竺大学卒業 2011年4月～2013年11月：株式会社流沙河出版にて旅行雑誌の編集業務に携わる。2013年12月～現在：独立しフリーランスのライター、編集者として活動。写真や動画撮影の仕事をうけることもあります。")
+      .form-wrap-01
+        %label.label-01(for="travel-career")
+          旅の経験
+        %textarea.textarea-01#travel-career(name="sagojo_backendbundle_user[travelExperience]" placeholder="例：【国内】自転車移動、テント泊で北海道を旅しました。【海外】インド（3週間）、ヨルダン・イスラエル（2週間）、フランス（4日間）の5ヶ国を旅しました。")
+      .form-wrap-01
+        %label.label-01(for="skill")
+          あなたのスキル・得意なこと（タグ）
+        %input.textbox-02.type-03.tagit-hidden-field#skill(type="text" placeholder="例：ライティング、写真撮影、動画編集")
+      .form-wrap-01
+        %label.label-01#skill
+          あなたのスキル・得意なこと
+        %textarea.textarea-01#skill(name="sagojo_backendbundle_user[specialSkill]" placeholder="タグで入力しづらい項目を、自由記述でご入力ください")
+      .form-wrap-01
+        %label.label-01(for="performance")
+          過去のご実績・ご活動
+        %textarea.textarea-01#performance(name="sagojo_backendbundle_user[actualResult]" placeholder="携わった作品・プロジェクトなどできるだけ詳細に記入してください。例：過去に執筆した主な記事は以下の通りです。http://www.sagojo.link/sample1http://www.sagojo.link/sample2http://www.sagojo.link/sample3下記の動画の撮影、編集も担当しました。http://www.sagojo.link/sample4http://www.sagojo.link/sample5")
+      .form-wrap-01
+        %label.label-01(for="income")
+          旅行時に臨む収入
+        %input.textbox-02.type-03#income(type="text" name="sagojo_backendbundle_user[hopeIncome]" placeholder="例:移動費+月収10万円")
+      .form-wrap-01
+        %label.label-01(for="preparation")
+          準備期間
+        %textarea.textarea-01#preparation(name="sagojo_backendbundle_user[preparationPeriod]" placeholder="例:基本的にご連絡いただいてから1ヶ月以内に出発可能です")
+      .form-wrap-01
+        %label.label-01(for="userPlan")
+          今後の旅の予定（必須ではありませんが、選考に影響する項目です）
+        .js-additional-input#userPlan(name-part="sagojo_backendbundle_user" data="[]")
+          .js-additional-input-inner(index="0")
+            %ul.select-list.planform
+              %li.startdate
+                .select-01.type-02.travel-plan
+                  %label.plan(for="job-plan")
+                    出発日
+                  %input.plan.date.datepicker.departureAt(type="date" name="sagojo_backendbundle_user[userPlan][0][departureAt]")
+              %li.backdate
+                .select-01.type-02.travel-plan
+                  %label.plan(for="job-plan")
+                    帰国日
+                  %input.plan.date.datepicker.departureAt(type="date" name="sagojo_backendbundle_user[userPlan][0][departureAt]")
+              %li
+                .select-01.type-02.travel-plan
+                  %label.plan(for="job-plan")
+                    場所
+                  %input.area-name#gmap-0(type="text" name="sagojo_backendbundle_user[userPlan][0][areaName]" placeholder="場所を入力" autocomplete="off")
+                  %input#lat-0(type="hidden" name="sagojo_backendbundle_user[userPlan][0][lat]")
+                  %input#lng-0(type="hidden" name="sagojo_backendbundle_user[userPlan][0][lng]")
+          %p
+            %a.js-additional-input-trigger.add-new-input
+              旅の予定を追加する
+      .form-wrap-01
+        %label.label-01(for="job-plan")
+          どんな旅がしたいか
+        %textarea.textarea-01#job-plan(name="sagojo_backendbundle_user[idealTravel]" placeholder="例：観光地をただ回るだけでなく、現地の方の自宅に泊めてもらったりヒッチハイクをしたりしながら、 人とコミュニケーションをとる旅がしたいです。")
+      .form-wrap-01
+        %label.label-01(for="self-introduction")
+          自己紹介文
+        %textarea.textarea-01#self-introduction(name="sagojo_backendbundle_user[introduction]" placeholder="その他あなたに関する情報をご記入ください。")
       .aplication-area-03.profile-form
         = f.submit "更新する", class: "btn w-100", id: "prof-update"
