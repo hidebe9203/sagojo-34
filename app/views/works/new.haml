@@ -19,11 +19,11 @@
                   報酬
                 %td.form
                   %span ¥
-                  = f.text_field :upper, placeholder: '下限'
+                  = f.text_field :under, placeholder: '下限'
                   %span 円
                   %span ~
                   %span ¥
-                  = f.text_field :under, placeholder: '上限'
+                  = f.text_field :upper, placeholder: '上限'
                   %span 円
               %tr
                 %td
@@ -51,6 +51,8 @@
                   = f.text_field :limit, placeholder: '例  2018/11/30'
           .requirement_article.my-5.py-5.px-3
             %h2.requirement.pt-5 アピール記事の投稿
+            .how-to-edit.w-50
+              = render partial: "how-to-edit"
             .edit-area.w-50.h-auto
               = f.text_area :title, size: '80x5',placeholder: 'タイトル'
               .image
