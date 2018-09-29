@@ -13,7 +13,8 @@
             %span.days 日
         .catchcopy
           .company
-            %p 楽天株式会社
+            %p
+              = slide.company.company_name
           .copy
             %h3
               = slide.title
@@ -33,7 +34,7 @@
                 = slide.upper
             - if slide.detail.present?
               %span.detail
-                = slide.detail
+                = slide.condition
           %ul.tag-list
             %li.tag
               %i.fa.fa-tag
