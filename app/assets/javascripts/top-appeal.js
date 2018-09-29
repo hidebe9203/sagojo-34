@@ -6,12 +6,8 @@ $(document).ready(function(){
   slidesToScroll: 1,
   accessibility: true,
   arrows: true,
-  // autoplay: true,
+  autoplay: true,
   autoplaySpeed: 2000,
-  dots: true,
-  dotsClass: 'slide-dots',
-  // variableWidth: true,
-  // adaptiveHeight: true
   prevArrow: '<button type="button" class="slick-prev" ></button>',
   nextArrow: '<button type="button" class="slick-next"></button>',
   });
