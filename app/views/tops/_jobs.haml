@@ -11,7 +11,8 @@
     .content
       .thum-job-company
         = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg", alt: "会社名")
-        %p 楽天株式会社
+        %p
+          = work.company.company_name
       %h3.thum-job-title
         = work.title
       %p.thum-job-desc
@@ -20,7 +21,7 @@
         募集終了まで
         %span
           %span.date
-            = days_left
+            = @days_left
           %span
             日
         %span.view
