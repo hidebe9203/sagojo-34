@@ -14,50 +14,41 @@
               %li.nav-item
                 = link_to "シゴト", works_path, class: "nav-link"
               %li.nav-item
-                = link_to "すごい旅研究所", "#", class: "nav-link"
-              %li.nav-item
-                = link_to "はじめての方はこちら", "#", class: "nav-link"
-              %li.nav-item
-                = link_to "企業の方はこちら", "#", class: "nav-link"
+                = link_to "企業の方はこちら", businesses_path, class: 'nav-link'
               %li.nav-item
                 = link_to "FAQ", faqs_path, class: 'nav-link'
-                / %a.nav-link{:href => "#"} FAQ
+              %li.nav-item
 
+          - if user_signed_in?
+            .col-sm-4.col-sm-offset-4
+              %ul.nav.justify-content-end.utility
+                %li.nav-item#dropdown-toggle
+                  %span.user{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = image_tag "user.png"
+                  %span.user_name{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = current_user.name
+                  .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+                    = link_to "プロフィール編集", root_path, method: :get, class: 'dropdown-item'
+                    = link_to "ログアウト", destroy_company_session_path, method: :delete, class: 'dropdown-item logout'
 
+          - elsif company_signed_in?
+            .col-sm-4.col-sm-offset-4
+              %ul.nav.justify-content-end.utility
+                %li.nav-item#dropdown-toggle
+                  %span.user{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = image_tag "user.png"
+                  %span.user_name{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = current_company.name
+                  .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+                    = link_to "旅人応募一覧", root_path, method: :get, class: 'dropdown-item'
+                    = link_to "シゴト新規投稿", new_work_path, method: :get, class: 'dropdown-item'
+                    = link_to "ログアウト", destroy_company_session_path, method: :delete, class: 'dropdown-item logout'
 
-          -# userがログインしていないとき
-          .col-sm-4.col-sm-offset-4
-            %ul.nav.justify-content-end.register
-              %li.nav-item.company
-                = link_to "ユーザーログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+          - else
+            .col-sm-4.col-sm-offset-4
+              %ul.nav.justify-content-end.register
+                %li.nav-item.company
+                  = link_to "企業登録", new_company_registration_path, method: :get, class: 'btn'
 
-                / %a.nav-link{:href => "#"} 企業登録
-              %li.nav-item.user
-                = link_to "ユーザーサインイン", new_user_registration_path, method: :get, class: 'btn'
-
-              %li.nav-item.company
-                = link_to "企業ログアウト", destroy_company_session_path, method: :delete, class: 'btn'
-
-              %li.nav-item.user
-                = link_to "企業サインイン", new_company_registration_path, method: :get, class: 'btn'
-                / %a.nav-link{:href => "#"} 旅人登録
-          -# userがログインしているとき
-          -# .col-sm-4.col-sm-offset-4
-          -#   %ul.nav.justify-content-end.utility
-          -#     %li.nav-item
-          -#       %span.bell
-          -#         = image_tag "bell.png"
-          -#       %span.comment
-          -#         = link_to image_tag('comment.png'), '#'
-          -#     %li.nav-item#dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
-          -#       %span.user
-          -#         = image_tag "user.png"
-          -#       %span.user_name
-          -#         current_user.name
-          -#       .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-          -#         %a.dropdown-item{:href => "#"} 応募したシゴト一覧
-          -#         %a.dropdown-item{:href => "#"} リターン管理
-          -#         %a.dropdown-item{:href => "#"} お気に入り一覧
-          -#         %a.dropdown-item{:href => "#"} プロフィール編集
-          -#         %a.dropdown-item{:href => "#"} アカウント設定
-          -#         %a.dropdown-item.logout{:href => "#"} ログアウト
+                %li.nav-item.user
+                  = link_to "旅人登録", new_user_registration_path, method: :get, class: 'btn'
