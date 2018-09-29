@@ -117,5 +117,4 @@
     #main.left
       %h2.top-hdg-02
         注目のシゴト
-      - (1..4).each do |n|
-        = render partial: "./tops/jobs"
+        = render partial: "./tops/jobs", collection: @works, as: "work", locals: {days_left: @days_left}
