@@ -65,6 +65,7 @@ body {
             margin-right: 10px;
             a{
               color: $btn-company-font;
+              font-size: 14px;
             }
           }
           li.user{
@@ -73,6 +74,7 @@ body {
             @include square-round_btn($btn-blue, 130px, 50px, 25px);
             a{
               color: $btn-user-font;
+              font-size: 14px;
             }
           }
           li:hover{
