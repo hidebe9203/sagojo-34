@@ -1,4 +1,5 @@
 class WorksController < ApplicationController
+
   def index
     # index画面で表示するシゴトを投稿日が新しい順に10件表示
     @works_latest = Work.order("created_at DESC").page(params[:page])
@@ -17,9 +18,9 @@ class WorksController < ApplicationController
   def create
     @work = Work.create(work_params)
     if @work.save
-      render :index
+      redirect_to works_path
     else
-      render :new
+      redirect_to new_work_path
     end
 
   end
