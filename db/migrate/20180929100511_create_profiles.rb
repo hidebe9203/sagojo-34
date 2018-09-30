@@ -5,9 +5,9 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.text :background_image
       t.text :person_image
       t.text :catchphrase
-      t.integer :birth_year
-      t.integer :birth_month
-      t.integer :birth_day
+      t.string :birth_year
+      t.string :birth_month
+      t.string :birth_day
       t.integer :gender, null: false
       t.integer :phone_number, unique: true
       t.string :current_place

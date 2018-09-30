@@ -1,9 +1,10 @@
 = render partial: "./tops/header"
-#wrap
-  .bg-prof-01
+#wrap.profile-top
+  .bg-prof-01(style="background-image: url(#{@profile.background_image})")
     %p.prof-image-bg-add
-      %a#upload-user-bg-trigger(href="#")
+      %label#upload-user-bg-trigger
         背景画像を設定する
+        -# = file_field :background_image, :file
   .main-content
     = render partial: './profiles/profile'
     #side.right
