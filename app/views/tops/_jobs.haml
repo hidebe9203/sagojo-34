@@ -1,0 +1,56 @@
+.thum-job-01
+  = link_to work do
+    .image
+      = image_tag work.image.to_s
+      - if days_left >= 0
+        .thum-job-status.on
+          募集中
+      - else
+        .thum-job-status.over
+          募集終了
+    .content
+      .thum-job-company
+        = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg", alt: "会社名")
+        %p 楽天株式会社
+      %h3.thum-job-title
+        = work.title
+      %p.thum-job-desc
+        = work.content
+      %p.thum-job-utility
+        募集終了まで
+        %span
+          %span.date
+            = days_left
+          %span
+            日
+        %span.view
+          185
+          %span
+            view
+        .thum-job-taglist
+          = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tag-01.svg", alt: "タグ")
+          %ul
+            %li
+              %i.fa.fa-tag
+              取材あり
+            %li
+              %i.fa.fa-tag
+              徳島県
+            %li
+              %i.fa.fa-tag
+              ライター
+        .thum-job-return
+          .inner-01
+            = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg", alt: "金額")
+            %p
+              - if work.under.present?
+                ¥
+                %span.price
+                  = work.under
+                〜
+              - if work.upper.present?
+                ¥
+                %span.price
+                  = work.upper
+              - if work.condition.present?
+                = work.condition

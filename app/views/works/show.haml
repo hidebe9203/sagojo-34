@@ -1,0 +1,108 @@
+= render partial: "./tops/header"
+.container.main-contents
+  .row.work_show
+    %nav.work_show{"aria-label" => "パンくずリスト"}
+      %ol.breadcrumb.mb-1
+        %li.breadcrumb-item
+          = link_to "ホーム", "/"
+        %li.breadcrumb-item
+          = link_to "シゴト", "/works"
+        %li.breadcrumb-item.active{"aria-current" => "page"}
+          = @work.title
+    .col-sm.main-content.work
+      #side.col-sm-8.work_show.left
+        = render partial: "left_contents", locals: { work: @work}
+      #side.col-sm-4.work_show.right
+        .side-profile-01
+          .image
+            = image_tag( "https://d1te0bovbq6epg.cloudfront.net/uploads/rakuten_travel/company_staff_icon.png", class: "image01")
+          %p.side-profile-title 担当者さまから一言
+          %p.side-profile-text 「この場所に行きたい！旅行したい！」と、読んだ人の心を動かせるような、読者の立場に立ったコンテンツを一緒に作りましょう！
+        .side-job-detail-01
+          .side-job-category
+            = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-category.svg", alt: "カテゴリ", class: "image02")
+            %p.image02-text 記事執筆
+          .side-job-company
+            = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg", alt: "会社名", class: "image03")
+            %P.image03-text 楽天株式会社
+          .side-job-return-01
+            = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg", alt:"金額", class: "image04")
+            %p.price-area
+              ￥
+              - if @work.under.present?
+                %span.price
+                  = @work.under
+                〜 ￥
+              - if @work.upper.present?
+                %span.price
+                  = @work.upper
+              = @work.condition
+          .side-tag-list-02
+            = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tag-01.svg", alt: "タグ", class: "image04")
+            %ul
+              %li
+                %a
+                  %i.fa.fa-tag
+                  取材あり
+              %li
+                %a
+                  %i.fa.fa-tag
+                  写真
+              %li
+                %a
+                  %i.fa.fa-tag
+                  記事執筆
+              %li
+                %a
+                  %i.fa.fa-tag
+                  ライター
+              %li
+                %a
+                  %i.fa.fa-tag
+                  カメラマン
+              %li
+                %a
+                  %i.fa.fa-tag
+                  徳島県
+              %li
+                %a
+                  %i.fa.fa-tag
+                  香川県
+              %li
+                %a
+                  %i.fa.fa-tag
+                  岡山県
+              %li
+                %a
+                  %i.fa.fa-tag
+                  愛媛県
+              %li
+                %a
+                  %i.fa.fa-tag
+                  広島県
+              %li
+                %a
+                  %i.fa.fa-tag
+                  島根県
+              %li
+                %a
+                  %i.fa.fa-tag
+                  山口県
+          .side-job-detail-inner-02.like
+            %p
+              %button#work-like-button.btn.w-100.work_like
+                .star
+                  %i.fa.fa-star
+                お気に入りに追加
+          .side-job-detail-inner-02
+            %p
+              = link_to "応募画面へ進む", "#", class: "btn"
+            %p.side-job-detail-text 現在16人が応募済みです
+.sub-contents-list
+  = render partial: "./tops/sub-contents-list"
+.sub-contents-aside
+  = render partial: "./tops/sub-contents-aside"
+.footer
+  .footer-inner
+    = render partial: "./tops/footer"
+    = render partial: "./tops/copyright"

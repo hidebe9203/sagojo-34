@@ -1,0 +1,29 @@
+.wrapper
+  .header
+    = render partial: "./tops/header"
+  .eyecatch.work.py-5
+    .inner
+      %h1 シゴト
+      %blockquote.eyecatch-lead "人は旅をしなければ、駄目になってしまう"
+      %span モーツァルト (1759 ~ 1791)
+  .main-contents.clearfix
+    .sub-content.work
+      %span シゴト数
+      %span.works_total
+        = Work.count
+      %span 件
+    #main.left
+      .inner
+        = render partial: "./tops/jobs", collection: @works_latest, as: "work", locals: {days_left: @days_left}
+      = paginate @works_latest
+    #side.right
+      = render partial: "occupation"
+      = render partial: "tag"
+  .sub-contents-list
+    = render partial: "./tops/sub-contents-list"
+  .sub-contents-aside
+    = render partial: "./tops/sub-contents-aside"
+  .footer
+    .footer-inner
+      = render partial: "./tops/footer"
+      = render partial: "./tops/copyright"

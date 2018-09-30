@@ -1,0 +1,54 @@
+.container-fluid
+  .row
+    .col-sm.navbar
+      %nav.navbar.navbar-expand-lg.navbar-light{style: "background-color: #FFFFFF;"}
+        %a.navbar-brand{href: "/"}
+          = image_tag "logo.png"
+        %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          .col-sm-8
+            %ul.navbar-nav
+              %li.nav-item
+                = link_to "ホーム", root_path, class: "nav-link"
+              %li.nav-item
+                = link_to "シゴト", works_path, class: "nav-link"
+              %li.nav-item
+                = link_to "企業の方はこちら", businesses_path, class: 'nav-link'
+              %li.nav-item
+                = link_to "FAQ", faqs_path, class: 'nav-link'
+              %li.nav-item
+
+          - if user_signed_in?
+            .col-sm-4.col-sm-offset-4
+              %ul.nav.justify-content-end.utility
+                %li.nav-item#dropdown-toggle
+                  %span.user{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = image_tag "user.png"
+                  %span.user_name{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = current_user.name
+                  .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+                    = link_to "プロフィール編集", root_path, method: :get, class: 'dropdown-item'
+                    = link_to "ログアウト", destroy_company_session_path, method: :delete, class: 'dropdown-item logout'
+
+          - elsif company_signed_in?
+            .col-sm-4.col-sm-offset-4
+              %ul.nav.justify-content-end.utility
+                %li.nav-item#dropdown-toggle
+                  %span.user{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = image_tag "user.png"
+                  %span.user_name{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown",:role => "button"}
+                    = current_company.name
+                  .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+                    = link_to "旅人応募一覧", root_path, method: :get, class: 'dropdown-item'
+                    = link_to "シゴト新規投稿", new_work_path, method: :get, class: 'dropdown-item'
+                    = link_to "ログアウト", destroy_company_session_path, method: :delete, class: 'dropdown-item logout'
+
+          - else
+            .col-sm-4.col-sm-offset-4
+              %ul.nav.justify-content-end.register
+                %li.nav-item.company
+                  = link_to "企業登録", new_company_registration_path, method: :get, class: 'btn'
+
+                %li.nav-item.user
+                  = link_to "旅人登録", new_user_registration_path, method: :get, class: 'btn'

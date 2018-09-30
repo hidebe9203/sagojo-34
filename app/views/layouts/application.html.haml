@@ -7,5 +7,10 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css", rel: "stylesheet", type: "text/css"}/
+    %link{href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css", rel: "stylesheet", type: "text/css"}/
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/marked/0.5.0/marked.min.js"}
+
   %body
     = yield
+    %script{src:  "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js", type: "text/javascript"}
