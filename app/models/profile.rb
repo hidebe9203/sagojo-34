@@ -1,5 +1,4 @@
 class Profile < ApplicationRecord
-
   belongs_to :user
   mount_uploader :person_image, ImageUploader
   mount_uploader :background_image, ImageUploader

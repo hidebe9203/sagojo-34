@@ -9,7 +9,7 @@
             %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-prof-camera.svg")
             = f.file_field :person_image, class: "js-img-uploader-trigger", id: "upload-user-img"
       %h2.profile-user-name
-        hidebe9203
+        = @profile.user.name
       .form-wrap-01
         %label.label-01(for="catch-frase")
           あなたのキャッチフレーズ

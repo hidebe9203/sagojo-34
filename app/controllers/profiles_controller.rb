@@ -1,4 +1,9 @@
 class ProfilesController < ApplicationController
+
+  def show
+    @profile = Profile.find_by(user_id: params[:id])
+  end
+
   def edit
     @profile = Profile.find_by(user_id: params[:id])
     if @profile.nil?
@@ -9,7 +14,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
-      redirect_to root_path
+      redirect_to profile_path(current_user.id)
     else
       render :edit
     end
@@ -18,7 +23,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
-      redirect_to root_path
+      redirect_to profile_path(current_user.id)
     else
       render :edit
     end
