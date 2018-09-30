@@ -1,0 +1,24 @@
+-# マークダウンテキストの入力方法をモーダルで表示
+%h3.requirement.pt-5 マークダウン形式で入力してください。
+/ 切り替えボタンの設定
+%button.btn.btn-primary{"data-target" => "#exampleModalCenter", "data-toggle" => "modal", :type => "button"}
+  入力方法を表示
+/ モーダルの設定
+#exampleModalCenter.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalCenterTitle", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-centered{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#exampleModalCenterTitle.modal-title マークダウンテキストの入力方法
+        %button.close{"aria-label" => "閉じる", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        %p.heading ●見出し
+        %p "#"の後ろに半角スペースを入れてから文字を入力してください。 例：# 見出し
+        %p.heading ●小見出し
+        %p "##"の後ろに半角スペースを入れてから文字を入力してください。 例：## 小見出し
+        %p.heading ●画像埋め込み
+        %p "![画像が表示されなかったときの代替テキスト](画像リンク)"　例：![test](https://xxxxxxx.jpg)
+        %p.heading ●リスト
+        %p 文頭に「*」「+」「-」のいずれかを入れるとリストになります。リストを挿入する際は、 リストの上下に空行がないと正しく表示されません。また「*」「+」「-」の後にはスペースが必要です。
+      .modal-footer
+        %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} 閉じる

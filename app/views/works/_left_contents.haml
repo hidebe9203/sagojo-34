@@ -1,0 +1,119 @@
+.inner
+  .article
+    .sigoto_status
+      - if @days_left >= 0
+        %p.on 募集中
+      - else
+        %p.off 募集終了
+    .utility-top
+      %span 募集終了まで
+      %span.days_left
+        = @days_left
+      %span 日
+    %h1.main_title
+      = markdown(work.title)
+    %ul.utility-sns
+      %li.twitter
+        = link_to "Tweet","https://twitter.com/share?ref_src=twsrc%5Etfw",class: "twitter-share-button","data-show-count" => "false"
+        %script{async: "", charset: "utf-8", src: "https://platform.twitter.com/widgets.js"}
+      %li.facebook
+        =image_tag "Like-Button_JP_RGB.png"
+      %li.hatena
+        = link_to "B!ブックマーク","http://b.hatena.ne.jp/entry/", class: "hatena-bookmark-button","data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter",title: "このエントリーをはてなブックマークに追加"
+        %script{async: "async", charset: "utf-8", src: "https://b.st-hatena.com/js/bookmark_button.js", type: "text/javascript"}
+      %li.google
+        %script{async: "", defer: "defer", src: "https://apis.google.com/js/platform.js"}
+        %plusone
+        .g-plusone{"..." => "", "data-size" => "tall"}
+    .main-image
+      = image_tag work.image.to_s
+    .work_detail
+      = markdown(work.content)
+    .utility-bottom
+      %ul.utility-sns.bottom
+        %li.google
+          %script{async: "", defer: "defer", src: "https://apis.google.com/js/platform.js"}
+          %plusone
+          .g-plusone{"..." => "", "data-size" => "tall"}
+        %li.hatena
+          = link_to "B!ブックマーク","http://b.hatena.ne.jp/entry/", class: "hatena-bookmark-button","data-hatena-bookmark-lang" => "ja", "data-hatena-bookmark-layout" => "basic-label-counter",title: "このエントリーをはてなブックマークに追加"
+          %script{async: "async", charset: "utf-8", src: "https://b.st-hatena.com/js/bookmark_button.js", type: "text/javascript"}
+        %li.facebook
+          =image_tag "Like-Button_JP_RGB.png"
+        %li.twitter
+          = link_to "Tweet","https://twitter.com/share?ref_src=twsrc%5Etfw",class: "twitter-share-button","data-show-count" => "false"
+          %script{async: "", charset: "utf-8", src: "https://platform.twitter.com/widgets.js"}
+    .shigoto-icon-box
+      =image_tag 'shigoto_icon.png', class: 'shigoto_icon'
+    .table-responsive
+      %table.show_requirement.border
+        %tr.border-bottom
+          %th{colspan: '5'} 募集概要
+        %tr.border-bottom
+          %th.border-right シゴト内容
+          %td{colspan: '4'}
+            = @work.detail
+        %tr.border-bottom
+          %th.border-right リターン(報酬)
+          %td
+            = '¥' + @work.under + '円'
+          - if @work.upper.present?
+            %td
+              = '~'
+            %td
+              = '¥' + @work.upper + '円'
+          %td
+            = @work.condition
+        %tr.border-bottom
+          %th.border-right 応募資格
+          %td{colspan: '4'}
+            = @work.requierment
+        %tr.border-bottom
+          %th.border-right 募集人数
+          %td{colspan: '4'}
+            = @work.member
+        %tr.border-bottom
+          %th.border-right 旅の期間
+          %td{colspan: '4'}
+            = @work.duration
+        %tr.border-bottom
+          %th.border-right 企業名
+          %td{colspan: '4'}
+            Table Data
+    .flow_chart
+      %h2 応募の流れ
+      %ol.list-group.flow{style: "max-width: 400px;"}
+        %li.border-bottom
+          %span 1
+          %dl
+            %dt 応募締め切り
+            %dd
+              = @work.limit.strftime("%Y年 %m月 %d日")
+        %li.border-bottom
+          %span 2
+          %dl
+            %dt 選出された方へ連絡
+            %dd 応募の中から選出された方には、締切日から2週間以内にご連絡いたします。
+        %li.border-bottom
+          %span 3
+          %dl
+            %dt 面接へ進む
+            %dd SAGOJO・企業と面接させていただきます。
+        %li.border-bottom
+          %span 4
+          %dl
+            %dt 旅がシゴトに！
+            %dd 際に旅をして、シゴトを実行していただきます。
+    .application-btn
+      .left-like
+        %button#work-like-button.btn.w-100.work_like
+          .star
+            %i.fa.fa-star
+          %span お気に入りに追加
+      .right-apply
+        = link_to "応募画面へ進む","#",class:"btn"
+  .sub-recomend
+    #main.left
+      %h2.top-hdg-02
+        注目のシゴト
+        = render partial: "./tops/jobs", collection: @works, as: "work", locals: {days_left: @days_left}
