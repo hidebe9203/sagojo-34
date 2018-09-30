@@ -1,40 +1,40 @@
 .slick-track
   %ul.slick
-    - @slides.each do |slide|
+    - @slides.each do |work|
       %li.slick-image
         .image-container.mx-5
-          =image_tag slide.image.to_s, class: 'img-fluid'
+          =image_tag work.image.to_s, class: 'img-fluid'
         .limit-time
           =fa_icon 'comment'
           .box
             %span.until あと
             %span.number
-              = @days_left
+              = Work.days_left(work)
             %span.days 日
         .catchcopy
           .company
             %p
-              = slide.company.company_name
+              = work.company.company_name
           .copy
             %h3
-              = slide.title
+              = work.title
           .return
             %span.fa-stack.fa-lg
               =fa_icon 'circle-thin stack-1x'
               =fa_icon 'jpy stack-1x'
-            - if slide.under.present?
+            - if work.under.present?
               %span.detail ¥
               %span.price.under
-                = slide.under
-            - if slide.under.present? && slide.upper.present?
+                = work.under
+            - if work.under.present? && work.upper.present?
               %span.detail ~
-            - if slide.upper.present?
+            - if work.upper.present?
               %span.detail ¥
               %span.price.upper
-                = slide.upper
-            - if slide.detail.present?
+                = work.upper
+            - if work.detail.present?
               %span.detail
-                = slide.condition
+                = work.condition
           %ul.tag-list
             %li.tag
               %i.fa.fa-tag
@@ -46,4 +46,4 @@
               %i.fa.fa-tag
               ライター
           .job-link
-            = link_to "シゴト詳細へ", "/works/#{slide.id}"
+            = link_to "シゴト詳細へ", "/works/#{work.id}"

@@ -2,7 +2,7 @@
   = link_to work do
     .image
       = image_tag work.image.to_s
-      - if days_left >= 0
+      - if Work.days_left(work) >= 0
         .thum-job-status.on
           募集中
       - else
@@ -21,7 +21,7 @@
         募集終了まで
         %span
           %span.date
-            = @days_left
+            = Work.days_left(work)
           %span
             日
         %span.view
