@@ -1,12 +1,14 @@
 $(document).ready(function(){
   $('.slick').slick({
   centerMode: true,
-  centerPadding: '165px',
+  centerPadding: '10%',
   slidesToShow: 1,
   slidesToScroll: 1,
   accessibility: true,
+  arrows: true,
   autoplay: true,
   autoplaySpeed: 2000,
-  dots: true,
-});
+  prevArrow: '<button type="button" class="slick-prev" ></button>',
+  nextArrow: '<button type="button" class="slick-next"></button>',
+  });
 });

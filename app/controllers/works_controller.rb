@@ -1,12 +1,8 @@
 class WorksController < ApplicationController
+
   def index
     # index画面で表示するシゴトを投稿日が新しい順に10件表示
     @works_latest = Work.order("created_at DESC").page(params[:page])
-
-    # 募集締め切りまでの日数を計算
-    @works_latest.each do |work_latest|
-      @days_left = Work.days_left(work_latest)
-    end
 
   end
 
@@ -17,9 +13,9 @@ class WorksController < ApplicationController
   def create
     @work = Work.create(work_params)
     if @work.save
-      render :index
+      redirect_to works_path
     else
-      render :new
+      redirect_to new_work_path
     end
 
   end
