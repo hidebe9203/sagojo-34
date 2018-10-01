@@ -21,10 +21,11 @@
               .collapse{id: "work_#{work.id}"}
                 %ul.list-group.list-group-flush.users
                   %li.list-group-item
-                    -# - work.users.each do |user|
-                      = user.name
-                  %li.list-group-item リスト2
-                  %li.list-group-item リスト3
+                    = link_to "ユーザーネーム", "#"
+                  %li.list-group-item
+                    = link_to "ユーザーネーム", "#"
+                  %li.list-group-item
+                    = link_to "ユーザーネーム", "#"
             .card-footer
               %span 応募締め切り
               %span
