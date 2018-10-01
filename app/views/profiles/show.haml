@@ -1,0 +1,86 @@
+= render partial: "./tops/header"
+#wrap.profile-top
+  .bg-prof-01(style="background-image: url(#{@profile.background_image})")
+  .main-content
+    #main.left
+      .profile-area-01
+        = form_for @profile, html: {class: "application-form-01"} do |f|
+          = f.file_field :background_image
+          .image-user
+            .image.js-img-uploader(style="background-image: url(#{@profile.person_image})")
+          %h2.profile-user-name
+            = @profile.user.name
+          .form-wrap-01
+            %label.label-01(for="catch-frase")
+              あなたのキャッチフレーズ
+            = @profile.catchphrase
+          .form-wrap-01
+            %label.label-01(for="#")
+              生年月日
+            #{@profile.birth_year}年
+            #{@profile.birth_month}月
+            #{@profile.birth_day}日
+          .form-wrap-01
+            %p
+              %label.label-01(for="#")
+                性別
+            - if @profile.gender == 0
+              男性
+            - if @profile.gender == 1
+              女性
+            - if @profile.gender == 2
+              その他
+          .form-wrap-01
+            %label.label-01(for="phone-number")
+              電話番号（半角）
+            = @profile.phone_number
+          .form-wrap-01
+            %label.label-01(for="address-04")
+              現在地（現在旅行中の方のみご記入ください）
+            = @profile.current_place
+          .form-wrap-01
+            %label.label-01(for="language")
+              語学力
+            = @profile.language_skill
+          .form-wrap-01
+            %label.label-01(for="career")
+              就業経験・学歴など
+            = @profile.career
+          .form-wrap-01
+            %label.label-01(for="travel-career")
+              旅の経験
+            = @profile.travel_history
+          .form-wrap-01
+            %label.label-01(for="performance")
+              過去のご実績・ご活動
+            = @profile.performance
+          .form-wrap-01
+            %label.label-01(for="income")
+              旅行時に臨む収入
+            = @profile.expected_income
+          .form-wrap-01
+            %label.label-01(for="preparation")
+              準備期間
+            = @profile.preparatory_period
+          .form-wrap-01
+            %label.label-01(for="job-plan")
+              どんな旅がしたいか
+            = @profile.desired_travel_detail
+          .form-wrap-01
+            %label.label-01(for="self-introduction")
+              自己紹介文
+            = @profile.self_introduction
+    #side.right
+      .side-profile-01
+        .image.writer
+          .image.user-image{:style => "background-image: url('https://d1te0bovbq6epg.cloudfront.net/images/775138cb6335dccb1a82cf12084f2d215f31b050.jpeg');"}
+        %p.side-profile-text.g-mt25 プロフィールを充実させると、シゴトの審査率がアップしたり、すごい旅人としてSAGOJOからスカウトを受け取る確率がアップします。
+        - if current_user.id == @profile.user_id
+          .side-btn-area-01
+            = link_to "プロフィール編集", edit_profile_path(current_user.id), method: :get, id: "prof-update-trigger", class: "btn blue"
+  .sub-contents-aside
+    = render partial: "./tops/sub-contents-aside"
+  .footer
+    .footer-inner
+      = render partial: "./tops/footer"
+      = render partial: "./tops/copyright"
