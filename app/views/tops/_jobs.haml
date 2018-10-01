@@ -19,11 +19,18 @@
         = work.content
       %p.thum-job-utility
         募集終了まで
-        %span
-          %span.date
-            = Work.days_left(work)
-          %span
-            日
+        - if Work.days_left(work) < 0
+          %span.end
+            %span.date
+              0
+            %span
+              日
+        - else
+          %span.go_on
+            %span.date
+              = Work.days_left(work)
+            %span
+              日
         %span.view
           185
           %span
