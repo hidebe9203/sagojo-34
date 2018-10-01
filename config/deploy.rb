@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "~> 3.10.2"
 
 set :application, "sagojo-34"
 set :repo_url, "git@github.com:hidebe9203/sagojo-34.git"
