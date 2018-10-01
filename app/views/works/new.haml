@@ -13,7 +13,7 @@
                 %td
                   = f.label :detail, 'シゴト内容'
                 %td
-                  = f.text_area :detail
+                  = f.text_area :detail, required: true
               %tr
                 %td.label
                   報酬
@@ -33,31 +33,31 @@
                 %td
                   = f.label :requierment, '応募資格'
                 %td
-                  = f.text_area :requierment
+                  = f.text_area :requierment, required: true
               %tr
                 %td
                   = f.label :member, '募集人数'
                 %td
-                  = f.text_field :member, placeholder: '例  1 ~ 20人'
+                  = f.text_field :member, placeholder: '例  1 ~ 20人', required: true
               %tr
                 %td
                   = f.label :duration, '期間'
                 %td
-                  = f.text_field :duration, placeholder: '例  2018年9月〜12月'
+                  = f.text_field :duration, required: true, placeholder: '例  2018年9月〜12月'
               %tr
                 %td
                   = f.label :limit, '募集締め切り日'
                 %td
-                  = f.text_field :limit, placeholder: '例  2018/11/30'
+                  = f.text_field :limit, required: true, placeholder: '例  2018/11/30'
           .requirement_article.my-5.py-5.px-3
             %h2.requirement.pt-5 アピール記事の投稿
             .how-to-edit.w-50
               = render partial: "how-to-edit"
             .edit-area.w-50.h-auto
-              = f.text_area :title, size: '80x5',placeholder: 'タイトル'
+              = f.text_area :title, size: '62x5',placeholder: 'タイトル', required: true
               .image
-                =f.file_field :image, class: 'file'
-              = f.text_area :content, size: '80x25', placeholder: '本文'
+                =f.file_field :image, class: 'file', required: true
+              = f.text_area :content, size: '62x25', placeholder: '本文', required: true
             .preview-area.w-50.h-auto.border
               .draw-title
                 ここにタイトルが表示されます
