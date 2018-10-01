@@ -46,7 +46,9 @@ Things you may want to cover:
 |background_image     |text      |                 |
 |person_image         |text      |                 |
 |catchphrase          |text      |                 |
-|birth                |date      |                 |
+|birth_year           |integer   |                 |
+|birth_month          |integer   |                 |
+|birth_day            |integer   |                 |
 |gender               |integer   |null: false      |
 |phone_number         |integer   |unique: true     |
 |current_place        |string    |                 |
@@ -201,6 +203,7 @@ Things you may want to cover:
 - belongs_to :company
 - has_many :work_spots, dependent: :destroy
 - has_many :spots, through: :work_spots, dependent: :destroy
+- has_many :workstatuses, dependent: :destroy
 
 
 
