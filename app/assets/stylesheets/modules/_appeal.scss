@@ -197,7 +197,8 @@ ul.tag-list{
     line-height: 3em;
     margin-bottom: 2vh;
     text-align: center;
-    @include square-round_btn($btn-yellow, 15vw, 10vh, 30px);
+    height: 8vh;
+    @include square-round_btn($btn-yellow, 15vw, 8vh, 30px);
   }
   a:hover{
     filter: brightness(110%);
