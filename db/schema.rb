@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_055037) do
+ActiveRecord::Schema.define(version: 2018_09_25_084924) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_name"
@@ -30,6 +30,28 @@ ActiveRecord::Schema.define(version: 2018_09_22_055037) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_companies_on_email", unique: true
     t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
+  end
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "background_image"
+    t.text "person_image"
+    t.text "catchphrase"
+    t.date "birth"
+    t.integer "gender", null: false
+    t.integer "phone_number"
+    t.string "current_place"
+    t.text "language_skill"
+    t.text "career"
+    t.text "travel_history"
+    t.text "performance"
+    t.text "expected_income"
+    t.text "preparatory_period"
+    t.text "desired_travel_detail"
+    t.text "self_introduction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,6 +101,7 @@ ActiveRecord::Schema.define(version: 2018_09_22_055037) do
     t.index ["company_id"], name: "index_works_on_company_id"
   end
 
+  add_foreign_key "profiles", "users"
   add_foreign_key "work_spots", "spots"
   add_foreign_key "work_spots", "works"
   add_foreign_key "works", "companies"
