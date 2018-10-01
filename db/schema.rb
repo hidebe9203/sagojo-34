@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2018_09_25_084924) do
+=======
 ActiveRecord::Schema.define(version: 2018_09_29_100511) do
+>>>>>>> master
+=======
+ActiveRecord::Schema.define(version: 2018_09_29_100511) do
+>>>>>>> master
+=======
+ActiveRecord::Schema.define(version: 2018_09_29_100511) do
+>>>>>>> master
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_name"
@@ -37,9 +47,25 @@ ActiveRecord::Schema.define(version: 2018_09_29_100511) do
     t.text "background_image"
     t.text "person_image"
     t.text "catchphrase"
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    t.date "birth"
+=======
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_day"
+>>>>>>> master
+=======
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
+>>>>>>> master
+=======
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
+>>>>>>> master
     t.integer "gender", null: false
     t.integer "phone_number"
     t.string "current_place"
@@ -103,6 +129,14 @@ ActiveRecord::Schema.define(version: 2018_09_29_100511) do
     t.index ["company_id"], name: "index_works_on_company_id"
   end
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
+=======
+>>>>>>> master
   create_table "workstatuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "work_id"
@@ -113,6 +147,13 @@ ActiveRecord::Schema.define(version: 2018_09_29_100511) do
     t.index ["work_id"], name: "index_workstatuses_on_work_id"
   end
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
+>>>>>>> master
+=======
+>>>>>>> master
   add_foreign_key "profiles", "users"
   add_foreign_key "work_spots", "spots"
   add_foreign_key "work_spots", "works"

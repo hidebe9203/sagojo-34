@@ -7,47 +7,20 @@
         主な機能
         %ul
           %li
-            %a(href="#")
-              ホーム
+            = link_to "ホーム", root_path
           %li
-            %a(href="#")
-              シゴト
+            = link_to "シゴト", works_path
           %li
-            %a(href="#")
-              すごい旅研究所
+            = link_to "ログイン", new_user_session_path
           %li
-            %a(href="#")
-              ログイン
-          %li
-            %a(href="#")
-              旅人登録
+            = link_to "旅人登録", new_user_registration_path
       %li.about-sagojo-list
         SAGOJOについて
         %ul
           %li
-            %a(href="#")
-              はじめての方はこちら
+            = link_to "FAQ", faqs_path
           %li
-            %a(href="#")
-              FAQ
-          %li
-            %a(href="#")
-              企業の方はこちら
-          %li
-            %a(href="#")
-              仲間になる
-          %li
-            %a(href="#")
-              運営会社について
-          %li
-            %a(href="#")
-              利用規約
-          %li
-            %a(href="#")
-              プライバシーポリシー
-          %li
-            %a(href="#")
-              お問い合わせ
+            = link_to "企業の方はこちら"
   .footer-col.footer-form-opinion-01
     %p SAGOJOについてご意見をお聞かせください
     %form(action="#")
