@@ -3,13 +3,13 @@
     .sigoto_status
       - if @days_left >= 0
         %p.on 募集中
+        .utility-top
+        %span 募集終了まで
+        %span.days_left
+          = @days_left
+        %span 日
       - else
         %p.off 募集終了
-    .utility-top
-      %span 募集終了まで
-      %span.days_left
-        = @days_left
-      %span 日
     %h1.main_title
       = markdown(work.title)
     %ul.utility-sns
@@ -104,15 +104,16 @@
           %dl
             %dt 旅がシゴトに！
             %dd 際に旅をして、シゴトを実行していただきます。
-    .application-btn
-      .left-like
-        %button#work-like-button.btn.w-100.work_like
-          .star
-            %i.fa.fa-star
-          %span お気に入りに追加
-      .right-apply
-        %a.btn{href: ""}
-          %span.apply 応募画面へ進む
+    - if @days_left >= 0
+      .application-btn
+        .left-like
+          %button#work-like-button.btn.w-100.work_like
+            .star
+              %i.fa.fa-star
+            %span お気に入りに追加
+        .right-apply
+          %a.btn{href: ""}
+            %span.apply 応募画面へ進む
   .sub-recomend
     #main.left
       %h2.top-hdg-02
