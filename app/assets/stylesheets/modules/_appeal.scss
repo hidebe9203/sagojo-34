@@ -128,8 +128,10 @@ ul.slide-dots{
   position: absolute;
   top: 10%;
   left: 0px;
+  right: 0px;
+  bottom: 0px;
   z-index: 4;
-  margin: 24px 34px 0 24px;
+  margin: 0 auto;
   width: auto;
   text-align: center;
   color: $white;
