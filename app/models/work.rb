@@ -5,6 +5,7 @@ class Work < ApplicationRecord
   belongs_to :company
   has_many :work_spots, dependent: :destroy
   has_many :spots, through: :work_spots, dependent: :destroy
+  has_many :workstatuses, dependent: :destroy
 
   validates :title, :content, :image, :detail, :duration, :requierment, :member, :limit, presence: true
   mount_uploader :image, ImageUploader

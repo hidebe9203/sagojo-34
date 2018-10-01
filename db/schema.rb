@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_25_084924) do
+ActiveRecord::Schema.define(version: 2018_09_29_100511) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_name"
@@ -37,7 +37,9 @@ ActiveRecord::Schema.define(version: 2018_09_25_084924) do
     t.text "background_image"
     t.text "person_image"
     t.text "catchphrase"
-    t.date "birth"
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
     t.integer "gender", null: false
     t.integer "phone_number"
     t.string "current_place"
@@ -101,8 +103,20 @@ ActiveRecord::Schema.define(version: 2018_09_25_084924) do
     t.index ["company_id"], name: "index_works_on_company_id"
   end
 
+  create_table "workstatuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "work_id"
+    t.integer "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_workstatuses_on_user_id"
+    t.index ["work_id"], name: "index_workstatuses_on_work_id"
+  end
+
   add_foreign_key "profiles", "users"
   add_foreign_key "work_spots", "spots"
   add_foreign_key "work_spots", "works"
   add_foreign_key "works", "companies"
+  add_foreign_key "workstatuses", "users"
+  add_foreign_key "workstatuses", "works"
 end
