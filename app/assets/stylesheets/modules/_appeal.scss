@@ -128,8 +128,10 @@ ul.slide-dots{
   position: absolute;
   top: 10%;
   left: 0px;
+  right: 0px;
+  bottom: 0px;
   z-index: 4;
-  margin: 24px 34px 0 24px;
+  margin: 0 auto;
   width: auto;
   text-align: center;
   color: $white;
@@ -195,7 +197,8 @@ ul.tag-list{
     line-height: 3em;
     margin-bottom: 2vh;
     text-align: center;
-    @include square-round_btn($btn-yellow, 15vw, 10vh, 30px);
+    height: 8vh;
+    @include square-round_btn($btn-yellow, 15vw, 8vh, 30px);
   }
   a:hover{
     filter: brightness(110%);

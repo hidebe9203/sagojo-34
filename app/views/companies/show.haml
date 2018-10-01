@@ -1,0 +1,41 @@
+.header
+  = render partial: "./tops/header"
+.main-contents
+  .jumbotron.jumbotron-fluid.check-users.px-5
+    .container
+      %h1.display-4
+        = @company.company_name
+      %p.lead このページでは投稿したシゴトに応募した旅人を確認することができます。
+  .container-fluid.check-users
+    .row
+      .col-md
+        - @works.each do |work|
+          .card.check.mb-5
+            .card-header
+              = link_to work.title, work_path
+              %span.mx-5 応募している旅人 20 人
+            .card-body
+              %p
+                %button.btn.btn-primary{"aria-controls": "work_#{work.id}", "aria-expanded": "false", "data-target": "#work_#{work.id}", "data-toggle": "collapse", type: "button"}
+                  %span 詳細を見る
+              .collapse{id: "work_#{work.id}"}
+                %ul.list-group.list-group-flush.users
+                  %li.list-group-item
+                    = link_to "ユーザーネーム", "#"
+                  %li.list-group-item
+                    = link_to "ユーザーネーム", "#"
+                  %li.list-group-item
+                    = link_to "ユーザーネーム", "#"
+            .card-footer
+              %span 応募締め切り
+              %span
+                = work.limit
+  = paginate @works
+.sub-contents-list
+  = render partial: "./tops/sub-contents-list"
+.sub-contents-aside
+  = render partial: "./tops/sub-contents-aside"
+.footer
+  .footer-inner
+    = render partial: "./tops/footer"
+    = render partial: "./tops/copyright"
