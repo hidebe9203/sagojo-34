@@ -72,20 +72,21 @@
     position: relative;
     padding-left: 35px;
   }
-  label:after {
-    position: absolute;
-    top: 5px;
-    left: 6px;
-    display: block;
-    width: 13px;
-    height: 13px;
-    content: '';
-    transition: opacity 0.3s;
-    opacity: 0;
-    border-radius: 50%;
-    background-color: #ffcb00;
-  }
 }
+.radio-01 input:checked + label:after {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  display: block;
+  width: 13px;
+  height: 13px;
+  content: '';
+  transition: opacity 0.3s;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: #ffcb00;
+}
+
 .radio-01:before {
   position: absolute;
   top: 0;

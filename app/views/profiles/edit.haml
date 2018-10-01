@@ -1,26 +1,27 @@
 = render partial: "./tops/header"
-#wrap
-  .bg-prof-01
+#wrap.profile-top
+  .bg-prof-01(style="background-image: url(#{@profile.background_image})")
     %p.prof-image-bg-add
-      %a#upload-user-bg-trigger(href="#")
+      %label#upload-user-bg-trigger
         背景画像を設定する
+        -# = file_field :background_image, :file
   .main-content
-    = render partial: './users/profile'
+    = render partial: './profiles/profile'
     #side.right
       .side-profile-01
         .image.writer
           .image.user-image{:style => "background-image: url('https://d1te0bovbq6epg.cloudfront.net/images/775138cb6335dccb1a82cf12084f2d215f31b050.jpeg');"}
-        %p.side-profile-title プロフィール完成度
-        .side-profile-percentage.animated
-          %p.number-wrap
-            %span.num.js-bar-percentage> 40
-            \%
-          %figure.bar-bg
-            %figure.bar{:style => "width: 40%;"}
+        -# %p.side-profile-title プロフィール完成度
+        -# .side-profile-percentage.animated
+        -#   %p.number-wrap
+        -#     %span.num.js-bar-percentage> 40
+        -#     \%
+        -#   %figure.bar-bg
+        -#     %figure.bar{:style => "width: 40%;"}
         %p.side-profile-text.g-mt25 プロフィールを充実させると、シゴトの審査率がアップしたり、すごい旅人としてSAGOJOからスカウトを受け取る確率がアップします。
-        .side-btn-area-01
-          %a#prof-update-trigger.btn.blue(href="#")
-            プロフィールを更新する
+        -# .side-btn-area-01
+        -#   %a#prof-update-trigger.btn.blue(href="#")
+        -#     プロフィールを更新する
   .sub-contents-aside
     = render partial: "./tops/sub-contents-aside"
   .footer
