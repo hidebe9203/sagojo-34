@@ -16,7 +16,7 @@
               %span.mx-5 応募している旅人 20 人
             .card-body
               %p
-                %button.btn.btn-primary{"aria-controls" => "work_#{work.id}", "aria-expanded" => "false", "data-target" => "#work_#{work.id}", "data-toggle" => "collapse", type: "button"}
+                %button.btn.btn-primary{"aria-controls": "work_#{work.id}", "aria-expanded": "false", "data-target": "#work_#{work.id}", "data-toggle": "collapse", type: "button"}
                   %span 詳細を見る
               .collapse{id: "work_#{work.id}"}
                 %ul.list-group.list-group-flush.users
@@ -29,7 +29,7 @@
             .card-footer
               %span 応募締め切り
               %span
-                = work.limit.strftime("%Y年 %m月 %d日")
+                = work.limit
   = paginate @works
 .sub-contents-list
   = render partial: "./tops/sub-contents-list"
