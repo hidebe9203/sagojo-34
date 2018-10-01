@@ -8,7 +8,7 @@
     float: left;
     .inner {
       .top-hdg-02 {
-        font-size: 1rem;
+        font-size: 16px;
         font-weight: normal;
         margin-bottom: 20px;
         letter-spacing: 2px;
@@ -188,11 +188,12 @@
         margin-bottom: 30px;
       }
     }
-    .top-hdg-02 {
-      font-size: 1rem;
+    .top-hdg-03 {
+      font-size: 17px;
       font-weight: normal;
       margin-bottom: 10px;
       letter-spacing: 2px;
+      margin-top: 30px;
     }
     .thum-column-01 {
       margin-top: 10px;
@@ -223,6 +224,7 @@
             font-size: 0.8rem;
             font-weight: bold;
             color: #000;
+            font-size: 13px;
           }
           .thum-column-utility {
             font-size: 0.6rem;
@@ -248,7 +250,7 @@
       border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
       .message-01 {
-        font-size: 1rem;
+        font-size: 16px;
         letter-spacing: 2px;
         img {
           position: relative;
@@ -260,7 +262,7 @@
       .side-sns-list {
         margin-top: 25px;
         .facebook-01 {
-          font-size: 0.9rem;
+          font-size: 15px;
           line-height: 35px;
           display: block;
           box-sizing: border-box;
@@ -285,7 +287,7 @@
           }
         }
         .twitter-01 {
-          font-size: 0.9rem;
+          font-size: 15px;
           line-height: 35px;
           display: block;
           box-sizing: border-box;
@@ -311,7 +313,7 @@
         }
       }
       .message-02 {
-        font-size: 0.7rem;
+        font-size: 13px;
         margin-top: 15px;
         text-align: center;
         color: #aeaeae;
@@ -378,7 +380,7 @@
 }
 
 .btn.type-06 {
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: bold;
   display: block;
   margin: 20px 0 0 0;

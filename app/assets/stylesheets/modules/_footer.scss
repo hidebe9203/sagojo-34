@@ -11,7 +11,7 @@
     margin: 0 auto;
     .footer-lead-01 {
       font-family: "Arial Rounded MT", "Arial Rounded MT Bold";
-      font-size: 1.8rem;
+      font-size: 24px;
       line-height: 1.25;
       margin-bottom: 75px;
       padding-left: 2px;
@@ -26,7 +26,7 @@
         float: left;
         width: 50%;
         .footer-list-col-01 {
-          font-size: 0.9rem;
+          font-size: 14px;
           line-height: 2;
           margin-bottom: 0;
           display: flex;
@@ -61,6 +61,7 @@
         width: 50%;
         p {
           font-weight: bold;
+          font-size: 14px;
         }
         .footermail {
           width: 100%;
@@ -80,7 +81,7 @@
           border-radius: 4px;
         }
         .submit-opinion {
-          font-size: 1rem;
+          font-size: 14px;
           font-weight: bold;
           line-height: 1;
           width: 100%;
@@ -103,7 +104,7 @@
     }
     .copyright {
       font-family: "Arial Rounded MT", "Arial Rounded MT Bold";
-      font-size: 1rem;
+      font-size: 14px;
       padding-left: 3px;
       text-align: center;
       letter-spacing: 3px;

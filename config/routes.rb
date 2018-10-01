@@ -18,4 +18,6 @@ devise_for :users, controllers: {
   resources :businesses, only: [:index]
   resources :faqs
   resources :profiles, only: [:show, :edit, :create, :update]
+  resources :users, only: [:edit, :update]
+  resources :companies, only: [:show]
 end

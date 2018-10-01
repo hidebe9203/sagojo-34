@@ -1,5 +1,5 @@
 #wrap
-  .main-content
+  .main-content01
     #main
       .inner
         .content-only-main-01
@@ -17,13 +17,13 @@
               = f.submit "ログイン", class: "btn w-100 g-mb0 after_gps"
         .content-only-sub-01
           .wrap-col_col2
-            .left
-              %p
-                パスワードを忘れた方は
-                %a{:href => "/user/password_reset/new"}> こちら
-                から
+            / .left
+            /   %p
+            /     パスワードを忘れた方は
+            /     %a{:href => "/user/password_reset/new"}> こちら
+            /     から
             .right
               %p
                 登録しましたか？
-                %a{:href => "/signup"} 企業登録
+                = link_to "企業登録", new_company_registration_path, method: :get
           %p.copyright02{lang: "en"}© SAGOJO.

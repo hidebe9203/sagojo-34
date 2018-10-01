@@ -2,11 +2,9 @@
   .inner
     %h2.top-hdg-02
       新着のシゴト
-    -# - (1..4).each do |n|
-    -#   = render partial: "./tops/jobs"
+    = render partial: "jobs", collection: @works, as: "work", locals: {days_left: @days_left}
     %p
-      %a.btn.type-06(href="#")
-        もっと見る
+      = link_to "もっと見る", works_path, class: "btn type-06"
 #side.right
   %a.topbanner(href="#")
     %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/top_baner03.jpg")
@@ -14,13 +12,10 @@
     = "新着 すごい旅研究所の記事"
   - (1..3).each do |n|
     = render partial: "./tops/columns"
-  %h3.top-hdg-02
+  %h3.top-hdg-03
     = "注目 すごい旅研究所の記事"
   - (1..3).each do |n|
     = render partial: "./tops/columns"
-  %p
-    %a.btn.type-06(href="#")
-      もっと見る
   .side-sns-01
     %p.message-01
       %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/logo.svg" alt="SAGOJO")

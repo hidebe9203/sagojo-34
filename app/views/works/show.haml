@@ -24,7 +24,8 @@
             %p.image02-text 記事執筆
           .side-job-company
             = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-company.svg", alt: "会社名", class: "image03")
-            %P.image03-text 楽天株式会社
+            %P.image03-text
+              = @work.company.company_name
           .side-job-return-01
             = image_tag("https://d1te0bovbq6epg.cloudfront.net/common/img/icon-money.svg", alt:"金額", class: "image04")
             %p.price-area

@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 2018_09_29_100511) do
     t.text "background_image"
     t.text "person_image"
     t.text "catchphrase"
-    t.string "birth_year"
-    t.string "birth_month"
-    t.string "birth_day"
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
     t.integer "gender", null: false
     t.integer "phone_number"
     t.string "current_place"

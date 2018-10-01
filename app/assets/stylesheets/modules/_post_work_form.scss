@@ -4,7 +4,7 @@ $form-background-color: #ffffe0;
 // シゴト投稿画面の応募概要の部分です
 .container.work-post{
   .box{
-    width: 100vw;
+    // width: 100vw;
     padding: 0 20px;
     h1.display-4{
       text-align: center;
@@ -21,17 +21,23 @@ $form-background-color: #ffffe0;
     .information_table{
       width: auto;
       font-size: 15px;
-      padding: 30px 340px 0 340px;
+      padding: 30px 20px 30px 20px;
       background-color: $white;
       border-radius: 40px;
       table{
+          width: 100%;
         tr{
           padding: 20px 0;
           td{
             margin: 0 20px 20px 20px;
+            padding-right: 30px;
+            label{
+              float: right;
+            }
           }
           td.label{
             width: 160px;
+            text-align: right;
           }
           td.form{
             width: 460px;
