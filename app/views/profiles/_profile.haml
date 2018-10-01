@@ -8,6 +8,8 @@
           %label.icon(for="upload-user-img")
             %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/icon-prof-camera.svg")
             = f.file_field :person_image, class: "js-img-uploader-trigger", id: "upload-user-img"
+      - if request.path_info =~ %r(/works/\d+/forms/new) then
+        = hidden_field_tag :applyId, "apply"
       %h2.profile-user-name
         = @profile.user.name
       .form-wrap-01
@@ -296,4 +298,5 @@
           自己紹介文
         = f.text_area :self_introduction, class: "textarea-01", id: "self-introduction", placeholder: "その他あなたに関する情報をご記入ください。"
       .aplication-area-03.profile-form
-        = f.submit "更新する", class: "btn w-100", id: "prof-update"
+        - if request.path_info =~ %r(/profiles/\d+/edit) then
+          = f.submit "更新する", class: "btn w-100", id: "prof-update"

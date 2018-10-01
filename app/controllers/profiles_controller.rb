@@ -7,14 +7,18 @@ class ProfilesController < ApplicationController
   def edit
     @profile = Profile.find_by(user_id: params[:id])
     if @profile.nil?
-      @profile = Profile.new()
+      @profile = Profile.new(user_id: current_user.id)
     end
   end
 
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
-      redirect_to profile_path(current_user.id)
+      if params[:applyId] == "apply"
+        redirect_to root_path
+      else
+        redirect_to profile_path(current_user.id)
+      end
     else
       render :edit
     end
@@ -23,7 +27,11 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
-      redirect_to profile_path(current_user.id)
+      if params[:applyId] == "apply"
+        redirect_to root_path
+      else
+        redirect_to profile_path(current_user.id)
+      end
     else
       render :edit
     end
