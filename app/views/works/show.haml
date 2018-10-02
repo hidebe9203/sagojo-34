@@ -95,9 +95,12 @@
                 お気に入りに追加
           - if @days_left >= 0
             .side-job-detail-inner-02
-              - if user_signed_in?
-                %p
+              %p
+                - if user_signed_in?
                   = link_to "応募画面へ進む", new_work_form_path(@work), class: "btn"
+                - else
+                  = link_to new_user_registration_path, class: "btn" do
+                    %span.apply シゴトの登録にはログインが必要です
               %p.side-job-detail-text 現在16人が応募済みです
 .sub-contents-list
   = render partial: "./tops/sub-contents-list"
