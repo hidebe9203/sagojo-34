@@ -51,6 +51,7 @@ html{
             padding-left: 2px;
             letter-spacing: 2px;
             line-height: 1.5;
+            word-break: keep-all;
             .hi_bottom{
               font-size: 1.2rem;
               line-height: 1.5;
@@ -94,7 +95,7 @@ html{
 }
 
 
-#sagojo_backendbundle_user_signup_name{
+#sagojo_backendbundle_user_signup_name,#sagojo_backendbundle_user_signup_email,#sagojo_backendbundle_user_signup_password,#company_signup_name,#company_signup_staff,#company_signup_phone-number,#company_signup_email,#company_signup_password{
   width: 99.99% !important;
   font-size: 1.4rem;
   line-height: 1;
@@ -106,41 +107,12 @@ html{
   -webkit-border-radius: 100px;
   border-radius: 100px;
   box-shadow: none !important;
-}
-#sagojo_backendbundle_user_signup_email{
-  width: 99.99% !important;
-  font-size: 1.4rem;
-  line-height: 1;
-  height: 50px;
-  margin-bottom: 10px;
-  text-align: center;
-  letter-spacing: 2px;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
-  box-shadow: none !important;
-}
-
-#sagojo_backendbundle_user_signup_password{
-  width: 99.99% !important;
-  font-size: 1.4rem;
-  line-height: 1;
-  height: 50px;
-  margin-bottom: 10px;
-  text-align: center;
-  letter-spacing: 2px;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
 }
 
 .password-font{
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 10px
-}
-
-#sagojo_backendbundle_user_signup__token{
 }
 
 .btn.w-100.g-mb0.after_gps{

@@ -10,7 +10,7 @@
             %br こちら
           %dd SAGOJOの使い方を確認しよう
     %li
-      %a.business(href="#")
+      = link_to businesses_path, class: "business" do
         .image
           %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/img-subnav-list-02.svg" alt="business")
         %dl
@@ -21,7 +21,7 @@
             SAGOJOがご提供できる価値を
             %br ご確認ください
     %li
-      %a.faq(href="#")
+      = link_to faqs_path, class: "faq" do
         .image
           %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/img-subnav-list-03.svg" alt="FAQ")
         %dl
@@ -29,7 +29,7 @@
             FAQ
           %dd よくあるご質問はこちら
     %li
-      %a.signup(href="#")
+      = link_to new_user_registration_path, class: "signup" do
         .image
           %img(src="https://d1te0bovbq6epg.cloudfront.net/common/img/img-subnav-list-04.svg" atl="signup")
         %dl

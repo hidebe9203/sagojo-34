@@ -14,8 +14,6 @@
         = render partial: "left_contents", locals: { work: @work}
       #side.col-sm-4.work_show.right
         .side-profile-01
-          .image
-            = image_tag( "https://d1te0bovbq6epg.cloudfront.net/uploads/rakuten_travel/company_staff_icon.png", class: "image01")
           %p.side-profile-title 担当者さまから一言
           %p.side-profile-text 「この場所に行きたい！旅行したい！」と、読んだ人の心を動かせるような、読者の立場に立ったコンテンツを一緒に作りましょう！
         .side-job-detail-01
@@ -89,17 +87,14 @@
                 %a
                   %i.fa.fa-tag
                   山口県
-          .side-job-detail-inner-02.like
-            %p
-              %button#work-like-button.btn.w-100.work_like
-                .star
-                  %i.fa.fa-star
-                お気に入りに追加
           - if @days_left >= 0
             .side-job-detail-inner-02
-              - if user_signed_in?
-                %p
+              %p
+                - if user_signed_in?
                   = link_to "応募画面へ進む", new_work_form_path(@work), class: "btn"
+                - else
+                  = link_to new_user_registration_path, class: "btn" do
+                    %span.apply シゴトの登録にはログインが必要です
               %p.side-job-detail-text 現在16人が応募済みです
 .sub-contents-list
   = render partial: "./tops/sub-contents-list"

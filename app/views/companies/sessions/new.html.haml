@@ -1,17 +1,25 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "companies/shared/links"
+#wrap
+  .main-content01
+    #main
+      .inner
+        .content-only-main-01
+          .img-prof
+            = image_tag "company_icon.png", class: "img"
+          %h1.hi
+            企業アカウントでログイン
+          %div#form-signup.form-signup-01
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .email_field
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email",id: "company_signup_email", class: "textbox-01.w-100.text-input", placeholder: "メールアドレス"
+            .password_field
+              %br/
+              = f.password_field :password, autocomplete: "current-password",id: "company_signup_password", class: "textbox-01.w-100.text-input", placeholder: "パスワード"
+            .fubmit_actions
+              = f.submit "ログイン", class: "btn w-100 g-mb0 after_gps"
+        .content-only-sub-01
+          .wrap-col_col2
+            .right
+              %span 登録しましたか？
+              = link_to "企業登録", new_company_registration_path
+          %p.copyright02{lang: "en"}© SAGOJO.
