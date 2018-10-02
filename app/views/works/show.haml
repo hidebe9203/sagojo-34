@@ -95,7 +95,8 @@
                 - else
                   = link_to new_user_registration_path, class: "btn" do
                     %span.apply シゴトの登録にはログインが必要です
-              %p.side-job-detail-text 現在16人が応募済みです
+              %p.side-job-detail-text
+                = "現在#{@work.workstatuses.count}人が応募済みです"
 .sub-contents-list
   = render partial: "./tops/sub-contents-list"
 .sub-contents-aside
