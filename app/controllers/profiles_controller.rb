@@ -15,7 +15,14 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     if @profile.save
       if params[:applyId] == "apply"
-        redirect_to root_path
+        workstatus = Workstatus.where('user_id = ? and work_id = ?', params[:user_id], params[:work_id])
+        if workstatus.present?
+          Workstatus.update(workstatus_params)
+          redirect_to controller: 'workstatuses', action: 'index'
+        else
+          Workstatus.create(workstatus_params)
+          redirect_to controller: 'workstatuses', action: 'index'
+        end
       else
         redirect_to profile_path(current_user.id)
       end
@@ -28,7 +35,14 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       if params[:applyId] == "apply"
-        redirect_to root_path
+        workstatus = Workstatus.where('user_id = ? and work_id = ?', params[:user_id], params[:work_id])
+        if workstatus.present?
+          Workstatus.update(workstatus_params)
+          redirect_to controller: 'workstatuses', action: 'index'
+        else
+          Workstatus.create(workstatus_params)
+          redirect_to controller: 'workstatuses', action: 'index'
+        end
       else
         redirect_to profile_path(current_user.id)
       end
@@ -40,5 +54,9 @@ class ProfilesController < ApplicationController
   private
   def profile_params
     params.require(:profile).permit(:background_image, :person_image, :catchphrase, :birth_year, :birth_month, :birth_day, :gender, :phone_number, :current_place, :language_skill, :career, :travel_history, :performance, :expected_income, :preparatory_period, :desired_travel_detail, :self_introduction).merge(user_id: current_user.id)
+  end
+
+  def workstatus_params
+    params.permit(:user_id, :work_id).merge(status: "0")
   end
 end
