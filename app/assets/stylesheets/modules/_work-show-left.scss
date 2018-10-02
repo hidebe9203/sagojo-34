@@ -241,19 +241,9 @@ table.show_requirement{
   margin-top: 35px;
   padding: 25px 20px;
   overflow: hidden;
-  .left-like{
-    width: 230px;
-    height: 65px;
-    float: left;
-    margin: 0 20px 15px 0;
-    button#work-like-button{
-      @include btn-like(230px, 65px);
-    }
-  }
   .right-apply{
-    width: 55%;
+    width: 100%;
     height: 65px;
-    float: right;
     a.btn{
       @include square-round_btn($yellow, 100%, 60px, 100px);
       padding: 10px 7.5px;

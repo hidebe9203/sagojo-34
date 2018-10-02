@@ -106,11 +106,6 @@
             %dd 際に旅をして、シゴトを実行していただきます。
     - if @days_left >= 0
       .application-btn
-        .left-like
-          %button#work-like-button.btn.w-100.work_like
-            .star
-              %i.fa.fa-star
-            %span お気に入りに追加
         .right-apply
           - if user_signed_in?
             = link_to new_work_form_path(@work), class: "btn" do
