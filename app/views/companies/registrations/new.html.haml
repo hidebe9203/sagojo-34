@@ -1,34 +1,41 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :company_name
-    %br/
-    = f.text_field :company_name, autofocus: true, autocomplete: "company_name"
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true, autocomplete: "name"
-  .field
-    = f.label :number
-    %br/
-    = f.text_field :number, autofocus: true, autocomplete: "number"
-
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "companies/shared/links"
+#wrap
+  .main-content01
+    #main
+      .inner
+        .content-only-main-01
+          .img-prof
+            %img.img{alt: "", src: "https://d1te0bovbq6epg.cloudfront.net/common/img/icon-tabibito-01.svg"}
+          %h1.hi
+            無料登録して旅人にシゴトを 依頼しましょう
+            %p.hi_bottom.mt-5
+              すでに登録済みの方は
+              = link_to "ログイン", new_company_session_path,class: "login"
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            .name_field
+              %br/
+              = f.text_field :company_name,id: "company_signup_name",class: "textbox-01.w-100", autofocus: true, autocomplete: "company_name", placeholder: "企業名", required: true
+            .field
+              %br/
+              = f.text_field :name,id: "company_signup_staff",class: "textbox-01.w-100", autofocus: true, autocomplete: "staff", placeholder: "あなたの氏名", required: true
+            .field
+              %br/
+              = f.text_field :number,id: "company_signup_phone-number",class: "textbox-01.w-100", autofocus: true, autocomplete: "phone-number", placeholder: "会社・仕事の電話番号", required: true
+            %p.mailaddress-font.mt-3
+              お仕事でお使いのアドレスを入力してください。
+              %br
+              gmailやキャリアのアドレスは使えません。
+            .email_field
+              %br/
+              = f.email_field :email,id: "company_signup_email",class: "textbox-01.w-100", autofocus: true, autocomplete: "email", placeholder: "メールアドレス", required: true
+            .password_field
+              - if @minimum_password_length
+                %em
+                  パスワードは#{@minimum_password_length} 文字以上にしてください
+              %br/
+              = f.password_field :password,id: "company_signup_password",class: "textbox-01.w-100", autocomplete: "new-password", placeholder: "パスワード"
+            .fubmit_actions
+              = f.submit "登録する", class: "btn w-100 g-mb0 after_gps"
+        .content-only-sub-01
+          %p.copyright{lang: "en"}© SAGOJO.
+          -# = render "companies/shared/links"
