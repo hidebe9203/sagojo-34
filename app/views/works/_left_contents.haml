@@ -112,8 +112,13 @@
               %i.fa.fa-star
             %span お気に入りに追加
         .right-apply
-          %a.btn{href: ""}
-            %span.apply 応募画面へ進む
+          - if user_signed_in?
+            = link_to new_work_form_path(@work), class: "btn" do
+              %span.apply 応募画面へ進む
+          - else
+            = link_to new_user_registration_path, class: "btn" do
+              %span.apply シゴトの登録にはログインが必要です
+
   .sub-recomend
     #main.left
       %h2.top-hdg-02
