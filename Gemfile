@@ -68,7 +68,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'faker'
 end
 
 group :production do
@@ -86,8 +85,6 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
-gem 'paperclip'
-gem 'mechanize'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'qiita-markdown'
