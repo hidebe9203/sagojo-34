@@ -10,6 +10,8 @@
             = f.file_field :person_image, class: "js-img-uploader-trigger", id: "upload-user-img"
       - if request.path_info =~ %r(/works/\d+/forms/new) then
         = hidden_field_tag :applyId, "apply"
+        = hidden_field_tag :work_id, params[:work_id]
+        = hidden_field_tag :user_id, current_user.id
       %h2.profile-user-name
         = @profile.user.name
       .form-wrap-01
@@ -151,7 +153,7 @@
             %span.label-required
               必須
         .radio-01
-          = f.radio_button :gender, 0, id: "male"
+          = f.radio_button :gender, 0, id: "male", checked: true
           %label(for="male")
             男性
         .radio-01
