@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_100511) do
+ActiveRecord::Schema.define(version: 2018_10_03_043327) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company_name"
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 2018_09_29_100511) do
     t.text "background_image"
     t.text "person_image"
     t.text "catchphrase"
-    t.integer "birth_year"
-    t.integer "birth_month"
-    t.integer "birth_day"
+    t.string "birth_year"
+    t.string "birth_month"
+    t.string "birth_day"
     t.integer "gender", null: false
     t.integer "phone_number"
     t.string "current_place"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2018_09_29_100511) do
   create_table "workstatuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "work_id"
-    t.integer "status", null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_workstatuses_on_user_id"

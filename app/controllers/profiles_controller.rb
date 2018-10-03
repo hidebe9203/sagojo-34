@@ -1,11 +1,10 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:show, :edit]
 
   def show
-    @profile = Profile.find_by(user_id: params[:id])
   end
 
   def edit
-    @profile = Profile.find_by(user_id: params[:id])
     if @profile.nil?
       @profile = Profile.new(user_id: current_user.id)
     end
@@ -18,10 +17,10 @@ class ProfilesController < ApplicationController
         workstatus = Workstatus.where('user_id = ? and work_id = ?', params[:user_id], params[:work_id])
         if workstatus.present?
           Workstatus.update(workstatus_params)
-          redirect_to controller: 'workstatuses', action: 'index'
+          redirect_to workstatuses_path
         else
           Workstatus.create(workstatus_params)
-          redirect_to controller: 'workstatuses', action: 'index'
+          redirect_to workstatuses_path
         end
       else
         redirect_to profile_path(current_user.id)
@@ -38,10 +37,10 @@ class ProfilesController < ApplicationController
         workstatus = Workstatus.where('user_id = ? and work_id = ?', params[:user_id], params[:work_id])
         if workstatus.present?
           Workstatus.update(workstatus_params)
-          redirect_to controller: 'workstatuses', action: 'index'
+          redirect_to workstatuses_path
         else
           Workstatus.create(workstatus_params)
-          redirect_to controller: 'workstatuses', action: 'index'
+          redirect_to workstatuses_path
         end
       else
         redirect_to profile_path(current_user.id)
@@ -57,6 +56,10 @@ class ProfilesController < ApplicationController
   end
 
   def workstatus_params
-    params.permit(:user_id, :work_id).merge(status: "0")
+    params.permit(:user_id, :work_id).merge(status: 0)
+  end
+
+  def set_profile
+    @profile = Profile.find_by(user_id: params[:id])
   end
 end
