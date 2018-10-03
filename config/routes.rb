@@ -20,4 +20,5 @@ devise_for :users, controllers: {
   resources :profiles, only: [:show, :edit, :create, :update]
   resources :users, only: [:edit, :update]
   resources :companies, only: [:show]
+  resources :workstatuses, only: [:index]
 end
