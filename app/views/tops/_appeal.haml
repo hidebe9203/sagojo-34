@@ -4,13 +4,19 @@
       %li.slick-image
         .image-container.mx-5
           =image_tag work.image.to_s, class: 'img-fluid'
-        .limit-time
-          =fa_icon 'comment'
-          .box
-            %span.until あと
-            %span.number
-              = Work.days_left(work)
-            %span.days 日
+          - if Work.days_left(work) >= 0
+            .limit-time
+              =fa_icon 'comment'
+              .box
+                %span.until あと
+                %span.number
+                  = Work.days_left(work)
+                %span.days 日
+          - else
+            .limit-time.end
+              =fa_icon 'comment'
+              .box.end
+                募集終了
         .catchcopy
           .company
             %p
