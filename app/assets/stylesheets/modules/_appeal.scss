@@ -121,6 +121,25 @@ ul.slide-dots{
     }
   }
 }
+.limit-time.end{
+  i{
+    font-size: 9vw;
+    color: #ddd;
+    z-index: 5;
+  }
+  .box.end{
+    width: 100%;
+    text-align: center;
+    color: $black;
+    top: 40%;
+    right: 0;
+    font-size: 1.2vw;
+    font-weight: bold;
+    span.end{
+    }
+  }
+}
+
 
 // キャッチコピー
 .catchcopy{
