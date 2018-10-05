@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
+  
+# 本番環境でBasic認証を行う
   def production?
     Rails.env.production?
   end
