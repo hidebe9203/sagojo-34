@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :company_name, :number])
   end
-
-  private
   
 # 本番環境でBasic認証を行う
   def production?
